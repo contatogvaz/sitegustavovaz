@@ -176,6 +176,25 @@ h1 span{
   background:var(--soft);
 }
 
+.audiovisual-content{
+  display:grid;
+  gap:22px;
+}
+
+.audiovisual-image-wrap{
+  width:100%;
+  border-bottom:1px solid var(--line);
+  padding-bottom:18px;
+}
+
+.audiovisual-image{
+  width:100%;
+  aspect-ratio:5/2;
+  object-fit:cover;
+  object-position:center center;
+  background:var(--soft);
+}
+
 .credits-list{
   display:grid;
   gap:0;
@@ -193,7 +212,7 @@ h1 span{
 
 .credit-title{
   margin:0 0 6px 0;
-  font-size:clamp(24px,3vw,34px);
+  font-size:clamp(22px,2.5vw,30px);
   line-height:1;
   font-weight:400;
   letter-spacing:-.03em;
@@ -231,10 +250,10 @@ h1 span{
 
 .item-title{
   margin:0 0 8px 0;
-  font-size:clamp(30px,4vw,46px);
-  line-height:.96;
+  font-size:clamp(22px,2.5vw,30px);
+  line-height:1;
   font-weight:400;
-  letter-spacing:-.04em;
+  letter-spacing:-.03em;
 }
 
 .item-desc{
@@ -337,8 +356,10 @@ h1 span{
     padding-top:136px;
   }
 
-  .item-title{
+  .item-title,
+  .credit-title{
     font-size:32px;
+    line-height:.96;
   }
 
   .contact-value{
@@ -388,7 +409,7 @@ h1 span{
       <div class="credits-list">
         <article class="credit-item">
           <h3 class="credit-title">Terminal</h3>
-          <p class="credit-meta">Ele (filho) • direção Cesar Augusto • 2025</p>
+          <p class="credit-meta">Ele mesmo, filho, ator • direção Cesar Augusto • 2025</p>
         </article>
 
         <article class="credit-item">
@@ -429,7 +450,7 @@ h1 span{
 
         <article class="credit-item">
           <h3 class="credit-title">Toc Toc</h3>
-          <p class="credit-meta">Vicente • direção Alexandre Heinecke • 2011</p>
+          <p class="credit-meta">Vicente • direção Alexandre Heinecke • 2011-2012</p>
         </article>
 
         <article class="credit-item">
@@ -459,7 +480,7 @@ h1 span{
 
         <article class="credit-item">
           <h3 class="credit-title">O Kronoscópio</h3>
-          <p class="credit-meta">direção Ricardo Karman • 2007</p>
+          <p class="credit-meta">José Félix • direção Ricardo Karman • 2007</p>
         </article>
 
         <article class="credit-item">
@@ -475,112 +496,122 @@ h1 span{
   <div class="section-grid">
     <h2 class="section-title">Audiovisual</h2>
 
-    <div class="content">
-      <article class="item">
-        <div>
-          <h3 class="item-title">Reencarne</h3>
-          <p class="item-desc">Ricardo • Globoplay / TV Globo • 2025</p>
-        </div>
-        <div class="item-meta">Bruno Safadi e Noa Bressani</div>
-      </article>
+    <div class="audiovisual-content">
+      <div class="audiovisual-image-wrap">
+        <img
+          class="audiovisual-image"
+          src="COLE_AQUI_O_FRAME_DO_AUDIOVISUAL"
+          alt="Frame de audiovisual de Gustavo Vaz"
+        >
+      </div>
 
-      <article class="item">
-        <div>
-          <h3 class="item-title">Paulo, o Apóstolo</h3>
-          <p class="item-desc">Apolo • Record TV • 2025</p>
-        </div>
-        <div class="item-meta"></div>
-      </article>
+      <div class="content">
+         <article class="item">
+          <div>
+            <h3 class="item-title">Justino</h3>
+            <p class="item-desc">Pastor Lauris • em pós-produção</p>
+          </div>
+          <div class="item-meta">José Eduardo Belmonte</div>
+        </article>
+        
+        <article class="item">
+          <div>
+            <h3 class="item-title">Reencarne</h3>
+            <p class="item-desc">Ricardo • Globoplay / TV Globo • 2025</p>
+          </div>
+          <div class="item-meta">Bruno Safadi e Noa Bressani</div>
+        </article>
 
-      <article class="item">
-        <div>
-          <h3 class="item-title">A Vida Pela Frente</h3>
-          <p class="item-desc">Ivo • Globoplay / TV Globo • 2023</p>
-        </div>
-        <div class="item-meta">Bruno Safadi e Leandra Leal</div>
-      </article>
+        <article class="item">
+          <div>
+            <h3 class="item-title">Paulo, o Apóstolo</h3>
+            <p class="item-desc">Apolo • Record TV • 2025</p>
+          </div>
+          <div class="item-meta"></div>
+        </article>
 
-      <article class="item">
-        <div>
-          <h3 class="item-title">Só Se For Por Amor</h3>
-          <p class="item-desc">César • Netflix • 2022</p>
-        </div>
-        <div class="item-meta">Ana Azevedo</div>
-      </article>
+        <article class="item">
+          <div>
+            <h3 class="item-title">A Vida Pela Frente</h3>
+            <p class="item-desc">Ivo • Globoplay / TV Globo • 2023</p>
+          </div>
+          <div class="item-meta">Bruno Safadi e Leandra Leal</div>
+        </article>
 
-      <article class="item">
-        <div>
-          <h3 class="item-title">Coisa Mais Linda</h3>
-          <p class="item-desc">Augusto • Netflix • 2019–2020</p>
-        </div>
-        <div class="item-meta">Caito Ortiz, Julia Rezende e Hugo Prata</div>
-      </article>
+        <article class="item">
+          <div>
+            <h3 class="item-title">Só Se For Por Amor</h3>
+            <p class="item-desc">César • Netflix • 2022</p>
+          </div>
+          <div class="item-meta">Ana Azevedo</div>
+        </article>
 
-      <article class="item">
-        <div>
-          <h3 class="item-title">Aruanas</h3>
-          <p class="item-desc">Gregory • Globoplay / TV Globo • 2019–2021</p>
-        </div>
-        <div class="item-meta">Luiz Felipe Binder, Carlos Manga Jr. e Estela Renner</div>
-      </article>
+        <article class="item">
+          <div>
+            <h3 class="item-title">Coisa Mais Linda</h3>
+            <p class="item-desc">Augusto • Netflix • 2019–2020</p>
+          </div>
+          <div class="item-meta">Caito Ortiz, Julia Rezende e Hugo Prata</div>
+        </article>
 
-      <article class="item">
-        <div>
-          <h3 class="item-title">Os Homens São de Marte</h3>
-          <p class="item-desc">Léo • GNT / Globosat • 2019</p>
-        </div>
-        <div class="item-meta">Suzana Garcia</div>
-      </article>
+        <article class="item">
+          <div>
+            <h3 class="item-title">Aruanas</h3>
+            <p class="item-desc">Gregory • Globoplay / TV Globo • 2019–2021</p>
+          </div>
+          <div class="item-meta">Luiz Felipe Binder, Carlos Manga Jr. e Estela Renner</div>
+        </article>
 
-      <article class="item">
-        <div>
-          <h3 class="item-title">Justino</h3>
-          <p class="item-desc">Pastor Lauris • em pós-produção</p>
-        </div>
-        <div class="item-meta">José Eduardo Belmonte</div>
-      </article>
+        <article class="item">
+          <div>
+            <h3 class="item-title">Os Homens São de Marte</h3>
+            <p class="item-desc">Léo • GNT / Globosat • 2019</p>
+          </div>
+          <div class="item-meta">Suzana Garcia</div>
+        </article>
 
-      <article class="item">
-        <div>
-          <h3 class="item-title">O Jardim Secreto de Mariana</h3>
-          <p class="item-desc">João • 2021</p>
-        </div>
-        <div class="item-meta">Sérgio Rezende</div>
-      </article>
+        <article class="item">
+          <div>
+            <h3 class="item-title">O Jardim Secreto de Mariana</h3>
+            <p class="item-desc">João • 2021</p>
+          </div>
+          <div class="item-meta">Sérgio Rezende</div>
+        </article>
 
-      <article class="item">
-        <div>
-          <h3 class="item-title">Depois a Louca Sou Eu</h3>
-          <p class="item-desc">Gilberto • 2021</p>
-          <p class="credit-award">Grande Prêmio do Cinema Brasileiro – Melhor Longa de Comédia</p>
-        </div>
-        <div class="item-meta">Julia Rezende</div>
-      </article>
+        <article class="item">
+          <div>
+            <h3 class="item-title">Depois a Louca Sou Eu</h3>
+            <p class="item-desc">Gilberto • 2021</p>
+            <p class="credit-award">Grande Prêmio do Cinema Brasileiro – Melhor Longa de Comédia</p>
+          </div>
+          <div class="item-meta">Julia Rezende</div>
+        </article>
 
-      <article class="item">
-        <div>
-          <h3 class="item-title">Maria do Caritó</h3>
-          <p class="item-desc">Anatoli • 2019</p>
-        </div>
-        <div class="item-meta">João Paulo Jabour</div>
-      </article>
+        <article class="item">
+          <div>
+            <h3 class="item-title">Maria do Caritó</h3>
+            <p class="item-desc">Anatoli • 2019</p>
+          </div>
+          <div class="item-meta">João Paulo Jabour</div>
+        </article>
 
-      <article class="item">
-        <div>
-          <h3 class="item-title">O Doutrinador</h3>
-          <p class="item-desc">Anterinho • 2018</p>
-        </div>
-        <div class="item-meta">Gustavo Bonafé</div>
-      </article>
+        <article class="item">
+          <div>
+            <h3 class="item-title">O Doutrinador</h3>
+            <p class="item-desc">Anterinho • 2018</p>
+          </div>
+          <div class="item-meta">Gustavo Bonafé</div>
+        </article>
 
-      <article class="item">
-        <div>
-          <h3 class="item-title">Divórcio</h3>
-          <p class="item-desc">Catanduva • 2017</p>
-          <p class="credit-award">Grande Prêmio do Cinema Brasileiro – Melhor Longa de Comédia</p>
-        </div>
-        <div class="item-meta">Pedro Amorim</div>
-      </article>
+        <article class="item">
+          <div>
+            <h3 class="item-title">Divórcio</h3>
+            <p class="item-desc">Catanduva • 2017</p>
+            <p class="credit-award">Grande Prêmio do Cinema Brasileiro – Melhor Longa de Comédia</p>
+          </div>
+          <div class="item-meta">Pedro Amorim</div>
+        </article>
+      </div>
     </div>
   </div>
 </section>
