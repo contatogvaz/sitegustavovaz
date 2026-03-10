@@ -98,11 +98,12 @@
     }
 
     .hero-inner{
-  position:relative;
-  z-index:2;
-  width:min(100%, 1180px);
-  display:block;
-}
+      position:relative;
+      z-index:2;
+      width:min(100%, 1180px);
+      display:block;
+    }
+
     .hero-left{
       max-width:760px;
     }
@@ -117,20 +118,20 @@
     }
 
     h1{
-  margin:0;
-  font-weight:400;
-  font-size:clamp(58px, 12vw, 150px);
-  line-height:.88;
-  letter-spacing:-.05em;
-}
+      margin:0;
+      font-weight:400;
+      font-size:clamp(58px, 12vw, 150px);
+      line-height:.88;
+      letter-spacing:-.05em;
+    }
 
-h1 span{
-  display:block;
-}
+    h1 span{
+      display:block;
+    }
 
-.last-name{
-  padding-left:12px;
-}
+    .last-name{
+      padding-left:12px;
+    }
 
     .hero-text{
       margin:20px 0 0 0;
@@ -183,6 +184,66 @@ h1 span{
     .content{
       display:grid;
       gap:0;
+    }
+
+    .theater-content{
+      display:grid;
+      gap:26px;
+    }
+
+    .theater-image-wrap{
+      width:100%;
+      border-bottom:1px solid var(--line);
+      padding-bottom:18px;
+    }
+
+    .theater-image{
+      width:100%;
+      aspect-ratio:16 / 9;
+      object-fit:cover;
+      background:var(--soft);
+    }
+
+    .credits-list{
+      display:grid;
+      gap:0;
+    }
+
+    .credit-item{
+      padding:18px 0;
+      border-top:1px solid var(--line);
+    }
+
+    .credit-item:first-child{
+      border-top:0;
+      padding-top:0;
+    }
+
+    .credit-title{
+      margin:0 0 6px 0;
+      font-size:clamp(24px, 3vw, 34px);
+      line-height:1;
+      font-weight:400;
+      letter-spacing:-.03em;
+    }
+
+    .credit-meta{
+      margin:0;
+      font-family:'Inter', sans-serif;
+      font-size:13px;
+      line-height:1.7;
+      color:#c5c5c5;
+      letter-spacing:-.01em;
+    }
+
+    .credit-award{
+      margin:6px 0 0 0;
+      font-family:'Inter', sans-serif;
+      font-size:12px;
+      line-height:1.6;
+      color:#8f8f8f;
+      font-style:italic;
+      letter-spacing:-.01em;
     }
 
     .item{
@@ -360,42 +421,29 @@ h1 span{
   <section id="teatro" class="section">
     <div class="section-grid">
       <h2 class="section-title">Teatro</h2>
-      <div class="content">
-        <article class="item">
-          <div>
-            <h3 class="item-title">Nome da peça</h3>
-            <p class="item-desc">Substituir por uma linha seca e precisa sobre o trabalho, sem excesso de explicação.</p>
-          </div>
-          <div class="item-meta">
-            Direção<br>
-            Cidade / Festival<br>
-            Ano
-          </div>
-        </article>
+      <div class="theater-content">
+        <div class="theater-image-wrap">
+          <img class="theater-image" src="_77A6373-Editar.jpg" alt="Gustavo Vaz em cena no teatro">
+        </div>
 
-        <article class="item">
-          <div>
-            <h3 class="item-title">Nome da peça</h3>
-            <p class="item-desc">Substituir por uma linha seca e precisa sobre o trabalho, sem excesso de explicação.</p>
-          </div>
-          <div class="item-meta">
-            Direção<br>
-            Cidade / Festival<br>
-            Ano
-          </div>
-        </article>
+        <div class="credits-list">
+          <article class="credit-item">
+            <h3 class="credit-title">Nome da peça</h3>
+            <p class="credit-meta">ator • direção • cidade / festival • ano</p>
+            <p class="credit-award">Prêmio ou indicação, se houver</p>
+          </article>
 
-        <article class="item">
-          <div>
-            <h3 class="item-title">Nome da peça</h3>
-            <p class="item-desc">Substituir por uma linha seca e precisa sobre o trabalho, sem excesso de explicação.</p>
-          </div>
-          <div class="item-meta">
-            Direção<br>
-            Cidade / Festival<br>
-            Ano
-          </div>
-        </article>
+          <article class="credit-item">
+            <h3 class="credit-title">Nome da peça</h3>
+            <p class="credit-meta">ator • direção • cidade / festival • ano</p>
+          </article>
+
+          <article class="credit-item">
+            <h3 class="credit-title">Nome da peça</h3>
+            <p class="credit-meta">ator • direção • cidade / festival • ano</p>
+            <p class="credit-award">Prêmio ou indicação, se houver</p>
+          </article>
+        </div>
       </div>
     </div>
   </section>
