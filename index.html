@@ -98,11 +98,14 @@
 }
     
     .hero-inner{
-  position:relative;
-  z-index:2;
-  width:min(100%, 1180px);
-  display:block;
-}
+      position:relative;
+      z-index:2;
+      width:min(100%, 1180px);
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:24px;
+      align-items:end;
+    }
 
     .hero-left{
       max-width:760px;
@@ -345,6 +348,17 @@
     <div class="hero-left">
       <h1>Gustavo<br>Vaz</h1>
     </div>
+    
+      <div class="hero-right">
+        <div class="hero-note">
+          Teatro<br>
+          Audiovisual<br>
+          Projetos autorais / exCompanhia<br>
+          Matérias, entrevistas e contato
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section id="teatro" class="section">
     <div class="section-grid">
