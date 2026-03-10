@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Gustavo Vaz</title>
-<meta name="description" content="Ator, criador e pesquisador. Teatro, audiovisual, projetos autorais, mídia e contato." />
+
+<meta name="description" content="Ator, criador e pesquisador. Teatro, audiovisual, projetos autorais, mídia e contato.">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
---bg:#000000;
+--bg:#000;
 --text:#f5f5f5;
 --muted:#9a9a9a;
 --line:rgba(255,255,255,.14);
@@ -30,7 +32,7 @@ body{
 margin:0;
 background:var(--bg);
 color:var(--text);
-font-family:'Playfair Display', serif;
+font-family:'Playfair Display',serif;
 -webkit-font-smoothing:antialiased;
 text-rendering:optimizeLegibility;
 }
@@ -62,7 +64,7 @@ border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .brand{
-font-family:'Inter', sans-serif;
+font-family:'Inter',sans-serif;
 font-size:12px;
 letter-spacing:.18em;
 text-transform:uppercase;
@@ -74,7 +76,7 @@ display:flex;
 flex-wrap:wrap;
 gap:16px;
 justify-content:flex-end;
-font-family:'Inter', sans-serif;
+font-family:'Inter',sans-serif;
 font-size:11px;
 letter-spacing:.14em;
 text-transform:uppercase;
@@ -97,14 +99,14 @@ align-items:flex-end;
 padding:120px 24px 40px;
 border-bottom:1px solid var(--line);
 background:
-url("https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/9R4A5628.jpg") center center / cover no-repeat;
+url("https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/9R4A5628.jpg")
+center center / cover no-repeat;
 }
 
 .hero-inner{
 position:relative;
 z-index:2;
 width:min(100%,1180px);
-display:block;
 }
 
 .hero-left{
@@ -169,8 +171,9 @@ padding-bottom:18px;
 
 .theater-image{
 width:100%;
-aspect-ratio:16/9;
+aspect-ratio:3/1;
 object-fit:cover;
+object-position:center 38%;
 background:var(--soft);
 }
 
@@ -329,7 +332,11 @@ grid-template-columns:1fr;
 <body>
 
 <header class="topbar">
-<div class="brand">Gustavo Vaz</div>
+
+<div class="brand">
+Gustavo Vaz
+</div>
+
 <nav class="nav">
 <a href="#teatro">Teatro</a>
 <a href="#audiovisual">Audiovisual</a>
@@ -337,20 +344,28 @@ grid-template-columns:1fr;
 <a href="#midia">Na mídia</a>
 <a href="#contato">Contato</a>
 </nav>
+
 </header>
 
 <section class="hero">
+
 <div class="hero-inner">
+
 <div class="hero-left">
+
 <h1>
 <span>Gustavo</span>
 <span class="last-name">Vaz</span>
 </h1>
+
 </div>
+
 </div>
+
 </section>
 
 <section id="teatro" class="section">
+
 <div class="section-grid">
 
 <h2 class="section-title">Teatro</h2>
@@ -358,9 +373,12 @@ grid-template-columns:1fr;
 <div class="theater-content">
 
 <div class="theater-image-wrap">
-<img class="theater-image"
+
+<img
+class="theater-image"
 src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg"
-alt="Tom na Fazenda, 2017-2021">
+alt="Tom na Fazenda">
+
 </div>
 
 <div class="credits-list">
@@ -383,7 +401,11 @@ alt="Tom na Fazenda, 2017-2021">
 <article class="credit-item">
 <h3 class="credit-title">Tom na Fazenda</h3>
 <p class="credit-meta">Francis • direção Rodrigo Portella • 2017–2021</p>
-<p class="credit-award">Prêmio Shell – Melhor Ator / Prêmio Cesgranrio – Melhor Ator / Prêmio Botequim Cultural – Melhor Ator Coadjuvante / Prêmio Cenym – Melhor Ator Coadjuvante</p>
+<p class="credit-award">
+Prêmio Shell – Melhor Ator / Prêmio Cesgranrio – Melhor Ator /
+Prêmio Botequim Cultural – Melhor Ator Coadjuvante /
+Prêmio Cenym – Melhor Ator Coadjuvante
+</p>
 </article>
 
 <article class="credit-item">
@@ -447,112 +469,12 @@ alt="Tom na Fazenda, 2017-2021">
 </article>
 
 </div>
+
 </div>
+
 </div>
+
 </section>
-
-<section id="audiovisual" class="section">
-<div class="section-grid">
-
-<h2 class="section-title">Audiovisual</h2>
-
-<div class="content">
-
-<article class="item">
-<div>
-<h3 class="item-title">Nome do filme ou série</h3>
-<p class="item-desc">Substituir por personagem, contexto do projeto ou plataforma.</p>
-</div>
-
-<div class="item-meta">
-Direção<br>
-Plataforma / Canal<br>
-Ano
-</div>
-</article>
-
-</div>
-</div>
-</section>
-
-<section id="autorais" class="section">
-<div class="section-grid">
-
-<h2 class="section-title">Projetos autorais</h2>
-
-<div class="content">
-
-<article class="item">
-<div>
-<h3 class="item-title">Projeto autoral</h3>
-<p class="item-desc">Descrição curta do projeto.</p>
-</div>
-
-<div class="item-meta">
-Criação<br>
-Direção<br>
-Ano
-</div>
-
-</article>
-
-</div>
-</div>
-</section>
-
-<section id="midia" class="section">
-<div class="section-grid">
-
-<h2 class="section-title">Na mídia</h2>
-
-<div class="content">
-
-<article class="item">
-<div>
-<h3 class="item-title">
-<a class="press-link" href="#" target="_blank">Título da matéria</a>
-</h3>
-</div>
-
-<div class="item-meta">
-Veículo<br>
-Ano
-</div>
-
-</article>
-
-</div>
-</div>
-</section>
-
-<section id="contato" class="section">
-<div class="section-grid">
-
-<h2 class="section-title">Contato</h2>
-
-<div class="content">
-
-<div class="contact-box">
-
-<article class="contact-card">
-<p class="contact-label">Email</p>
-<p class="contact-value">contato@gustavovaz.com.br</p>
-</article>
-
-<article class="contact-card">
-<p class="contact-label">Instagram</p>
-<p class="contact-value">@gustavovaz</p>
-</article>
-
-</div>
-
-</div>
-</div>
-</section>
-
-<footer class="footer">
-Gustavo Vaz
-</footer>
 
 </body>
 </html>
