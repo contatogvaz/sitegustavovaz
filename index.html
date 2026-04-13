@@ -7,7 +7,7 @@
   <title>Gustavo Vaz</title>
   <meta
     name="description"
-    content="Gustavo Vaz é ator, autor e criador multimídia. Pesquisa autoral, teatro, audiovisual e projetos da ExCompanhia."
+    content="Gustavo Vaz é ator, autor e criador multimídia. Teatro, dramaturgia, pesquisa autoral, audiovisual e projetos da ExCompanhia."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,17 +19,14 @@
 
   <style>
     :root{
-      --bg:#050505;
-      --bg-soft:#0d0d0d;
-      --panel:#111111;
-      --text:#f3efe8;
-      --muted:#aaa294;
-      --line:rgba(255,255,255,.10);
-      --line-strong:rgba(255,255,255,.18);
-      --accent:#d8ccb7;
-      --max:1280px;
-      --radius:22px;
-      --shadow:0 20px 60px rgba(0,0,0,.28);
+      --bg:#f7f4ee;
+      --panel:#efe9de;
+      --text:#111111;
+      --muted:#6f6a62;
+      --line:rgba(0,0,0,.11);
+      --line-strong:rgba(0,0,0,.2);
+      --accent:#000;
+      --max:1320px;
     }
 
     *{
@@ -59,22 +56,6 @@
       max-width:100%;
     }
 
-    .site{
-      position:relative;
-      overflow:hidden;
-    }
-
-    .site::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      background:
-        radial-gradient(circle at 15% 10%, rgba(255,255,255,.035), transparent 24%),
-        radial-gradient(circle at 85% 80%, rgba(255,255,255,.025), transparent 20%);
-      z-index:0;
-    }
-
     .topbar{
       position:fixed;
       top:0;
@@ -84,31 +65,29 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:24px;
+      gap:20px;
       padding:18px 26px;
-      background:rgba(5,5,5,.74);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(255,255,255,.08);
+      background:rgba(247,244,238,.88);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(0,0,0,.08);
     }
 
     .brand{
       font-size:11px;
       letter-spacing:.22em;
       text-transform:uppercase;
-      color:var(--muted);
       white-space:nowrap;
     }
 
     .topbar-right{
       display:flex;
       align-items:center;
-      gap:22px;
+      gap:24px;
     }
 
     .nav{
       display:flex;
       flex-wrap:wrap;
-      justify-content:flex-end;
       gap:16px;
       font-size:11px;
       letter-spacing:.18em;
@@ -116,62 +95,62 @@
     }
 
     .nav a{
-      color:rgba(243,239,232,.78);
-      transition:color .2s ease;
+      opacity:.72;
+      transition:opacity .2s ease;
     }
 
     .nav a:hover{
-      color:var(--text);
+      opacity:1;
     }
 
-    .lang-switch{
+    .lang{
       display:flex;
       align-items:center;
       gap:8px;
       font-size:11px;
       letter-spacing:.18em;
       text-transform:uppercase;
-      color:var(--muted);
       white-space:nowrap;
     }
 
-    .lang-switch .active{
-      color:var(--text);
+    .lang .active{
+      font-weight:600;
     }
 
     .hero{
-      position:relative;
-      z-index:1;
-      min-height:100svh;
-      padding:132px 26px 48px;
+      padding:132px 26px 40px;
       border-bottom:1px solid var(--line);
-      display:flex;
-      align-items:flex-end;
+      overflow:hidden;
     }
 
     .hero-grid{
       width:min(100%, var(--max));
       margin:0 auto;
       display:grid;
-      grid-template-columns:minmax(0, 1.1fr) minmax(320px, .9fr);
-      gap:34px;
+      grid-template-columns:minmax(0, .95fr) minmax(360px, .95fr);
+      gap:26px;
       align-items:end;
+      min-height:72vh;
+    }
+
+    .hero-copy{
+      padding-bottom:18px;
     }
 
     .hero-kicker{
-      margin:0 0 18px;
+      margin:0 0 16px;
       font-size:11px;
       letter-spacing:.22em;
       text-transform:uppercase;
-      color:var(--accent);
+      color:var(--muted);
     }
 
     .hero-title{
       margin:0;
       font-family:'Cormorant Garamond',serif;
-      font-size:clamp(78px, 12vw, 170px);
-      line-height:.84;
-      letter-spacing:-.05em;
+      font-size:clamp(88px, 13vw, 196px);
+      line-height:.82;
+      letter-spacing:-.06em;
       font-weight:500;
     }
 
@@ -179,30 +158,31 @@
       display:block;
     }
 
-    .hero-text{
-      max-width:740px;
-      margin:26px 0 0;
+    .hero-lines{
+      margin-top:24px;
+      display:grid;
+      gap:6px;
+      max-width:640px;
       font-size:clamp(19px, 2vw, 24px);
-      line-height:1.48;
-      color:rgba(243,239,232,.92);
+      line-height:1.45;
     }
 
-    .hero-note{
-      max-width:720px;
-      margin:16px 0 0;
-      font-size:14px;
-      line-height:1.8;
-      color:var(--muted);
+    .hero-image-wrap{
+      position:relative;
+      height:100%;
+      min-height:520px;
     }
 
     .hero-image{
-      position:relative;
-      aspect-ratio:4/5;
-      border-radius:26px;
-      overflow:hidden;
+      position:absolute;
+      right:-10%;
+      bottom:0;
+      width:min(100%, 640px);
+      height:100%;
+      min-height:520px;
       border:1px solid var(--line);
-      background:var(--bg-soft);
-      box-shadow:var(--shadow);
+      overflow:hidden;
+      background:#ddd6ca;
     }
 
     .hero-image img{
@@ -210,53 +190,48 @@
       height:100%;
       object-fit:cover;
       object-position:center top;
-      filter:saturate(.95) contrast(1.02);
+      filter:saturate(.95);
     }
 
-    .recognition{
-      position:relative;
-      z-index:1;
-      border-bottom:1px solid var(--line);
+    .strip{
       padding:0 26px;
+      border-bottom:1px solid var(--line);
     }
 
-    .recognition-grid{
+    .strip-grid{
       width:min(100%, var(--max));
       margin:0 auto;
       display:grid;
-      grid-template-columns:repeat(3, minmax(0,1fr));
+      grid-template-columns:repeat(4, minmax(0,1fr));
       gap:0;
     }
 
-    .recognition-item{
-      padding:20px 18px 22px;
-      border-left:1px solid var(--line);
+    .strip-item{
+      padding:16px 16px 18px 0;
+      border-right:1px solid var(--line);
     }
 
-    .recognition-item:first-child{
-      border-left:0;
-      padding-left:0;
+    .strip-item:last-child{
+      border-right:0;
+      padding-right:0;
     }
 
-    .recognition-label{
-      margin:0 0 7px;
+    .strip-label{
+      margin:0 0 6px;
       font-size:10px;
       letter-spacing:.18em;
       text-transform:uppercase;
       color:var(--muted);
     }
 
-    .recognition-text{
+    .strip-text{
       margin:0;
       font-size:15px;
-      line-height:1.65;
-      color:var(--text);
+      line-height:1.62;
     }
 
     .section{
-      position:relative;
-      z-index:1;
-      padding:76px 26px 34px;
+      padding:74px 26px 34px;
       border-bottom:1px solid var(--line);
     }
 
@@ -264,8 +239,8 @@
       width:min(100%, var(--max));
       margin:0 auto;
       display:grid;
-      grid-template-columns:220px minmax(0, 1fr);
-      gap:30px;
+      grid-template-columns:210px minmax(0, 1fr);
+      gap:28px;
     }
 
     .section-label{
@@ -274,7 +249,7 @@
       top:88px;
       align-self:start;
       font-size:11px;
-      letter-spacing:.20em;
+      letter-spacing:.2em;
       text-transform:uppercase;
       color:var(--muted);
     }
@@ -283,191 +258,209 @@
       min-width:0;
     }
 
-    .intro-grid{
+    .about-grid{
       display:grid;
-      grid-template-columns:minmax(0, 1.15fr) minmax(280px, .85fr);
+      grid-template-columns:minmax(0, 1fr) 320px;
       gap:28px;
       align-items:start;
     }
 
-    .intro-title{
+    .about-title{
       margin:0 0 18px;
       font-family:'Cormorant Garamond',serif;
-      font-size:clamp(38px, 5vw, 72px);
-      line-height:.94;
-      letter-spacing:-.04em;
+      font-size:clamp(42px, 6vw, 82px);
+      line-height:.92;
+      letter-spacing:-.05em;
       font-weight:500;
+      max-width:760px;
     }
 
     .body-text{
       margin:0;
-      max-width:880px;
+      max-width:840px;
       font-size:16px;
-      line-height:1.88;
-      color:#d0c9bc;
+      line-height:1.9;
+      color:#2b2926;
     }
 
-    .facts{
+    .meta-list{
       display:grid;
-      gap:12px;
+      gap:14px;
     }
 
-    .fact{
-      padding:14px 0;
+    .meta-item{
+      padding-top:14px;
       border-top:1px solid var(--line);
     }
 
-    .fact:first-child{
+    .meta-item:first-child{
+      padding-top:0;
       border-top:0;
-      padding-top:0;
     }
 
-    .fact-title{
-      margin:0 0 5px;
-      font-size:11px;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      color:var(--muted);
-    }
-
-    .fact-text{
-      margin:0;
-      font-size:15px;
-      line-height:1.7;
-      color:var(--text);
-    }
-
-    .work-block{
-      margin-top:2px;
-      padding-top:0;
-    }
-
-    .work-head{
-      margin:0 0 28px;
-      padding-bottom:20px;
-      border-bottom:1px solid var(--line);
-      display:grid;
-      grid-template-columns:minmax(0,1fr) 320px;
-      gap:28px;
-      align-items:end;
-    }
-
-    .work-title{
-      margin:0;
-      font-family:'Cormorant Garamond',serif;
-      font-size:clamp(42px, 6vw, 84px);
-      line-height:.92;
-      letter-spacing:-.04em;
-      font-weight:500;
-    }
-
-    .work-subtitle{
-      margin:16px 0 0;
-      max-width:860px;
-      font-size:16px;
-      line-height:1.84;
-      color:#d0c9bc;
-    }
-
-    .work-image{
-      aspect-ratio:4/5;
-      border-radius:22px;
-      overflow:hidden;
-      border:1px solid var(--line);
-      background:var(--bg-soft);
-    }
-
-    .work-image img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:center 38%;
-    }
-
-    .project-grid{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0, 1fr));
-      gap:16px;
-      margin-bottom:42px;
-    }
-
-    .project-card{
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.012));
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:22px 22px 20px;
-      min-height:100%;
-    }
-
-    .project-year{
-      margin:0 0 10px;
+    .meta-head{
+      margin:0 0 4px;
       font-size:10px;
       letter-spacing:.18em;
       text-transform:uppercase;
       color:var(--muted);
     }
 
-    .project-title{
-      margin:0 0 10px;
-      font-family:'Cormorant Garamond',serif;
-      font-size:38px;
-      line-height:.95;
-      letter-spacing:-.03em;
-      font-weight:500;
-    }
-
-    .project-role{
-      margin:0 0 12px;
-      font-size:12px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:#dbd2c4;
-    }
-
-    .project-desc{
+    .meta-text{
       margin:0;
       font-size:15px;
-      line-height:1.78;
-      color:#cbc4b7;
+      line-height:1.72;
+    }
+
+    .works-layout{
+      display:grid;
+      grid-template-columns:minmax(0, 1.05fr) minmax(280px, .95fr);
+      gap:34px;
+      align-items:start;
+    }
+
+    .works-list{
+      border-top:1px solid var(--line-strong);
+    }
+
+    .work-item{
+      border-bottom:1px solid var(--line);
+    }
+
+    .work-button{
+      width:100%;
+      padding:18px 0 18px;
+      background:none;
+      border:0;
+      text-align:left;
+      cursor:pointer;
+      display:grid;
+      grid-template-columns:110px minmax(0, 1fr);
+      gap:16px;
+      align-items:start;
+      color:inherit;
+      font:inherit;
+    }
+
+    .work-year{
+      font-size:11px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--muted);
+      padding-top:6px;
+    }
+
+    .work-main{
+      min-width:0;
+    }
+
+    .work-name{
+      margin:0;
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(34px, 4vw, 54px);
+      line-height:.94;
+      letter-spacing:-.04em;
+      font-weight:500;
+      transition:transform .18s ease;
+    }
+
+    .work-kind{
+      margin:8px 0 0;
+      font-size:13px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .work-button:hover .work-name,
+    .work-button:focus-visible .work-name,
+    .work-button.is-active .work-name{
+      transform:translateX(8px);
+    }
+
+    .preview{
+      padding-top:6px;
+      border-top:1px solid var(--line-strong);
+      min-height:420px;
+    }
+
+    .preview-tag{
+      margin:0 0 12px;
+      font-size:10px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .preview-title{
+      margin:0 0 10px;
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(42px, 5vw, 76px);
+      line-height:.9;
+      letter-spacing:-.05em;
+      font-weight:500;
+      max-width:460px;
+    }
+
+    .preview-meta{
+      margin:0 0 16px;
+      font-size:13px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .preview-text{
+      margin:0;
+      max-width:480px;
+      font-size:16px;
+      line-height:1.88;
+      color:#2c2a27;
+    }
+
+    .preview-link{
+      display:inline-block;
+      margin-top:18px;
+      font-size:11px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      border-bottom:1px solid currentColor;
+      padding-bottom:4px;
     }
 
     .subsection{
-      margin-top:34px;
-      padding-top:18px;
-      border-top:1px solid var(--line);
+      margin-top:38px;
+      padding-top:20px;
+      border-top:1px solid var(--line-strong);
     }
 
-    .subsection-title{
-      margin:0 0 20px;
+    .sub-title{
+      margin:0 0 18px;
       font-family:'Cormorant Garamond',serif;
-      font-size:40px;
-      line-height:.98;
-      letter-spacing:-.03em;
+      font-size:42px;
+      line-height:.95;
+      letter-spacing:-.04em;
       font-weight:500;
     }
 
     .credit-list{
       display:grid;
       gap:0;
+      border-top:1px solid var(--line);
     }
 
     .credit-item{
       display:grid;
       grid-template-columns:minmax(0,1fr) 180px;
       gap:18px;
-      padding:18px 0;
-      border-top:1px solid var(--line);
-    }
-
-    .credit-item:first-child{
-      border-top:0;
-      padding-top:0;
+      padding:16px 0 18px;
+      border-bottom:1px solid var(--line);
     }
 
     .credit-name{
-      margin:0 0 6px;
+      margin:0 0 5px;
       font-family:'Cormorant Garamond',serif;
-      font-size:33px;
+      font-size:31px;
       line-height:.96;
       letter-spacing:-.03em;
       font-weight:500;
@@ -476,8 +469,8 @@
     .credit-desc{
       margin:0;
       font-size:15px;
-      line-height:1.76;
-      color:#cbc4b7;
+      line-height:1.74;
+      color:#2c2a27;
     }
 
     .credit-meta{
@@ -491,7 +484,7 @@
 
     .contact-grid{
       display:grid;
-      grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);
+      grid-template-columns:minmax(0, 1fr) 320px;
       gap:28px;
       align-items:end;
     }
@@ -500,26 +493,29 @@
       margin:0;
       max-width:760px;
       font-family:'Cormorant Garamond',serif;
-      font-size:clamp(38px, 5vw, 68px);
-      line-height:.95;
-      letter-spacing:-.04em;
+      font-size:clamp(40px, 5vw, 72px);
+      line-height:.94;
+      letter-spacing:-.05em;
       font-weight:500;
     }
 
     .contact-cards{
       display:grid;
-      gap:14px;
+      gap:12px;
     }
 
     .contact-card{
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:18px;
+      padding:16px 0;
+      border-top:1px solid var(--line);
+    }
+
+    .contact-card:first-child{
+      border-top:0;
+      padding-top:0;
     }
 
     .contact-label{
-      margin:0 0 10px;
+      margin:0 0 6px;
       font-size:10px;
       letter-spacing:.18em;
       text-transform:uppercase;
@@ -528,9 +524,8 @@
 
     .contact-value{
       margin:0;
-      font-size:22px;
+      font-size:24px;
       line-height:1.25;
-      color:var(--text);
       word-break:break-word;
     }
 
@@ -544,30 +539,37 @@
       color:var(--muted);
     }
 
-    @media (max-width:1100px){
+    @media (max-width:1120px){
       .hero-grid,
-      .intro-grid,
-      .work-head,
+      .about-grid,
+      .works-layout,
       .contact-grid{
         grid-template-columns:1fr;
       }
 
-      .project-grid{
-        grid-template-columns:1fr;
+      .hero-image-wrap{
+        min-height:420px;
       }
 
-      .recognition-grid{
-        grid-template-columns:1fr;
+      .hero-image{
+        position:relative;
+        right:auto;
+        width:100%;
+        min-height:420px;
       }
 
-      .recognition-item{
-        border-left:0;
-        border-top:1px solid var(--line);
-        padding-left:0;
+      .strip-grid{
+        grid-template-columns:1fr 1fr;
       }
 
-      .recognition-item:first-child{
-        border-top:0;
+      .strip-item{
+        border-right:0;
+        border-bottom:1px solid var(--line);
+        padding-right:0;
+      }
+
+      .strip-item:nth-last-child(-n+2){
+        border-bottom:0;
       }
     }
 
@@ -590,7 +592,7 @@
       }
     }
 
-    @media (max-width:740px){
+    @media (max-width:760px){
       .topbar{
         flex-direction:column;
         align-items:flex-start;
@@ -603,78 +605,83 @@
         gap:14px;
       }
 
-      .nav{
-        gap:12px;
-      }
-
       .hero{
-        padding-top:158px;
+        padding-top:156px;
       }
 
-      .hero-title{
-        font-size:94px;
+      .work-button{
+        grid-template-columns:1fr;
+        gap:8px;
       }
 
-      .project-title{
-        font-size:34px;
+      .work-year{
+        padding-top:0;
       }
 
-      .credit-name{
-        font-size:30px;
+      .strip-grid{
+        grid-template-columns:1fr;
+      }
+
+      .strip-item{
+        border-bottom:1px solid var(--line);
+      }
+
+      .strip-item:last-child{
+        border-bottom:0;
       }
     }
 
     @media (max-width:560px){
       .hero-title{
-        font-size:78px;
+        font-size:82px;
+      }
+
+      .preview-title,
+      .about-title,
+      .contact-title{
+        line-height:.98;
       }
     }
   </style>
 </head>
 <body>
-  <div class="site">
 
-    <header class="topbar">
-      <div class="brand">Gustavo Vaz</div>
+  <header class="topbar">
+    <div class="brand">Gustavo Vaz</div>
 
-      <div class="topbar-right">
-        <nav class="nav">
-          <a href="#sobre">Sobre</a>
-          <a href="#trabalhos">Trabalhos</a>
-          <a href="#contato">Contato</a>
-        </nav>
+    <div class="topbar-right">
+      <nav class="nav">
+        <a href="#trabalhos">Trabalhos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
 
-        <div class="lang-switch">
-          <span class="active">PT</span>
-          <span>/</span>
-          <a href="en.html">EN</a>
+      <div class="lang">
+        <span class="active">PT</span>
+        <span>/</span>
+        <a href="en.html">EN</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="hero-kicker">Ator · Autor · Criador multimídia</p>
+
+        <h1 class="hero-title">
+          <span>Gustavo</span>
+          <span>Vaz</span>
+        </h1>
+
+        <div class="hero-lines">
+          <div>Teatro.</div>
+          <div>Dramaturgia.</div>
+          <div>Escuta, mediação, cidade.</div>
         </div>
       </div>
-    </header>
 
-    <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <p class="hero-kicker">Ator · Autor · Criador multimídia</p>
-
-          <h1 class="hero-title">
-            <span>Gustavo</span>
-            <span>Vaz</span>
-          </h1>
-
-          <p class="hero-text">
-            Pesquisa autoral em teatro contemporâneo, dramaturgia,
-            performance, escuta, mediação tecnológica e experiência.
-          </p>
-
-          <p class="hero-note">
-            Sua trajetória articula criação autoral, atuação, escrita e dispositivos
-            de cena. Ao longo de mais de duas décadas, desenvolveu um percurso
-            em que presença, território, linguagem e mediação se tornam matéria
-            formal de trabalho.
-          </p>
-        </div>
-
+      <div class="hero-image-wrap">
         <div class="hero-image">
           <img
             src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/9R4A5628.jpg"
@@ -682,313 +689,324 @@
           />
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="recognition" aria-label="Reconhecimento">
-      <div class="recognition-grid">
-        <article class="recognition-item">
-          <p class="recognition-label">Reconhecimento</p>
-          <p class="recognition-text">
-            Prêmio Shell de Melhor Ator por <em>Tom na Fazenda</em>.
-          </p>
-        </article>
+  <section class="strip" aria-label="Percurso em resumo">
+    <div class="strip-grid">
+      <article class="strip-item">
+        <p class="strip-label">Reconhecimento</p>
+        <p class="strip-text">Prêmio Shell de Melhor Ator por <em>Tom na Fazenda</em>.</p>
+      </article>
 
-        <article class="recognition-item">
-          <p class="recognition-label">Circulação</p>
-          <p class="recognition-text">
-            Alemanha, Portugal, Montenegro e Suíça, em residências,
-            apresentações e intercâmbios.
-          </p>
-        </article>
+      <article class="strip-item">
+        <p class="strip-label">Pesquisa autoral</p>
+        <p class="strip-text">ExCompanhia, desde 2012.</p>
+      </article>
 
-        <article class="recognition-item">
-          <p class="recognition-label">Pesquisa autoral</p>
-          <p class="recognition-text">
-            ExCompanhia, desde 2012, como campo contínuo de criação e investigação.
-          </p>
-        </article>
-      </div>
-    </section>
+      <article class="strip-item">
+        <p class="strip-label">Circulação</p>
+        <p class="strip-text">Alemanha, Portugal, Montenegro e Suíça.</p>
+      </article>
 
-    <section id="sobre" class="section">
-      <div class="section-grid">
-        <h2 class="section-label">Sobre</h2>
+      <article class="strip-item">
+        <p class="strip-label">Dramaturgia</p>
+        <p class="strip-text">Prêmio Especial no FIAT por <em>Frequência Ausente 19Hz</em>.</p>
+      </article>
+    </div>
+  </section>
 
-        <div class="section-body">
-          <div class="intro-grid">
-            <div>
-              <h3 class="intro-title">
-                Um percurso autoral construído entre cena, escrita,
-                mediação e experiência.
-              </h3>
+  <section id="trabalhos" class="section">
+    <div class="section-grid">
+      <h2 class="section-label">Trabalhos</h2>
 
-              <p class="body-text">
-                Gustavo Vaz é ator, autor e criador multimídia. Ao lado de uma
-                trajetória consistente no teatro e no audiovisual, desenvolve desde 2012,
-                na ExCompanhia, uma investigação continuada sobre presença,
-                dramaturgia site-specific, imersão sonora, dispositivos digitais e
-                reconfigurações contemporâneas da experiência.
-              </p>
+      <div class="section-body">
+        <div class="works-layout">
+          <div class="works-list">
+            <article class="work-item">
+              <button class="work-button is-active"
+                data-title="Frequência Ausente 19Hz"
+                data-meta="2015 – atual · Dramaturgia · Direção · Performance"
+                data-text="Trabalho concebido a partir da integração entre presença, vídeo e áudio 3D, adaptável a diferentes cidades e contextos."
+              >
+                <div class="work-year">2015 – atual</div>
+                <div class="work-main">
+                  <h3 class="work-name">Frequência Ausente 19Hz</h3>
+                  <p class="work-kind">Pesquisa autoral / ExCompanhia</p>
+                </div>
+              </button>
+            </article>
 
-              <p class="body-text" style="margin-top:18px;">
-                Seu trabalho não trata tecnologia como ornamento nem apenas como tema.
-                Ela aparece como condição que desloca percepção, escuta, relação com o
-                espaço e posição do público. Nos últimos anos, essa pesquisa vem se
-                concentrando de forma mais aguda na escrita dramatúrgica, em projetos
-                como <em>Terminal</em> e <em>NATUREZA</em>.
-              </p>
-            </div>
+            <article class="work-item">
+              <button class="work-button"
+                data-title="ExReality"
+                data-meta="2021 · Direção · Dramaturgia"
+                data-text="Experimento performativo em transmissão contínua, com dramaturgia modulada em tempo real pela interação do público em plataforma própria."
+              >
+                <div class="work-year">2021</div>
+                <div class="work-main">
+                  <h3 class="work-name">ExReality</h3>
+                  <p class="work-kind">Pesquisa autoral / ExCompanhia</p>
+                </div>
+              </button>
+            </article>
 
-            <div class="facts">
-              <div class="fact">
-                <p class="fact-title">Trajetória</p>
-                <p class="fact-text">22 anos de experiência profissional em teatro e audiovisual.</p>
-              </div>
+            <article class="work-item">
+              <button class="work-button"
+                data-title="Jornada"
+                data-meta="2023 · Direção · Dramaturgia · Performance"
+                data-text="Audiotour artístico site-specific que desloca a escuta e propõe uma leitura sensível do espaço urbano por meio de uma travessia sonora."
+              >
+                <div class="work-year">2023</div>
+                <div class="work-main">
+                  <h3 class="work-name">Jornada</h3>
+                  <p class="work-kind">Pesquisa autoral / ExCompanhia</p>
+                </div>
+              </button>
+            </article>
 
-              <div class="fact">
-                <p class="fact-title">Reconhecimento internacional</p>
-                <p class="fact-text">
-                  Prêmio Especial de Dramaturgia no FIAT, em Montenegro,
-                  por <em>Frequência Ausente 19Hz</em>.
-                </p>
-              </div>
+            <article class="work-item">
+              <button class="work-button"
+                data-title="O Enigma Voynich"
+                data-meta="2017 · Roteiro · Direção · Performance"
+                data-text="Série em aplicativo que posiciona o público como protagonista de uma narrativa em áudio 3D, articulando memória e espaço urbano."
+              >
+                <div class="work-year">2017</div>
+                <div class="work-main">
+                  <h3 class="work-name">O Enigma Voynich</h3>
+                  <p class="work-kind">Pesquisa autoral / ExCompanhia</p>
+                </div>
+              </button>
+            </article>
 
-              <div class="fact">
-                <p class="fact-title">Desenvolvimento atual</p>
-                <p class="fact-text">
-                  <em>NATUREZA</em> aprofunda a pesquisa em voz, dramaturgia,
-                  presença e experiência humana em contextos instáveis.
-                </p>
-              </div>
-            </div>
+            <article class="work-item">
+              <button class="work-button"
+                data-title="EU – Negociando Sentidos"
+                data-meta="2012 – 2013 · Dramaturgia · Direção"
+                data-text="Experiência cênica de longa duração que articulou redes sociais, encontros presenciais, telefone, mensagens e território urbano."
+              >
+                <div class="work-year">2012 – 2013</div>
+                <div class="work-main">
+                  <h3 class="work-name">EU – Negociando Sentidos</h3>
+                  <p class="work-kind">Pesquisa autoral / ExCompanhia</p>
+                </div>
+              </button>
+            </article>
+
+            <article class="work-item">
+              <button class="work-button"
+                data-title="NATUREZA"
+                data-meta="2026 · Desenvolvimento"
+                data-text="Novo estágio da pesquisa, concentrado em voz, dramaturgia, presença e experiência humana em contextos atravessados por mediação tecnológica."
+              >
+                <div class="work-year">2026</div>
+                <div class="work-main">
+                  <h3 class="work-name">NATUREZA</h3>
+                  <p class="work-kind">Pesquisa atual</p>
+                </div>
+              </button>
+            </article>
           </div>
+
+          <aside class="preview" aria-live="polite">
+            <p class="preview-tag">Pesquisa autoral</p>
+            <h3 class="preview-title" id="preview-title">Frequência Ausente 19Hz</h3>
+            <p class="preview-meta" id="preview-meta">2015 – atual · Dramaturgia · Direção · Performance</p>
+            <p class="preview-text" id="preview-text">
+              Trabalho concebido a partir da integração entre presença, vídeo e áudio 3D,
+              adaptável a diferentes cidades e contextos.
+            </p>
+            <span class="preview-link">Página individual em seguida</span>
+          </aside>
         </div>
-      </div>
-    </section>
 
-    <section id="trabalhos" class="section">
-      <div class="section-grid">
-        <h2 class="section-label">Trabalhos</h2>
+        <div class="subsection">
+          <h3 class="sub-title">Teatro</h3>
 
-        <div class="section-body">
-          <div class="work-block">
-            <div class="work-head">
+          <div class="credit-list">
+            <article class="credit-item">
               <div>
-                <h3 class="work-title">Pesquisa autoral / ExCompanhia</h3>
-                <p class="work-subtitle">
-                  O centro deste site está aqui. Projetos em que dramaturgia,
-                  escuta, cidade, espacialização sonora, mediação e presença operam
-                  como estrutura da obra, e não como complemento.
-                </p>
+                <h4 class="credit-name">Tom na Fazenda</h4>
+                <p class="credit-desc">Francis · direção Rodrigo Portella.</p>
               </div>
+              <div class="credit-meta">Ator<br>2017 – 2021</div>
+            </article>
 
-              <div class="work-image">
-                <img
-                  src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg"
-                  alt="Cena de Tom na Fazenda"
-                />
+            <article class="credit-item">
+              <div>
+                <h4 class="credit-name">Terminal</h4>
+                <p class="credit-desc">Texto original em formato palco-plateia.</p>
               </div>
+              <div class="credit-meta">Autor · Ator<br>2025</div>
+            </article>
+
+            <article class="credit-item">
+              <div>
+                <h4 class="credit-name">Uma Casa de Bonecas</h4>
+                <p class="credit-desc">Torvald Helmer · direção Georgette Fadel e Lívia Camargo.</p>
+              </div>
+              <div class="credit-meta">Ator<br>2025</div>
+            </article>
+
+            <article class="credit-item">
+              <div>
+                <h4 class="credit-name">Shakespeare Apaixonado</h4>
+                <p class="credit-desc">Lord Wessex · direção Rafael Gomes.</p>
+              </div>
+              <div class="credit-meta">Ator<br>2024</div>
+            </article>
+
+            <article class="credit-item">
+              <div>
+                <h4 class="credit-name">O Rei Leão</h4>
+                <p class="credit-desc">Diretor residente · direção original Julie Taymor.</p>
+              </div>
+              <div class="credit-meta">Direção<br>2013 – 2014</div>
+            </article>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3 class="sub-title">Audiovisual</h3>
+
+          <div class="credit-list">
+            <article class="credit-item">
+              <div>
+                <h4 class="credit-name">Justino</h4>
+                <p class="credit-desc">Pastor Lauris · longa em pós-produção.</p>
+              </div>
+              <div class="credit-meta">José Eduardo Belmonte</div>
+            </article>
+
+            <article class="credit-item">
+              <div>
+                <h4 class="credit-name">Reencarne</h4>
+                <p class="credit-desc">Ricardo · Globoplay / TV Globo.</p>
+              </div>
+              <div class="credit-meta">2025</div>
+            </article>
+
+            <article class="credit-item">
+              <div>
+                <h4 class="credit-name">A Vida Pela Frente</h4>
+                <p class="credit-desc">Ivo · Globoplay / TV Globo.</p>
+              </div>
+              <div class="credit-meta">2023</div>
+            </article>
+
+            <article class="credit-item">
+              <div>
+                <h4 class="credit-name">Só Se For Por Amor</h4>
+                <p class="credit-desc">César · Netflix.</p>
+              </div>
+              <div class="credit-meta">2022</div>
+            </article>
+
+            <article class="credit-item">
+              <div>
+                <h4 class="credit-name">Coisa Mais Linda</h4>
+                <p class="credit-desc">Augusto · Netflix.</p>
+              </div>
+              <div class="credit-meta">2019 – 2020</div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="section">
+    <div class="section-grid">
+      <h2 class="section-label">Sobre</h2>
+
+      <div class="section-body">
+        <div class="about-grid">
+          <div>
+            <h3 class="about-title">Cena, escrita, mediação, experiência.</h3>
+
+            <p class="body-text">
+              Gustavo Vaz é ator, autor e criador multimídia. Ao lado de uma trajetória
+              consistente no teatro e no audiovisual, desenvolve desde 2012, na
+              ExCompanhia, uma investigação continuada sobre dramaturgia site-specific,
+              imersão sonora, dispositivos digitais e formas contemporâneas de presença.
+            </p>
+
+            <p class="body-text" style="margin-top:18px;">
+              Nos últimos anos, esse percurso vem se concentrando de modo mais agudo
+              na escrita dramatúrgica e na construção de projetos em que voz, escuta,
+              território e mediação operam como matéria de cena.
+            </p>
+          </div>
+
+          <div class="meta-list">
+            <div class="meta-item">
+              <p class="meta-head">Trajetória</p>
+              <p class="meta-text">22 anos de experiência profissional em teatro e audiovisual.</p>
             </div>
 
-            <div class="project-grid">
-              <article class="project-card">
-                <p class="project-year">2015 – atual</p>
-                <h4 class="project-title">Frequência Ausente 19Hz</h4>
-                <p class="project-role">Dramaturgia · Direção · Performance</p>
-                <p class="project-desc">
-                  Trabalho estruturado pela integração entre presença, vídeo e áudio 3D,
-                  concebido para dialogar com diferentes cidades e contextos.
-                </p>
-              </article>
-
-              <article class="project-card">
-                <p class="project-year">2021</p>
-                <h4 class="project-title">ExReality</h4>
-                <p class="project-role">Direção · Dramaturgia</p>
-                <p class="project-desc">
-                  Experimento performativo em transmissão contínua, com dramaturgia
-                  modulada em tempo real pela interação do público em plataforma própria.
-                </p>
-              </article>
-
-              <article class="project-card">
-                <p class="project-year">2023</p>
-                <h4 class="project-title">Jornada</h4>
-                <p class="project-role">Direção · Dramaturgia · Performance</p>
-                <p class="project-desc">
-                  Audiotour artístico site-specific que propõe uma leitura sensível do
-                  espaço urbano por meio de uma travessia sonora.
-                </p>
-              </article>
-
-              <article class="project-card">
-                <p class="project-year">2025 – 2026</p>
-                <h4 class="project-title">Terminal / NATUREZA</h4>
-                <p class="project-role">Escrita · Dramaturgia · Desenvolvimento atual</p>
-                <p class="project-desc">
-                  <em>Terminal</em> consolida uma prática dramatúrgica em teatro.
-                  <em>NATUREZA</em> marca um aprofundamento da pesquisa em voz,
-                  presença, mediação e experiência contemporânea.
-                </p>
-              </article>
+            <div class="meta-item">
+              <p class="meta-head">Reconhecimento</p>
+              <p class="meta-text">Prêmio Shell de Melhor Ator por <em>Tom na Fazenda</em>.</p>
             </div>
 
-            <div class="subsection">
-              <h4 class="subsection-title">Teatro</h4>
-
-              <div class="credit-list">
-                <article class="credit-item">
-                  <div>
-                    <h5 class="credit-name">Tom na Fazenda</h5>
-                    <p class="credit-desc">
-                      Francis · direção Rodrigo Portella.
-                    </p>
-                  </div>
-                  <div class="credit-meta">Ator<br>2017 – 2021</div>
-                </article>
-
-                <article class="credit-item">
-                  <div>
-                    <h5 class="credit-name">Terminal</h5>
-                    <p class="credit-desc">
-                      Texto original em formato palco-plateia, expandindo a prática
-                      de escrita dramatúrgica.
-                    </p>
-                  </div>
-                  <div class="credit-meta">Autor · Ator<br>2025</div>
-                </article>
-
-                <article class="credit-item">
-                  <div>
-                    <h5 class="credit-name">Uma Casa de Bonecas</h5>
-                    <p class="credit-desc">
-                      Torvald Helmer · direção Georgette Fadel e Lívia Camargo.
-                    </p>
-                  </div>
-                  <div class="credit-meta">Ator<br>2025</div>
-                </article>
-
-                <article class="credit-item">
-                  <div>
-                    <h5 class="credit-name">Shakespeare Apaixonado</h5>
-                    <p class="credit-desc">
-                      Lord Wessex · direção Rafael Gomes.
-                    </p>
-                  </div>
-                  <div class="credit-meta">Ator<br>2024</div>
-                </article>
-
-                <article class="credit-item">
-                  <div>
-                    <h5 class="credit-name">O Rei Leão</h5>
-                    <p class="credit-desc">
-                      Diretor residente · direção original Julie Taymor.
-                    </p>
-                  </div>
-                  <div class="credit-meta">Direção<br>2013 – 2014</div>
-                </article>
-
-                <article class="credit-item">
-                  <div>
-                    <h5 class="credit-name">Na Solidão dos Campos de Algodão</h5>
-                    <p class="credit-desc">
-                      Dealer · direção Caco Ciocler.
-                    </p>
-                  </div>
-                  <div class="credit-meta">Ator<br>2009</div>
-                </article>
-              </div>
-            </div>
-
-            <div class="subsection">
-              <h4 class="subsection-title">Audiovisual</h4>
-
-              <div class="credit-list">
-                <article class="credit-item">
-                  <div>
-                    <h5 class="credit-name">Justino</h5>
-                    <p class="credit-desc">Pastor Lauris · longa-metragem em pós-produção.</p>
-                  </div>
-                  <div class="credit-meta">José Eduardo Belmonte</div>
-                </article>
-
-                <article class="credit-item">
-                  <div>
-                    <h5 class="credit-name">Reencarne</h5>
-                    <p class="credit-desc">Ricardo · Globoplay / TV Globo.</p>
-                  </div>
-                  <div class="credit-meta">Bruno Safadi · Noa Bressani<br>2025</div>
-                </article>
-
-                <article class="credit-item">
-                  <div>
-                    <h5 class="credit-name">A Vida Pela Frente</h5>
-                    <p class="credit-desc">Ivo · Globoplay / TV Globo.</p>
-                  </div>
-                  <div class="credit-meta">Bruno Safadi · Leandra Leal<br>2023</div>
-                </article>
-
-                <article class="credit-item">
-                  <div>
-                    <h5 class="credit-name">Só Se For Por Amor</h5>
-                    <p class="credit-desc">César · Netflix.</p>
-                  </div>
-                  <div class="credit-meta">Ana Azevedo<br>2022</div>
-                </article>
-
-                <article class="credit-item">
-                  <div>
-                    <h5 class="credit-name">Coisa Mais Linda</h5>
-                    <p class="credit-desc">Augusto · Netflix.</p>
-                  </div>
-                  <div class="credit-meta">Caito Ortiz · Julia Rezende · Hugo Prata<br>2019 – 2020</div>
-                </article>
-
-                <article class="credit-item">
-                  <div>
-                    <h5 class="credit-name">Aruanas</h5>
-                    <p class="credit-desc">Gregory · Globoplay / TV Globo.</p>
-                  </div>
-                  <div class="credit-meta">Luiz Felipe Binder · Carlos Manga Jr. · Estela Renner<br>2019 – 2021</div>
-                </article>
-              </div>
+            <div class="meta-item">
+              <p class="meta-head">Internacional</p>
+              <p class="meta-text">Residências, apresentações e intercâmbios em Alemanha, Portugal, Montenegro e Suíça.</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="contato" class="section">
-      <div class="section-grid">
-        <h2 class="section-label">Contato</h2>
+  <section id="contato" class="section">
+    <div class="section-grid">
+      <h2 class="section-label">Contato</h2>
 
-        <div class="section-body">
-          <div class="contact-grid">
-            <h3 class="contact-title">
-              Para colaborações artísticas, convites, residências,
-              imprensa e contato profissional.
-            </h3>
+      <div class="section-body">
+        <div class="contact-grid">
+          <h3 class="contact-title">Colaborações, residências, convites, imprensa.</h3>
 
-            <div class="contact-cards">
-              <article class="contact-card">
-                <p class="contact-label">Email</p>
-                <p class="contact-value">contato@gustavovaz.com.br</p>
-              </article>
+          <div class="contact-cards">
+            <article class="contact-card">
+              <p class="contact-label">Email</p>
+              <p class="contact-value">contato@gustavovaz.com.br</p>
+            </article>
 
-              <article class="contact-card">
-                <p class="contact-label">Instagram</p>
-                <p class="contact-value">@gustavovaz</p>
-              </article>
-            </div>
+            <article class="contact-card">
+              <p class="contact-label">Instagram</p>
+              <p class="contact-value">@gustavovaz</p>
+            </article>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer class="footer">
-      Gustavo Vaz
-    </footer>
+  <footer class="footer">
+    Gustavo Vaz
+  </footer>
 
-  </div>
+  <script>
+    const buttons = document.querySelectorAll('.work-button');
+    const title = document.getElementById('preview-title');
+    const meta = document.getElementById('preview-meta');
+    const text = document.getElementById('preview-text');
+
+    function setPreview(button){
+      buttons.forEach(btn => btn.classList.remove('is-active'));
+      button.classList.add('is-active');
+      title.textContent = button.dataset.title;
+      meta.textContent = button.dataset.meta;
+      text.textContent = button.dataset.text;
+    }
+
+    buttons.forEach(button => {
+      button.addEventListener('mouseenter', () => setPreview(button));
+      button.addEventListener('focus', () => setPreview(button));
+      button.addEventListener('click', () => setPreview(button));
+    });
+  </script>
+
 </body>
 </html>
