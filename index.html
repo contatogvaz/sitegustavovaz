@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,29 +7,29 @@
   <title>Gustavo Vaz</title>
   <meta
     name="description"
-    content="Gustavo Vaz is a Brazilian actor, author, and multimedia creator. Theatre, dramaturgy, site-specific research, audiovisual work, and authorial projects."
+    content="Gustavo Vaz é ator, autor e criador multimídia. Pesquisa autoral, teatro, audiovisual e projetos da ExCompanhia."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap"
     rel="stylesheet"
   />
 
   <style>
     :root{
       --bg:#050505;
-      --bg-soft:#0f0f0f;
-      --card:#121212;
-      --text:#f3f1eb;
-      --muted:#b0aba1;
-      --line:rgba(255,255,255,.11);
-      --line-strong:rgba(255,255,255,.22);
-      --accent:#ddd0bb;
-      --max:1240px;
+      --bg-soft:#0d0d0d;
+      --panel:#111111;
+      --text:#f3efe8;
+      --muted:#aaa294;
+      --line:rgba(255,255,255,.10);
+      --line-strong:rgba(255,255,255,.18);
+      --accent:#d8ccb7;
+      --max:1280px;
       --radius:22px;
-      --shadow:0 18px 60px rgba(0,0,0,.28);
+      --shadow:0 20px 60px rgba(0,0,0,.28);
     }
 
     *{
@@ -59,19 +59,19 @@
       max-width:100%;
     }
 
-    .page-shell{
+    .site{
       position:relative;
       overflow:hidden;
     }
 
-    .page-shell::before{
+    .site::before{
       content:"";
       position:fixed;
       inset:0;
       pointer-events:none;
       background:
-        radial-gradient(circle at 20% 10%, rgba(255,255,255,.045), transparent 24%),
-        radial-gradient(circle at 80% 80%, rgba(255,255,255,.03), transparent 22%);
+        radial-gradient(circle at 15% 10%, rgba(255,255,255,.035), transparent 24%),
+        radial-gradient(circle at 85% 80%, rgba(255,255,255,.025), transparent 20%);
       z-index:0;
     }
 
@@ -86,7 +86,7 @@
       justify-content:space-between;
       gap:24px;
       padding:18px 26px;
-      background:rgba(5,5,5,.72);
+      background:rgba(5,5,5,.74);
       backdrop-filter:blur(14px);
       border-bottom:1px solid rgba(255,255,255,.08);
     }
@@ -95,8 +95,14 @@
       font-size:11px;
       letter-spacing:.22em;
       text-transform:uppercase;
-      white-space:nowrap;
       color:var(--muted);
+      white-space:nowrap;
+    }
+
+    .topbar-right{
+      display:flex;
+      align-items:center;
+      gap:22px;
     }
 
     .nav{
@@ -110,41 +116,44 @@
     }
 
     .nav a{
-      color:rgba(243,241,235,.74);
-      transition:color .2s ease, transform .2s ease;
+      color:rgba(243,239,232,.78);
+      transition:color .2s ease;
     }
 
     .nav a:hover{
       color:var(--text);
-      transform:translateY(-1px);
+    }
+
+    .lang-switch{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-size:11px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+
+    .lang-switch .active{
+      color:var(--text);
     }
 
     .hero{
       position:relative;
+      z-index:1;
       min-height:100svh;
-      padding:130px 26px 40px;
+      padding:132px 26px 48px;
       border-bottom:1px solid var(--line);
       display:flex;
       align-items:flex-end;
-      isolation:isolate;
-    }
-
-    .hero-bg{
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.18) 0%, rgba(0,0,0,.28) 28%, rgba(0,0,0,.66) 72%, rgba(5,5,5,.96) 100%),
-        linear-gradient(90deg, rgba(0,0,0,.66) 0%, rgba(0,0,0,.30) 40%, rgba(0,0,0,.10) 100%),
-        url("https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/9R4A5628.jpg") center 22% / cover no-repeat;
-      z-index:-2;
-      transform:scale(1.03);
     }
 
     .hero-grid{
       width:min(100%, var(--max));
       margin:0 auto;
       display:grid;
-      grid-template-columns:minmax(0, 1.2fr) minmax(300px, .8fr);
+      grid-template-columns:minmax(0, 1.1fr) minmax(320px, .9fr);
       gap:34px;
       align-items:end;
     }
@@ -159,75 +168,95 @@
 
     .hero-title{
       margin:0;
-      max-width:820px;
       font-family:'Cormorant Garamond',serif;
-      font-size:clamp(72px, 12vw, 164px);
-      line-height:.86;
+      font-size:clamp(78px, 12vw, 170px);
+      line-height:.84;
+      letter-spacing:-.05em;
       font-weight:500;
-      letter-spacing:-.045em;
     }
 
     .hero-title span{
       display:block;
     }
 
-    .hero-lead{
-      max-width:670px;
+    .hero-text{
+      max-width:740px;
       margin:26px 0 0;
-      font-size:clamp(18px, 2.15vw, 24px);
-      line-height:1.42;
-      color:rgba(243,241,235,.9);
+      font-size:clamp(19px, 2vw, 24px);
+      line-height:1.48;
+      color:rgba(243,239,232,.92);
     }
 
     .hero-note{
-      max-width:680px;
-      margin:18px 0 0;
+      max-width:720px;
+      margin:16px 0 0;
       font-size:14px;
-      line-height:1.7;
+      line-height:1.8;
       color:var(--muted);
     }
 
-    .hero-proof{
-      display:grid;
-      gap:12px;
-      align-self:end;
-    }
-
-    .proof-card{
-      background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.13);
-      border-radius:20px;
-      padding:18px 18px 17px;
+    .hero-image{
+      position:relative;
+      aspect-ratio:4/5;
+      border-radius:26px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:var(--bg-soft);
       box-shadow:var(--shadow);
     }
 
-    .proof-label{
-      margin:0 0 8px;
+    .hero-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center top;
+      filter:saturate(.95) contrast(1.02);
+    }
+
+    .recognition{
+      position:relative;
+      z-index:1;
+      border-bottom:1px solid var(--line);
+      padding:0 26px;
+    }
+
+    .recognition-grid{
+      width:min(100%, var(--max));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:0;
+    }
+
+    .recognition-item{
+      padding:20px 18px 22px;
+      border-left:1px solid var(--line);
+    }
+
+    .recognition-item:first-child{
+      border-left:0;
+      padding-left:0;
+    }
+
+    .recognition-label{
+      margin:0 0 7px;
       font-size:10px;
       letter-spacing:.18em;
       text-transform:uppercase;
       color:var(--muted);
     }
 
-    .proof-value{
+    .recognition-text{
       margin:0;
-      font-family:'Cormorant Garamond',serif;
-      font-size:32px;
-      line-height:.96;
-      letter-spacing:-.03em;
-    }
-
-    .proof-detail{
-      margin:8px 0 0;
-      font-size:13px;
-      line-height:1.6;
-      color:#cec8bc;
+      font-size:15px;
+      line-height:1.65;
+      color:var(--text);
     }
 
     .section{
       position:relative;
       z-index:1;
-      padding:72px 26px 30px;
+      padding:76px 26px 34px;
       border-bottom:1px solid var(--line);
     }
 
@@ -242,10 +271,10 @@
     .section-label{
       margin:0;
       position:sticky;
-      top:86px;
+      top:88px;
       align-self:start;
       font-size:11px;
-      letter-spacing:.2em;
+      letter-spacing:.20em;
       text-transform:uppercase;
       color:var(--muted);
     }
@@ -254,27 +283,28 @@
       min-width:0;
     }
 
-    .intro-block{
+    .intro-grid{
       display:grid;
-      grid-template-columns:minmax(0, 1.15fr) minmax(260px, .85fr);
+      grid-template-columns:minmax(0, 1.15fr) minmax(280px, .85fr);
       gap:28px;
       align-items:start;
     }
 
-    .statement{
-      margin:0;
-      max-width:860px;
+    .intro-title{
+      margin:0 0 18px;
       font-family:'Cormorant Garamond',serif;
-      font-size:clamp(34px, 5vw, 60px);
-      line-height:.98;
-      letter-spacing:-.03em;
+      font-size:clamp(38px, 5vw, 72px);
+      line-height:.94;
+      letter-spacing:-.04em;
+      font-weight:500;
     }
 
     .body-text{
       margin:0;
+      max-width:880px;
       font-size:16px;
-      line-height:1.82;
-      color:#d2cdc3;
+      line-height:1.88;
+      color:#d0c9bc;
     }
 
     .facts{
@@ -283,7 +313,7 @@
     }
 
     .fact{
-      padding:16px 0;
+      padding:14px 0;
       border-top:1px solid var(--line);
     }
 
@@ -294,80 +324,84 @@
 
     .fact-title{
       margin:0 0 5px;
-      font-size:12px;
-      letter-spacing:.14em;
+      font-size:11px;
+      letter-spacing:.16em;
       text-transform:uppercase;
       color:var(--muted);
     }
 
-    .fact-value{
+    .fact-text{
       margin:0;
       font-size:15px;
       line-height:1.7;
       color:var(--text);
     }
 
-    .authorial-header{
-      display:grid;
-      grid-template-columns:minmax(0, 1fr) 320px;
-      gap:28px;
-      align-items:end;
-      margin-bottom:28px;
-      padding-bottom:22px;
-      border-bottom:1px solid var(--line);
+    .work-block{
+      margin-top:2px;
+      padding-top:0;
     }
 
-    .section-title-xl{
+    .work-head{
+      margin:0 0 28px;
+      padding-bottom:20px;
+      border-bottom:1px solid var(--line);
+      display:grid;
+      grid-template-columns:minmax(0,1fr) 320px;
+      gap:28px;
+      align-items:end;
+    }
+
+    .work-title{
       margin:0;
       font-family:'Cormorant Garamond',serif;
-      font-size:clamp(42px, 6vw, 78px);
+      font-size:clamp(42px, 6vw, 84px);
       line-height:.92;
       letter-spacing:-.04em;
       font-weight:500;
     }
 
-    .section-subtitle{
+    .work-subtitle{
       margin:16px 0 0;
       max-width:860px;
       font-size:16px;
-      line-height:1.82;
-      color:#d2cdc3;
+      line-height:1.84;
+      color:#d0c9bc;
     }
 
-    .image-frame{
-      position:relative;
-      width:100%;
+    .work-image{
       aspect-ratio:4/5;
-      border:1px solid var(--line);
-      border-radius:20px;
+      border-radius:22px;
       overflow:hidden;
+      border:1px solid var(--line);
       background:var(--bg-soft);
     }
 
-    .image-frame img{
+    .work-image img{
       width:100%;
       height:100%;
       object-fit:cover;
-      filter:saturate(.96) contrast(1.02);
+      object-position:center 38%;
     }
 
     .project-grid{
       display:grid;
       grid-template-columns:repeat(2, minmax(0, 1fr));
       gap:16px;
+      margin-bottom:42px;
     }
 
     .project-card{
-      background:linear-gradient(180deg, rgba(255,255,255,.032), rgba(255,255,255,.012));
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.012));
       border:1px solid var(--line);
-      border-radius:var(--radius);
+      border-radius:22px;
       padding:22px 22px 20px;
       min-height:100%;
     }
 
     .project-year{
-      margin:0 0 12px;
-      font-size:11px;
+      margin:0 0 10px;
+      font-size:10px;
       letter-spacing:.18em;
       text-transform:uppercase;
       color:var(--muted);
@@ -384,33 +418,27 @@
 
     .project-role{
       margin:0 0 12px;
-      font-size:13px;
-      line-height:1.6;
-      color:#d8d1c4;
-      text-transform:uppercase;
+      font-size:12px;
       letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#dbd2c4;
     }
 
     .project-desc{
       margin:0;
       font-size:15px;
       line-height:1.78;
-      color:#cac5ba;
+      color:#cbc4b7;
     }
 
-    .split-grid{
-      display:grid;
-      grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
-      gap:26px;
-    }
-
-    .column-card{
+    .subsection{
+      margin-top:34px;
+      padding-top:18px;
       border-top:1px solid var(--line);
-      padding-top:8px;
     }
 
-    .column-title{
-      margin:0 0 18px;
+    .subsection-title{
+      margin:0 0 20px;
       font-family:'Cormorant Garamond',serif;
       font-size:40px;
       line-height:.98;
@@ -425,7 +453,7 @@
 
     .credit-item{
       display:grid;
-      grid-template-columns:minmax(0, 1fr) 168px;
+      grid-template-columns:minmax(0,1fr) 180px;
       gap:18px;
       padding:18px 0;
       border-top:1px solid var(--line);
@@ -440,7 +468,7 @@
       margin:0 0 6px;
       font-family:'Cormorant Garamond',serif;
       font-size:33px;
-      line-height:.95;
+      line-height:.96;
       letter-spacing:-.03em;
       font-weight:500;
     }
@@ -448,69 +476,34 @@
     .credit-desc{
       margin:0;
       font-size:15px;
-      line-height:1.72;
-      color:#ccc6bb;
+      line-height:1.76;
+      color:#cbc4b7;
     }
 
     .credit-meta{
+      text-align:right;
       font-size:12px;
       line-height:1.7;
-      color:var(--muted);
-      text-align:right;
       letter-spacing:.08em;
       text-transform:uppercase;
+      color:var(--muted);
     }
 
-    .awards-grid{
+    .contact-grid{
       display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:26px;
-    }
-
-    .list-block{
-      border-top:1px solid var(--line);
-      padding-top:10px;
-    }
-
-    .bullet-list{
-      display:grid;
-      gap:14px;
-      margin:0;
-      padding:0;
-      list-style:none;
-    }
-
-    .bullet-list li{
-      padding-bottom:14px;
-      border-bottom:1px solid rgba(255,255,255,.08);
-      font-size:15px;
-      line-height:1.72;
-      color:#ccc6bb;
-    }
-
-    .bullet-list li:last-child{
-      border-bottom:0;
-      padding-bottom:0;
-    }
-
-    .highlight{
-      color:var(--text);
-    }
-
-    .contact-wrap{
-      display:grid;
-      grid-template-columns:minmax(0, 1.2fr) minmax(280px, .8fr);
-      gap:26px;
+      grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);
+      gap:28px;
       align-items:end;
     }
 
-    .contact-text{
+    .contact-title{
       margin:0;
       max-width:760px;
       font-family:'Cormorant Garamond',serif;
-      font-size:clamp(34px, 5vw, 60px);
-      line-height:.96;
-      letter-spacing:-.03em;
+      font-size:clamp(38px, 5vw, 68px);
+      line-height:.95;
+      letter-spacing:-.04em;
+      font-weight:500;
     }
 
     .contact-cards{
@@ -553,11 +546,9 @@
 
     @media (max-width:1100px){
       .hero-grid,
-      .intro-block,
-      .authorial-header,
-      .split-grid,
-      .awards-grid,
-      .contact-wrap{
+      .intro-grid,
+      .work-head,
+      .contact-grid{
         grid-template-columns:1fr;
       }
 
@@ -565,8 +556,18 @@
         grid-template-columns:1fr;
       }
 
-      .hero-proof{
-        grid-template-columns:repeat(2, minmax(0, 1fr));
+      .recognition-grid{
+        grid-template-columns:1fr;
+      }
+
+      .recognition-item{
+        border-left:0;
+        border-top:1px solid var(--line);
+        padding-left:0;
+      }
+
+      .recognition-item:first-child{
+        border-top:0;
       }
     }
 
@@ -589,10 +590,17 @@
       }
     }
 
-    @media (max-width:720px){
+    @media (max-width:740px){
       .topbar{
         flex-direction:column;
         align-items:flex-start;
+      }
+
+      .topbar-right{
+        width:100%;
+        justify-content:space-between;
+        flex-wrap:wrap;
+        gap:14px;
       }
 
       .nav{
@@ -600,11 +608,11 @@
       }
 
       .hero{
-        padding-top:150px;
+        padding-top:158px;
       }
 
-      .hero-proof{
-        grid-template-columns:1fr;
+      .hero-title{
+        font-size:94px;
       }
 
       .project-title{
@@ -620,434 +628,346 @@
       .hero-title{
         font-size:78px;
       }
-
-      .statement,
-      .contact-text{
-        line-height:1.02;
-      }
     }
   </style>
 </head>
 <body>
-  <div class="page-shell">
+  <div class="site">
+
     <header class="topbar">
       <div class="brand">Gustavo Vaz</div>
 
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#authorial">Authorial Practice</a>
-        <a href="#theatre">Theatre</a>
-        <a href="#screen">Screen</a>
-        <a href="#awards">Recognition</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div class="topbar-right">
+        <nav class="nav">
+          <a href="#sobre">Sobre</a>
+          <a href="#trabalhos">Trabalhos</a>
+          <a href="#contato">Contato</a>
+        </nav>
+
+        <div class="lang-switch">
+          <span class="active">PT</span>
+          <span>/</span>
+          <a href="en.html">EN</a>
+        </div>
+      </div>
     </header>
 
     <section class="hero">
-      <div class="hero-bg"></div>
-
       <div class="hero-grid">
         <div>
-          <p class="hero-kicker">Actor · Author · Multimedia Creator</p>
+          <p class="hero-kicker">Ator · Autor · Criador multimídia</p>
 
           <h1 class="hero-title">
             <span>Gustavo</span>
             <span>Vaz</span>
           </h1>
 
-          <p class="hero-lead">
-            Brazilian artist working across theatre, dramaturgy, site-specific research,
-            multimedia performance, and audiovisual production.
+          <p class="hero-text">
+            Pesquisa autoral em teatro contemporâneo, dramaturgia,
+            performance, escuta, mediação tecnológica e experiência.
           </p>
 
           <p class="hero-note">
-            His trajectory brings together authorial research, acting, writing, and
-            mediated scenic forms. The work moves between presence, listening, territory,
-            and contemporary technological conditions.
+            Sua trajetória articula criação autoral, atuação, escrita e dispositivos
+            de cena. Ao longo de mais de duas décadas, desenvolveu um percurso
+            em que presença, território, linguagem e mediação se tornam matéria
+            formal de trabalho.
           </p>
         </div>
 
-        <div class="hero-proof">
-          <article class="proof-card">
-            <p class="proof-label">Award</p>
-            <p class="proof-value">Shell Theatre Award</p>
-            <p class="proof-detail">Best Actor for <em>Tom na Fazenda</em>.</p>
-          </article>
-
-          <article class="proof-card">
-            <p class="proof-label">Authorial Research</p>
-            <p class="proof-value">ExCompanhia</p>
-            <p class="proof-detail">Founded in 2012. Fourteen years of continuous research and creation.</p>
-          </article>
-
-          <article class="proof-card">
-            <p class="proof-label">International Recognition</p>
-            <p class="proof-value">FIAT, Montenegro</p>
-            <p class="proof-detail">Special Dramaturgy Award for <em>Frequência Ausente 19Hz</em>.</p>
-          </article>
-
-          <article class="proof-card">
-            <p class="proof-label">International Presence</p>
-            <p class="proof-value">Germany · Portugal · Montenegro · Switzerland</p>
-            <p class="proof-detail">Residencies, festival presentations, and artistic exchange.</p>
-          </article>
+        <div class="hero-image">
+          <img
+            src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/9R4A5628.jpg"
+            alt="Retrato de Gustavo Vaz"
+          />
         </div>
       </div>
     </section>
 
-    <section id="about" class="section">
+    <section class="recognition" aria-label="Reconhecimento">
+      <div class="recognition-grid">
+        <article class="recognition-item">
+          <p class="recognition-label">Reconhecimento</p>
+          <p class="recognition-text">
+            Prêmio Shell de Melhor Ator por <em>Tom na Fazenda</em>.
+          </p>
+        </article>
+
+        <article class="recognition-item">
+          <p class="recognition-label">Circulação</p>
+          <p class="recognition-text">
+            Alemanha, Portugal, Montenegro e Suíça, em residências,
+            apresentações e intercâmbios.
+          </p>
+        </article>
+
+        <article class="recognition-item">
+          <p class="recognition-label">Pesquisa autoral</p>
+          <p class="recognition-text">
+            ExCompanhia, desde 2012, como campo contínuo de criação e investigação.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
       <div class="section-grid">
-        <h2 class="section-label">About</h2>
+        <h2 class="section-label">Sobre</h2>
 
         <div class="section-body">
-          <div class="intro-block">
+          <div class="intro-grid">
             <div>
-              <p class="statement">
-                A contemporary artistic trajectory built at the intersection of
-                performance, dramaturgy, mediation, and scenic research.
+              <h3 class="intro-title">
+                Um percurso autoral construído entre cena, escrita,
+                mediação e experiência.
+              </h3>
+
+              <p class="body-text">
+                Gustavo Vaz é ator, autor e criador multimídia. Ao lado de uma
+                trajetória consistente no teatro e no audiovisual, desenvolve desde 2012,
+                na ExCompanhia, uma investigação continuada sobre presença,
+                dramaturgia site-specific, imersão sonora, dispositivos digitais e
+                reconfigurações contemporâneas da experiência.
+              </p>
+
+              <p class="body-text" style="margin-top:18px;">
+                Seu trabalho não trata tecnologia como ornamento nem apenas como tema.
+                Ela aparece como condição que desloca percepção, escuta, relação com o
+                espaço e posição do público. Nos últimos anos, essa pesquisa vem se
+                concentrando de forma mais aguda na escrita dramatúrgica, em projetos
+                como <em>Terminal</em> e <em>NATUREZA</em>.
               </p>
             </div>
 
             <div class="facts">
               <div class="fact">
-                <p class="fact-title">Practice</p>
-                <p class="fact-value">
-                  22 years of professional experience across theatre and audiovisual work.
+                <p class="fact-title">Trajetória</p>
+                <p class="fact-text">22 anos de experiência profissional em teatro e audiovisual.</p>
+              </div>
+
+              <div class="fact">
+                <p class="fact-title">Reconhecimento internacional</p>
+                <p class="fact-text">
+                  Prêmio Especial de Dramaturgia no FIAT, em Montenegro,
+                  por <em>Frequência Ausente 19Hz</em>.
                 </p>
               </div>
 
               <div class="fact">
-                <p class="fact-title">Research Field</p>
-                <p class="fact-value">
-                  Since 2012, ExCompanhia has been the main field for developing his authorial research.
-                </p>
-              </div>
-
-              <div class="fact">
-                <p class="fact-title">Current Development</p>
-                <p class="fact-value">
-                  <em>NATUREZA</em> marks a new stage in the research, with dramaturgical writing as a structuring axis.
+                <p class="fact-title">Desenvolvimento atual</p>
+                <p class="fact-text">
+                  <em>NATUREZA</em> aprofunda a pesquisa em voz, dramaturgia,
+                  presença e experiência humana em contextos instáveis.
                 </p>
               </div>
             </div>
-          </div>
-
-          <p class="section-subtitle" style="margin-top:28px;">
-            Gustavo Vaz is a Brazilian actor, author, and multimedia creator. His artistic
-            investigation articulates presence, mediation, and experience, while challenging
-            theatrical language in dialogue with technological and territorial contexts. Alongside
-            a consistent career as an actor, he has developed a distinct authorial path through
-            works that explore site-specific dramaturgies, sound immersions, digital structures,
-            and the active role of the audience in the construction of scenic experience.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="authorial" class="section">
-      <div class="section-grid">
-        <h2 class="section-label">Authorial Practice</h2>
-
-        <div class="section-body">
-          <div class="authorial-header">
-            <div>
-              <h3 class="section-title-xl">ExCompanhia and the authorial field</h3>
-              <p class="section-subtitle">
-                Over more than a decade, Gustavo Vaz has built a body of work in which theatre,
-                sound, urban space, digital devices, and mediated presence operate as formal
-                tools rather than ornament. The research is not about technology as theme, but
-                about how contemporary systems of mediation reorganize perception, listening,
-                presence, and experience.
-              </p>
-            </div>
-
-            <div class="image-frame">
-              <img
-                src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg"
-                alt="Gustavo Vaz in Tom na Fazenda"
-              />
-            </div>
-          </div>
-
-          <div class="project-grid">
-            <article class="project-card">
-              <p class="project-year">2015–present</p>
-              <h4 class="project-title">Frequência Ausente 19Hz</h4>
-              <p class="project-role">Dramaturgy · Direction · Performance</p>
-              <p class="project-desc">
-                A work structured through the integration of presence, video, and 3D audio,
-                conceived to adapt to different cities. Presented in Portugal and awarded at
-                FIAT – International Theatre Festival of Podgorica.
-              </p>
-            </article>
-
-            <article class="project-card">
-              <p class="project-year">2021</p>
-              <h4 class="project-title">ExReality</h4>
-              <p class="project-role">Direction · Dramaturgy</p>
-              <p class="project-desc">
-                A performative experiment based on a continuous nine-day transmission, with
-                dramaturgy modulated in real time through audience interaction via a dedicated platform.
-              </p>
-            </article>
-
-            <article class="project-card">
-              <p class="project-year">2023</p>
-              <h4 class="project-title">Jornada</h4>
-              <p class="project-role">Direction · Dramaturgy · Performance</p>
-              <p class="project-desc">
-                A site-specific artistic audiotour proposing a sensitive reading of urban space
-                through a sound-based journey, deepening territory as active dramaturgical material.
-              </p>
-            </article>
-
-            <article class="project-card">
-              <p class="project-year">2025–2026</p>
-              <h4 class="project-title">Terminal / NATUREZA</h4>
-              <p class="project-role">Writing · Dramaturgy · Current Development</p>
-              <p class="project-desc">
-                <em>Terminal</em> consolidates a dramaturgical practice in theatre. <em>NATUREZA</em>
-                marks a new movement in the research, concentrating on textual construction,
-                voice, mediation, and human experience in unstable contemporary contexts.
-              </p>
-            </article>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="theatre" class="section">
+    <section id="trabalhos" class="section">
       <div class="section-grid">
-        <h2 class="section-label">Theatre</h2>
+        <h2 class="section-label">Trabalhos</h2>
 
         <div class="section-body">
-          <div class="split-grid">
-            <div class="column-card">
-              <h3 class="column-title">Selected stage work</h3>
+          <div class="work-block">
+            <div class="work-head">
+              <div>
+                <h3 class="work-title">Pesquisa autoral / ExCompanhia</h3>
+                <p class="work-subtitle">
+                  O centro deste site está aqui. Projetos em que dramaturgia,
+                  escuta, cidade, espacialização sonora, mediação e presença operam
+                  como estrutura da obra, e não como complemento.
+                </p>
+              </div>
+
+              <div class="work-image">
+                <img
+                  src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg"
+                  alt="Cena de Tom na Fazenda"
+                />
+              </div>
+            </div>
+
+            <div class="project-grid">
+              <article class="project-card">
+                <p class="project-year">2015 – atual</p>
+                <h4 class="project-title">Frequência Ausente 19Hz</h4>
+                <p class="project-role">Dramaturgia · Direção · Performance</p>
+                <p class="project-desc">
+                  Trabalho estruturado pela integração entre presença, vídeo e áudio 3D,
+                  concebido para dialogar com diferentes cidades e contextos.
+                </p>
+              </article>
+
+              <article class="project-card">
+                <p class="project-year">2021</p>
+                <h4 class="project-title">ExReality</h4>
+                <p class="project-role">Direção · Dramaturgia</p>
+                <p class="project-desc">
+                  Experimento performativo em transmissão contínua, com dramaturgia
+                  modulada em tempo real pela interação do público em plataforma própria.
+                </p>
+              </article>
+
+              <article class="project-card">
+                <p class="project-year">2023</p>
+                <h4 class="project-title">Jornada</h4>
+                <p class="project-role">Direção · Dramaturgia · Performance</p>
+                <p class="project-desc">
+                  Audiotour artístico site-specific que propõe uma leitura sensível do
+                  espaço urbano por meio de uma travessia sonora.
+                </p>
+              </article>
+
+              <article class="project-card">
+                <p class="project-year">2025 – 2026</p>
+                <h4 class="project-title">Terminal / NATUREZA</h4>
+                <p class="project-role">Escrita · Dramaturgia · Desenvolvimento atual</p>
+                <p class="project-desc">
+                  <em>Terminal</em> consolida uma prática dramatúrgica em teatro.
+                  <em>NATUREZA</em> marca um aprofundamento da pesquisa em voz,
+                  presença, mediação e experiência contemporânea.
+                </p>
+              </article>
+            </div>
+
+            <div class="subsection">
+              <h4 class="subsection-title">Teatro</h4>
 
               <div class="credit-list">
                 <article class="credit-item">
                   <div>
-                    <h4 class="credit-name">Terminal</h4>
+                    <h5 class="credit-name">Tom na Fazenda</h5>
                     <p class="credit-desc">
-                      Original stage text in a stage-and-audience format, consolidating
-                      Gustavo Vaz’s dramaturgical practice in theatre.
+                      Francis · direção Rodrigo Portella.
                     </p>
                   </div>
-                  <div class="credit-meta">Author · Actor<br />2025</div>
+                  <div class="credit-meta">Ator<br>2017 – 2021</div>
                 </article>
 
                 <article class="credit-item">
                   <div>
-                    <h4 class="credit-name">Tom na Fazenda</h4>
+                    <h5 class="credit-name">Terminal</h5>
                     <p class="credit-desc">
-                      Francis · directed by Rodrigo Portella.
+                      Texto original em formato palco-plateia, expandindo a prática
+                      de escrita dramatúrgica.
                     </p>
                   </div>
-                  <div class="credit-meta">Actor<br />2017–2021</div>
+                  <div class="credit-meta">Autor · Ator<br>2025</div>
                 </article>
 
                 <article class="credit-item">
                   <div>
-                    <h4 class="credit-name">Uma Casa de Bonecas</h4>
+                    <h5 class="credit-name">Uma Casa de Bonecas</h5>
                     <p class="credit-desc">
-                      Torvald Helmer · directed by Georgette Fadel and Lívia Camargo.
+                      Torvald Helmer · direção Georgette Fadel e Lívia Camargo.
                     </p>
                   </div>
-                  <div class="credit-meta">Actor<br />2025</div>
+                  <div class="credit-meta">Ator<br>2025</div>
                 </article>
 
                 <article class="credit-item">
                   <div>
-                    <h4 class="credit-name">Shakespeare Apaixonado</h4>
+                    <h5 class="credit-name">Shakespeare Apaixonado</h5>
                     <p class="credit-desc">
-                      Lord Wessex · directed by Rafael Gomes.
+                      Lord Wessex · direção Rafael Gomes.
                     </p>
                   </div>
-                  <div class="credit-meta">Actor<br />2024</div>
+                  <div class="credit-meta">Ator<br>2024</div>
                 </article>
 
                 <article class="credit-item">
                   <div>
-                    <h4 class="credit-name">O Rei Leão</h4>
+                    <h5 class="credit-name">O Rei Leão</h5>
                     <p class="credit-desc">
-                      Resident director · original direction by Julie Taymor.
+                      Diretor residente · direção original Julie Taymor.
                     </p>
                   </div>
-                  <div class="credit-meta">Direction<br />2013–2014</div>
+                  <div class="credit-meta">Direção<br>2013 – 2014</div>
                 </article>
 
                 <article class="credit-item">
                   <div>
-                    <h4 class="credit-name">Na Solidão dos Campos de Algodão</h4>
+                    <h5 class="credit-name">Na Solidão dos Campos de Algodão</h5>
                     <p class="credit-desc">
-                      Dealer · directed by Caco Ciocler.
+                      Dealer · direção Caco Ciocler.
                     </p>
                   </div>
-                  <div class="credit-meta">Actor<br />2009</div>
+                  <div class="credit-meta">Ator<br>2009</div>
                 </article>
               </div>
             </div>
 
-            <div class="column-card">
-              <h3 class="column-title">Why theatre matters here</h3>
-              <p class="body-text">
-                The stage trajectory remains essential, but it is framed here as part of a larger
-                authorial field. The acting work gives force, precision, and public visibility to the
-                artistic path; the authorial research gives singularity, coherence, and future direction.
-              </p>
+            <div class="subsection">
+              <h4 class="subsection-title">Audiovisual</h4>
 
-              <p class="body-text" style="margin-top:18px;">
-                This balance matters: Gustavo Vaz is not presented as an actor with side projects,
-                but as an artist whose acting career, writing, direction, and research reinforce one
-                another.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+              <div class="credit-list">
+                <article class="credit-item">
+                  <div>
+                    <h5 class="credit-name">Justino</h5>
+                    <p class="credit-desc">Pastor Lauris · longa-metragem em pós-produção.</p>
+                  </div>
+                  <div class="credit-meta">José Eduardo Belmonte</div>
+                </article>
 
-    <section id="screen" class="section">
-      <div class="section-grid">
-        <h2 class="section-label">Screen</h2>
+                <article class="credit-item">
+                  <div>
+                    <h5 class="credit-name">Reencarne</h5>
+                    <p class="credit-desc">Ricardo · Globoplay / TV Globo.</p>
+                  </div>
+                  <div class="credit-meta">Bruno Safadi · Noa Bressani<br>2025</div>
+                </article>
 
-        <div class="section-body">
-          <div class="credit-list">
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Justino</h4>
-                <p class="credit-desc">Pastor Lauris · feature film in post-production.</p>
+                <article class="credit-item">
+                  <div>
+                    <h5 class="credit-name">A Vida Pela Frente</h5>
+                    <p class="credit-desc">Ivo · Globoplay / TV Globo.</p>
+                  </div>
+                  <div class="credit-meta">Bruno Safadi · Leandra Leal<br>2023</div>
+                </article>
+
+                <article class="credit-item">
+                  <div>
+                    <h5 class="credit-name">Só Se For Por Amor</h5>
+                    <p class="credit-desc">César · Netflix.</p>
+                  </div>
+                  <div class="credit-meta">Ana Azevedo<br>2022</div>
+                </article>
+
+                <article class="credit-item">
+                  <div>
+                    <h5 class="credit-name">Coisa Mais Linda</h5>
+                    <p class="credit-desc">Augusto · Netflix.</p>
+                  </div>
+                  <div class="credit-meta">Caito Ortiz · Julia Rezende · Hugo Prata<br>2019 – 2020</div>
+                </article>
+
+                <article class="credit-item">
+                  <div>
+                    <h5 class="credit-name">Aruanas</h5>
+                    <p class="credit-desc">Gregory · Globoplay / TV Globo.</p>
+                  </div>
+                  <div class="credit-meta">Luiz Felipe Binder · Carlos Manga Jr. · Estela Renner<br>2019 – 2021</div>
+                </article>
               </div>
-              <div class="credit-meta">José Eduardo Belmonte</div>
-            </article>
-
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Reencarne</h4>
-                <p class="credit-desc">Ricardo · Globoplay / TV Globo.</p>
-              </div>
-              <div class="credit-meta">Bruno Safadi · Noa Bressani<br />2025</div>
-            </article>
-
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">A Vida Pela Frente</h4>
-                <p class="credit-desc">Ivo · Globoplay / TV Globo.</p>
-              </div>
-              <div class="credit-meta">Bruno Safadi · Leandra Leal<br />2023</div>
-            </article>
-
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Só Se For Por Amor</h4>
-                <p class="credit-desc">César · Netflix.</p>
-              </div>
-              <div class="credit-meta">Ana Azevedo<br />2022</div>
-            </article>
-
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Coisa Mais Linda</h4>
-                <p class="credit-desc">Augusto · Netflix.</p>
-              </div>
-              <div class="credit-meta">Caito Ortiz · Julia Rezende · Hugo Prata<br />2019–2020</div>
-            </article>
-
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Aruanas</h4>
-                <p class="credit-desc">Gregory · Globoplay / TV Globo.</p>
-              </div>
-              <div class="credit-meta">Luiz Felipe Binder · Carlos Manga Jr. · Estela Renner<br />2019–2021</div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="awards" class="section">
-      <div class="section-grid">
-        <h2 class="section-label">Recognition</h2>
-
-        <div class="section-body">
-          <div class="awards-grid">
-            <div class="list-block">
-              <h3 class="column-title">Awards and recognition</h3>
-
-              <ul class="bullet-list">
-                <li>
-                  <span class="highlight">Shell Theatre Award — Best Actor</span><br />
-                  for <em>Tom na Fazenda</em>.
-                </li>
-
-                <li>
-                  <span class="highlight">Cesgranrio Theatre Award — Best Actor</span><br />
-                  for <em>Tom na Fazenda</em>.
-                </li>
-
-                <li>
-                  <span class="highlight">Cenym Award — Best Supporting Actor</span><br />
-                  for <em>Tom na Fazenda</em>.
-                </li>
-
-                <li>
-                  <span class="highlight">Botequim Cultural Award — Best Supporting Actor</span><br />
-                  for <em>Tom na Fazenda</em>.
-                </li>
-
-                <li>
-                  <span class="highlight">APTR Award — Nomination for Best Actor</span><br />
-                  for <em>Tom na Fazenda</em>.
-                </li>
-
-                <li>
-                  <span class="highlight">FIAT – International Theatre Festival of Podgorica</span><br />
-                  Special Dramaturgy Award for <em>Frequência Ausente 19Hz</em>.
-                </li>
-              </ul>
-            </div>
-
-            <div class="list-block">
-              <h3 class="column-title">International presence</h3>
-
-              <ul class="bullet-list">
-                <li>
-                  <span class="highlight">Germany — Villa Waldberta</span><br />
-                  Artistic residency where <em>EU – Negociando Sentidos</em> was recreated for a different cultural context.
-                </li>
-
-                <li>
-                  <span class="highlight">Portugal — Imaginarius Festival</span><br />
-                  Presentation of <em>Frequência Ausente 19Hz</em> with formal adaptations to the local context.
-                </li>
-
-                <li>
-                  <span class="highlight">Montenegro — FIAT</span><br />
-                  Presentation of <em>Frequência Ausente 19Hz</em> and Special Dramaturgy Award.
-                </li>
-
-                <li>
-                  <span class="highlight">Switzerland — Belluard Bollwerk</span><br />
-                  Participation in the “Watch & Talk” residency and artistic exchange programme.
-                </li>
-              </ul>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section">
+    <section id="contato" class="section">
       <div class="section-grid">
-        <h2 class="section-label">Contact</h2>
+        <h2 class="section-label">Contato</h2>
 
         <div class="section-body">
-          <div class="contact-wrap">
-            <p class="contact-text">
-              For artistic collaborations, international opportunities, research dialogues,
-              and professional contact.
-            </p>
+          <div class="contact-grid">
+            <h3 class="contact-title">
+              Para colaborações artísticas, convites, residências,
+              imprensa e contato profissional.
+            </h3>
 
             <div class="contact-cards">
               <article class="contact-card">
@@ -1068,6 +988,7 @@
     <footer class="footer">
       Gustavo Vaz
     </footer>
+
   </div>
 </body>
 </html>
