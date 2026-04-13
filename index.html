@@ -7,13 +7,13 @@
   <title>Gustavo Vaz</title>
   <meta
     name="description"
-    content="Gustavo Vaz é ator, autor e criador multimídia. Teatro, dramaturgia, pesquisa autoral, audiovisual e projetos da ExCompanhia."
+    content="Gustavo Vaz é ator, autor e criador multimídia. Teatro, dramaturgia, pesquisa autoral, audiovisual, literatura e mídia."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@500;600;700;800&display=swap"
     rel="stylesheet"
   />
 
@@ -21,7 +21,7 @@
     :root{
       --bg:#ffffff;
       --text:#111111;
-      --muted:#6a6a6a;
+      --muted:#6b6b6b;
       --line:rgba(0,0,0,.12);
       --line-strong:rgba(0,0,0,.2);
       --max:1360px;
@@ -65,7 +65,7 @@
       justify-content:space-between;
       gap:20px;
       padding:18px 26px;
-      background:rgba(255,255,255,.88);
+      background:rgba(255,255,255,.9);
       backdrop-filter:blur(12px);
       border-bottom:1px solid rgba(0,0,0,.08);
     }
@@ -148,9 +148,8 @@
       font-family:'Manrope',sans-serif;
       font-size:clamp(76px, 11vw, 174px);
       line-height:.84;
-      letter-spacing:-.06em;
-      font-weight:700;
-      text-transform:none;
+      letter-spacing:-.065em;
+      font-weight:800;
     }
 
     .hero-title span{
@@ -161,7 +160,7 @@
       margin-top:24px;
       display:grid;
       gap:6px;
-      max-width:640px;
+      max-width:660px;
       font-size:clamp(19px, 2vw, 24px);
       line-height:1.42;
     }
@@ -181,7 +180,7 @@
       min-height:540px;
       overflow:hidden;
       border:1px solid var(--line);
-      background:#f2f2f2;
+      background:#f3f3f3;
     }
 
     .hero-image img{
@@ -256,63 +255,9 @@
       min-width:0;
     }
 
-    .about-grid{
-      display:grid;
-      grid-template-columns:minmax(0, 1fr) 320px;
-      gap:28px;
-      align-items:start;
-    }
-
-    .about-title{
-      margin:0 0 18px;
-      font-family:'Manrope',sans-serif;
-      font-size:clamp(34px, 4.8vw, 74px);
-      line-height:.94;
-      letter-spacing:-.05em;
-      font-weight:700;
-      max-width:760px;
-    }
-
-    .body-text{
-      margin:0;
-      max-width:860px;
-      font-size:16px;
-      line-height:1.9;
-      color:#232323;
-    }
-
-    .meta-list{
-      display:grid;
-      gap:14px;
-    }
-
-    .meta-item{
-      padding-top:14px;
-      border-top:1px solid var(--line);
-    }
-
-    .meta-item:first-child{
-      padding-top:0;
-      border-top:0;
-    }
-
-    .meta-head{
-      margin:0 0 4px;
-      font-size:10px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--muted);
-    }
-
-    .meta-text{
-      margin:0;
-      font-size:15px;
-      line-height:1.72;
-    }
-
     .works-layout{
       display:grid;
-      grid-template-columns:minmax(0, 1.02fr) minmax(320px, .98fr);
+      grid-template-columns:minmax(0, 1.02fr) minmax(340px, .98fr);
       gap:34px;
       align-items:start;
     }
@@ -357,8 +302,8 @@
       font-family:'Manrope',sans-serif;
       font-size:clamp(28px, 3.4vw, 46px);
       line-height:.98;
-      letter-spacing:-.045em;
-      font-weight:700;
+      letter-spacing:-.05em;
+      font-weight:800;
       transition:transform .18s ease;
     }
 
@@ -379,7 +324,7 @@
     .preview{
       padding-top:2px;
       border-top:1px solid var(--line-strong);
-      min-height:540px;
+      min-height:560px;
     }
 
     .preview-image{
@@ -387,7 +332,7 @@
       aspect-ratio:16/11;
       overflow:hidden;
       border:1px solid var(--line);
-      background:#f2f2f2;
+      background:#f3f3f3;
       margin-bottom:18px;
     }
 
@@ -411,8 +356,8 @@
       font-family:'Manrope',sans-serif;
       font-size:clamp(34px, 4.8vw, 64px);
       line-height:.92;
-      letter-spacing:-.05em;
-      font-weight:700;
+      letter-spacing:-.055em;
+      font-weight:800;
       max-width:520px;
     }
 
@@ -432,123 +377,163 @@
       color:#232323;
     }
 
-    .preview-link{
-      display:inline-block;
-      margin-top:18px;
-      font-size:11px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      border-bottom:1px solid currentColor;
-      padding-bottom:4px;
-    }
-
-    .subsection{
-      margin-top:40px;
-      padding-top:20px;
+    .compact-block{
+      margin-top:34px;
+      padding-top:18px;
       border-top:1px solid var(--line-strong);
     }
 
-    .sub-title{
-      margin:0 0 18px;
+    .compact-title{
+      margin:0 0 16px;
       font-family:'Manrope',sans-serif;
-      font-size:34px;
+      font-size:32px;
       line-height:1;
       letter-spacing:-.04em;
-      font-weight:700;
+      font-weight:800;
     }
 
-    .credit-list{
-      display:grid;
-      gap:0;
+    .compact-list{
       border-top:1px solid var(--line);
     }
 
-    .credit-item{
+    .compact-row{
       display:grid;
-      grid-template-columns:minmax(0,1fr) 220px;
+      grid-template-columns:240px minmax(0, 1fr);
       gap:18px;
-      padding:16px 0 18px;
+      padding:12px 0;
       border-bottom:1px solid var(--line);
+      align-items:start;
     }
 
-    .credit-name{
-      margin:0 0 5px;
+    .compact-name{
+      font-family-name{
       font-family:'Manrope',sans-serif;
-      font-size:28px;
-      line-height:1.02;
-      letter-spacing:-.04em;
+      font-size:18px;
+      line-height:1.2;
+      letter-spacing:-.02em;
       font-weight:700;
     }
 
-    .credit-desc{
-      margin:0;
+    .compact-info{
       font-size:15px;
-      line-height:1.74;
+      line-height:1.65;
       color:#232323;
     }
 
-    .credit-award{
-      margin:8px 0 0;
+    .compact-note{
+      display:block;
+      margin-top:4px;
       font-size:12px;
-      line-height:1.7;
+      line-height:1.6;
       color:var(--muted);
       font-style:italic;
     }
 
-    .credit-meta{
-      text-align:right;
-      font-size:12px;
-      line-height:1.7;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      color:var(--muted);
-    }
-
-    .contact-grid{
+    .about-grid{
       display:grid;
       grid-template-columns:minmax(0, 1fr) 320px;
       gap:28px;
-      align-items:end;
+      align-items:start;
     }
 
-    .contact-title{
-      margin:0;
-      max-width:760px;
+    .about-title{
+      margin:0 0 18px;
       font-family:'Manrope',sans-serif;
-      font-size:clamp(34px, 4.6vw, 64px);
-      line-height:.96;
-      letter-spacing:-.05em;
-      font-weight:700;
+      font-size:clamp(34px, 4.8vw, 74px);
+      line-height:.94;
+      letter-spacing:-.055em;
+      font-weight:800;
+      max-width:760px;
     }
 
-    .contact-cards{
+    .body-text{
+      margin:0;
+      max-width:860px;
+      font-size:16px;
+      line-height:1.9;
+      color:#232323;
+    }
+
+    .body-text + .body-text{
+      margin-top:18px;
+    }
+
+    .meta-list{
       display:grid;
-      gap:12px;
+      gap:14px;
     }
 
-    .contact-card{
-      padding:16px 0;
+    .meta-item{
+      padding-top:14px;
       border-top:1px solid var(--line);
     }
 
-    .contact-card:first-child{
-      border-top:0;
+    .meta-item:first-child{
       padding-top:0;
+      border-top:0;
     }
 
-    .contact-label{
-      margin:0 0 6px;
+    .meta-head{
+      margin:0 0 4px;
       font-size:10px;
       letter-spacing:.18em;
       text-transform:uppercase;
       color:var(--muted);
     }
 
-    .contact-value{
+    .meta-text{
       margin:0;
-      font-size:24px;
-      line-height:1.25;
-      word-break:break-word;
+      font-size:15px;
+      line-height:1.72;
+    }
+
+    .media-list{
+      border-top:1px solid var(--line);
+    }
+
+    .media-row{
+      display:grid;
+      grid-template-columns:240px minmax(0, 1fr);
+      gap:18px;
+      padding:12px 0;
+      border-bottom:1px solid var(--line);
+      align-items:start;
+    }
+
+    .media-source{
+      font-family:'Manrope',sans-serif;
+      font-size:18px;
+      line-height:1.2;
+      letter-spacing:-.02em;
+      font-weight:700;
+    }
+
+    .media-focus{
+      font-size:15px;
+      line-height:1.65;
+      color:#232323;
+    }
+
+    .contact-simple{
+      display:grid;
+      gap:14px;
+      max-width:480px;
+      border-top:1px solid var(--line);
+      padding-top:18px;
+    }
+
+    .contact-line{
+      font-size:18px;
+      line-height:1.5;
+    }
+
+    .contact-label{
+      display:block;
+      margin-bottom:4px;
+      font-size:10px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--muted);
     }
 
     .footer{
@@ -563,9 +548,8 @@
 
     @media (max-width:1120px){
       .hero-grid,
-      .about-grid,
       .works-layout,
-      .contact-grid{
+      .about-grid{
         grid-template-columns:1fr;
       }
 
@@ -603,13 +587,10 @@
         position:static;
       }
 
-      .credit-item{
+      .compact-row,
+      .media-row{
         grid-template-columns:1fr;
-        gap:8px;
-      }
-
-      .credit-meta{
-        text-align:left;
+        gap:6px;
       }
     }
 
@@ -667,6 +648,10 @@
     <div class="topbar-right">
       <nav class="nav">
         <a href="#trabalhos">Trabalhos</a>
+        <a href="#teatro">Teatro</a>
+        <a href="#audiovisual">Audiovisual</a>
+        <a href="#literatura">Literatura</a>
+        <a href="#midia">Mídia</a>
         <a href="#sobre">Sobre</a>
         <a href="#contato">Contato</a>
       </nav>
@@ -711,7 +696,7 @@
     <div class="strip-grid">
       <article class="strip-item">
         <p class="strip-label">Reconhecimento</p>
-        <p class="strip-text">Prêmio Shell de Melhor Ator por <em>Tom na Fazenda</em>.</p>
+        <p class="strip-text">Prêmios Shell e Cesgranrio de Melhor Ator por <em>Tom na Fazenda</em>.</p>
       </article>
 
       <article class="strip-item">
@@ -726,7 +711,7 @@
 
       <article class="strip-item">
         <p class="strip-label">Dramaturgia</p>
-        <p class="strip-text">Prêmio Especial no FIAT por <em>Frequência Ausente 19Hz</em>.</p>
+        <p class="strip-text">Prêmio internacional FIAT, em Podgorica, Montenegro, por <em>Frequência Ausente 19Hz</em>.</p>
       </article>
     </div>
   </section>
@@ -757,7 +742,7 @@
               <button class="work-button"
                 data-title="Jornada"
                 data-meta="2023 · Direção · Dramaturgia · Performance"
-                data-text="Audiotour artístico site-specific que desloca a escuta e propõe uma leitura sensível do espaço urbano por meio de uma travessia sonora."
+                data-text="Audiotour artístico site-specific que propõe uma leitura sensível do espaço urbano por meio de uma travessia sonora."
                 data-image="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg"
               >
                 <div class="work-year">2023</div>
@@ -802,7 +787,7 @@
               <button class="work-button"
                 data-title="Frequência Ausente 19Hz"
                 data-meta="2015 – atual · Dramaturgia · Direção · Performance"
-                data-text="Trabalho concebido a partir da integração entre presença, vídeo e áudio 3D, adaptável a diferentes cidades e contextos."
+                data-text="Trabalho estruturado pela integração entre presença, vídeo e áudio 3D, concebido para dialogar com diferentes cidades e contextos."
                 data-image="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg"
               >
                 <div class="work-year">2015 – atual</div>
@@ -843,255 +828,242 @@
             <p class="preview-text" id="preview-text">
               Novo estágio da pesquisa, concentrado em voz, dramaturgia, presença e experiência humana em contextos atravessados por mediação tecnológica.
             </p>
-            <a class="preview-link" href="#">Página individual em seguida</a>
           </aside>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="subsection">
-          <h3 class="sub-title">Teatro</h3>
+  <section id="teatro" class="section">
+    <div class="section-grid">
+      <h2 class="section-label">Teatro</h2>
 
-          <div class="credit-list">
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Terminal</h4>
-                <p class="credit-desc">Ele mesmo, filho, ator.</p>
-              </div>
-              <div class="credit-meta">direção Cesar Augusto<br>2025</div>
+      <div class="section-body">
+        <div class="compact-block" style="margin-top:0;padding-top:0;border-top:0;">
+          <div class="compact-list">
+            <article class="compact-row">
+              <div class="compact-name">Terminal</div>
+              <div class="compact-info">Ele mesmo, filho, ator · direção Cesar Augusto · 2025</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Uma Casa de Bonecas</h4>
-                <p class="credit-desc">Torvald Helmer.</p>
-              </div>
-              <div class="credit-meta">direção Georgette Fadel e Lívia Camargo<br>2025</div>
+            <article class="compact-row">
+              <div class="compact-name">Uma Casa de Bonecas</div>
+              <div class="compact-info">Torvald Helmer · direção Georgette Fadel e Lívia Camargo · 2025</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Shakespeare Apaixonado</h4>
-                <p class="credit-desc">Lord Wessex.</p>
-              </div>
-              <div class="credit-meta">direção Rafael Gomes<br>2024</div>
+            <article class="compact-row">
+              <div class="compact-name">Shakespeare Apaixonado</div>
+              <div class="compact-info">Lord Wessex · direção Rafael Gomes · 2024</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Tom na Fazenda</h4>
-                <p class="credit-desc">Francis.</p>
-                <p class="credit-award">Prêmio Shell – Melhor Ator / Prêmio Cesgranrio – Melhor Ator / Prêmio Botequim Cultural – Melhor Ator Coadjuvante / Prêmio Cenym – Melhor Ator Coadjuvante</p>
+            <article class="compact-row">
+              <div class="compact-name">Tom na Fazenda</div>
+              <div class="compact-info">
+                Francis · direção Rodrigo Portella · 2017–2021
+                <span class="compact-note">Prêmio Shell – Melhor Ator · Prêmio Cesgranrio – Melhor Ator · Prêmio Botequim Cultural – Melhor Ator Coadjuvante · Prêmio Cenym – Melhor Ator Coadjuvante</span>
               </div>
-              <div class="credit-meta">direção Rodrigo Portella<br>2017 – 2021</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Ovono</h4>
-                <p class="credit-desc">Adão.</p>
-              </div>
-              <div class="credit-meta">direção Ricardo Karman<br>2016</div>
+            <article class="compact-row">
+              <div class="compact-name">Ovono</div>
+              <div class="compact-info">Adão · direção Ricardo Karman · 2016</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Sobre Ratos e Homens</h4>
-                <p class="credit-desc">Slim.</p>
-              </div>
-              <div class="credit-meta">direção Kiko Marques<br>2016</div>
+            <article class="compact-row">
+              <div class="compact-name">Sobre Ratos e Homens</div>
+              <div class="compact-info">Slim · direção Kiko Marques · 2016</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Animais na Pista</h4>
-                <p class="credit-desc">Léo.</p>
-              </div>
-              <div class="credit-meta">direção Isabel Teixeira<br>2015</div>
+            <article class="compact-row">
+              <div class="compact-name">Animais na Pista</div>
+              <div class="compact-info">Léo · direção Isabel Teixeira · 2015</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">O Rei Leão</h4>
-                <p class="credit-desc">Diretor residente.</p>
-              </div>
-              <div class="credit-meta">direção original Julie Taymor<br>2013 – 2014</div>
+            <article class="compact-row">
+              <div class="compact-name">O Rei Leão</div>
+              <div class="compact-info">Diretor residente · direção original Julie Taymor · 2013–2014</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Toc Toc</h4>
-                <p class="credit-desc">Vicente.</p>
-              </div>
-              <div class="credit-meta">direção Alexandre Heinecke<br>2011 – 2012</div>
+            <article class="compact-row">
+              <div class="compact-name">Toc Toc</div>
+              <div class="compact-info">Vicente · direção Alexandre Heinecke · 2011–2012</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Biliri e o Pote Vazio</h4>
-                <p class="credit-desc">Imperador e outros.</p>
-              </div>
-              <div class="credit-meta">direção Ricardo Karman<br>2011</div>
+            <article class="compact-row">
+              <div class="compact-name">Biliri e o Pote Vazio</div>
+              <div class="compact-info">Imperador e outros · direção Ricardo Karman · 2011</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">A Pantera</h4>
-                <p class="credit-desc">Ele.</p>
-              </div>
-              <div class="credit-meta">texto Camila Appel<br>2010</div>
+            <article class="compact-row">
+              <div class="compact-name">A Pantera</div>
+              <div class="compact-info">Ele · texto Camila Appel · 2010</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Teatrokê</h4>
-                <p class="credit-desc">Apresentador e outros.</p>
-              </div>
-              <div class="credit-meta">direção Ricardo Karman<br>2010</div>
+            <article class="compact-row">
+              <div class="compact-name">Teatrokê</div>
+              <div class="compact-info">Apresentador e outros · direção Ricardo Karman · 2010</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Na Solidão dos Campos de Algodão</h4>
-                <p class="credit-desc">Dealer.</p>
-              </div>
-              <div class="credit-meta">direção Caco Ciocler<br>2009</div>
+            <article class="compact-row">
+              <div class="compact-name">Na Solidão dos Campos de Algodão</div>
+              <div class="compact-info">Dealer · direção Caco Ciocler · 2009</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Os Assassinos de Inês de Castro</h4>
-                <p class="credit-desc">Pedro.</p>
-              </div>
-              <div class="credit-meta">direção Rui Xavier<br>2008</div>
+            <article class="compact-row">
+              <div class="compact-name">Os Assassinos de Inês de Castro</div>
+              <div class="compact-info">Pedro · direção Rui Xavier · 2008</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">O Kronoscópio</h4>
-                <p class="credit-desc">José Félix.</p>
-              </div>
-              <div class="credit-meta">direção Ricardo Karman<br>2007</div>
+            <article class="compact-row">
+              <div class="compact-name">O Kronoscópio</div>
+              <div class="compact-info">José Félix · direção Ricardo Karman · 2007</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Por Trás do Céu</h4>
-                <p class="credit-desc">Micuim.</p>
-              </div>
-              <div class="credit-meta">direção Caio Soh<br>2006</div>
+            <article class="compact-row">
+              <div class="compact-name">Por Trás do Céu</div>
+              <div class="compact-info">Micuim · direção Caio Soh · 2006</div>
             </article>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="subsection">
-          <h3 class="sub-title">Audiovisual</h3>
+  <section id="audiovisual" class="section">
+    <div class="section-grid">
+      <h2 class="section-label">Audiovisual</h2>
 
-          <div class="credit-list">
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Justino</h4>
-                <p class="credit-desc">Pastor Lauris • em pós-produção.</p>
-              </div>
-              <div class="credit-meta">José Eduardo Belmonte</div>
+      <div class="section-body">
+        <div class="compact-block" style="margin-top:0;padding-top:0;border-top:0;">
+          <div class="compact-list">
+            <article class="compact-row">
+              <div class="compact-name">Justino</div>
+              <div class="compact-info">Pastor Lauris · José Eduardo Belmonte · em pós-produção</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Reencarne</h4>
-                <p class="credit-desc">Ricardo • Globoplay / TV Globo • 2025.</p>
-              </div>
-              <div class="credit-meta">Bruno Safadi e Noa Bressani</div>
+            <article class="compact-row">
+              <div class="compact-name">Reencarne</div>
+              <div class="compact-info">Ricardo · Bruno Safadi e Noa Bressani · Globoplay / TV Globo · 2025</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Paulo, o Apóstolo</h4>
-                <p class="credit-desc">Apolo • Record TV • 2025.</p>
-              </div>
-              <div class="credit-meta"></div>
+            <article class="compact-row">
+              <div class="compact-name">Paulo, o Apóstolo</div>
+              <div class="compact-info">Apolo · Record TV · 2025</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">A Vida Pela Frente</h4>
-                <p class="credit-desc">Ivo • Globoplay / TV Globo • 2023.</p>
-              </div>
-              <div class="credit-meta">Bruno Safadi e Leandra Leal</div>
+            <article class="compact-row">
+              <div class="compact-name">A Vida Pela Frente</div>
+              <div class="compact-info">Ivo · Bruno Safadi e Leandra Leal · Globoplay / TV Globo · 2023</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Só Se For Por Amor</h4>
-                <p class="credit-desc">César • Netflix • 2022.</p>
-              </div>
-              <div class="credit-meta">Ana Azevedo</div>
+            <article class="compact-row">
+              <div class="compact-name">Só Se For Por Amor</div>
+              <div class="compact-info">César · Ana Azevedo · Netflix · 2022</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Coisa Mais Linda</h4>
-                <p class="credit-desc">Augusto • Netflix • 2019 – 2020.</p>
-              </div>
-              <div class="credit-meta">Caito Ortiz, Julia Rezende e Hugo Prata</div>
+            <article class="compact-row">
+              <div class="compact-name">Coisa Mais Linda</div>
+              <div class="compact-info">Augusto · Caito Ortiz, Julia Rezende e Hugo Prata · Netflix · 2019–2020</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Aruanas</h4>
-                <p class="credit-desc">Gregory • Globoplay / TV Globo • 2019 – 2021.</p>
-              </div>
-              <div class="credit-meta">Luiz Felipe Binder, Carlos Manga Jr. e Estela Renner</div>
+            <article class="compact-row">
+              <div class="compact-name">Aruanas</div>
+              <div class="compact-info">Gregory · Luiz Felipe Binder, Carlos Manga Jr. e Estela Renner · Globoplay / TV Globo · 2019–2021</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Os Homens São de Marte</h4>
-                <p class="credit-desc">Léo • GNT / Globosat • 2019.</p>
-              </div>
-              <div class="credit-meta">Suzana Garcia</div>
+            <article class="compact-row">
+              <div class="compact-name">Os Homens São de Marte</div>
+              <div class="compact-info">Léo · Suzana Garcia · GNT / Globosat · 2019</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">O Jardim Secreto de Mariana</h4>
-                <p class="credit-desc">João • 2021.</p>
-              </div>
-              <div class="credit-meta">Sérgio Rezende</div>
+            <article class="compact-row">
+              <div class="compact-name">O Jardim Secreto de Mariana</div>
+              <div class="compact-info">João · Sérgio Rezende · 2021</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Depois a Louca Sou Eu</h4>
-                <p class="credit-desc">Gilberto • 2021.</p>
-                <p class="credit-award">Grande Prêmio do Cinema Brasileiro – Melhor Longa de Comédia</p>
+            <article class="compact-row">
+              <div class="compact-name">Depois a Louca Sou Eu</div>
+              <div class="compact-info">
+                Gilberto · Julia Rezende · 2021
+                <span class="compact-note">Grande Prêmio do Cinema Brasileiro – Melhor Longa de Comédia</span>
               </div>
-              <div class="credit-meta">Julia Rezende</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Maria do Caritó</h4>
-                <p class="credit-desc">Anatoli • 2019.</p>
-              </div>
-              <div class="credit-meta">João Paulo Jabour</div>
+            <article class="compact-row">
+              <div class="compact-name">Maria do Caritó</div>
+              <div class="compact-info">Anatoli · João Paulo Jabour · 2019</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">O Doutrinador</h4>
-                <p class="credit-desc">Anterinho • 2018.</p>
-              </div>
-              <div class="credit-meta">Gustavo Bonafé</div>
+            <article class="compact-row">
+              <div class="compact-name">O Doutrinador</div>
+              <div class="compact-info">Anterinho · Gustavo Bonafé · 2018</div>
             </article>
 
-            <article class="credit-item">
-              <div>
-                <h4 class="credit-name">Divórcio</h4>
-                <p class="credit-desc">Catanduva • 2017.</p>
-                <p class="credit-award">Grande Prêmio do Cinema Brasileiro – Melhor Longa de Comédia</p>
+            <article class="compact-row">
+              <div class="compact-name">Divórcio</div>
+              <div class="compact-info">
+                Catanduva · Pedro Amorim · 2017
+                <span class="compact-note">Grande Prêmio do Cinema Brasileiro – Melhor Longa de Comédia</span>
               </div>
-              <div class="credit-meta">Pedro Amorim</div>
             </article>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="literatura" class="section">
+    <div class="section-grid">
+      <h2 class="section-label">Literatura</h2>
+
+      <div class="section-body">
+        <div class="compact-block" style="margin-top:0;padding-top:0;border-top:0;">
+          <div class="compact-list">
+            <article class="compact-row">
+              <div class="compact-name">Como Não Morrer de uma Só Vez</div>
+              <div class="compact-info">Romance · lançamento em 2023</div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="midia" class="section">
+    <div class="section-grid">
+      <h2 class="section-label">Mídia</h2>
+
+      <div class="section-body">
+        <div class="media-list">
+          <article class="media-row">
+            <div class="media-source">Folha de S.Paulo</div>
+            <div class="media-focus">Frequência Ausente 19Hz</div>
+          </article>
+
+          <article class="media-row">
+            <div class="media-source">O Globo</div>
+            <div class="media-focus">ExReality</div>
+          </article>
+
+          <article class="media-row">
+            <div class="media-source">Gshow</div>
+            <div class="media-focus">Se Eu Estivesse Aí</div>
+          </article>
+
+          <article class="media-row">
+            <div class="media-source">Veja Rio</div>
+            <div class="media-focus">Terminal</div>
+          </article>
+
+          <article class="media-row">
+            <div class="media-source">Rota Cult</div>
+            <div class="media-focus">Terminal</div>
+          </article>
+
+          <article class="media-row">
+            <div class="media-source">Literatamy</div>
+            <div class="media-focus">Como Não Morrer de uma Só Vez</div>
+          </article>
         </div>
       </div>
     </div>
@@ -1104,31 +1076,40 @@
       <div class="section-body">
         <div class="about-grid">
           <div>
-            <h3 class="about-title">Cena, escrita, mediação, experiência.</h3>
+            <h3 class="about-title">Atuação, escrita, pesquisa, mediação.</h3>
 
             <p class="body-text">
-              Gustavo Vaz é ator, autor e criador multimídia. Ao lado de uma trajetória consistente no teatro e no audiovisual, desenvolve desde 2012, na ExCompanhia, uma investigação continuada sobre dramaturgia site-specific, imersão sonora, dispositivos digitais e formas contemporâneas de presença.
+              Gustavo Vaz é ator, autor e criador multimídia, com 22 anos de trajetória profissional. Ao lado de um percurso consistente no teatro e no audiovisual, desenvolve desde 2012, na ExCompanhia, uma investigação continuada em torno de presença, escuta, dramaturgia, experiência e mediação.
             </p>
 
-            <p class="body-text" style="margin-top:18px;">
-              Nos últimos anos, esse percurso vem se concentrando de modo mais agudo na escrita dramatúrgica e na construção de projetos em que voz, escuta, território e mediação operam como matéria de cena.
+            <p class="body-text">
+              Ao longo desse percurso, criou trabalhos que atravessam dramaturgias site-specific, imersões sonoras, dispositivos digitais e formas de reorganização da posição do público. A pesquisa se estrutura em diálogo com transformações culturais, tecnológicas e territoriais do presente, e cada obra desloca procedimentos sem abandonar as questões que sustentam o campo de investigação.
+            </p>
+
+            <p class="body-text">
+              Nos últimos anos, esse eixo vem se concentrando de modo mais agudo na escrita dramatúrgica. Em 2023, publicou seu primeiro romance. Em 2025, estreou <em>Terminal</em>, texto original em formato palco-plateia. Atualmente desenvolve <em>NATUREZA</em>, novo estágio da pesquisa, voltado ao aprofundamento das relações entre voz, presença, dramaturgia e experiência humana em contextos contemporâneos.
             </p>
           </div>
 
           <div class="meta-list">
             <div class="meta-item">
-              <p class="meta-head">Trajetória</p>
-              <p class="meta-text">22 anos de experiência profissional em teatro e audiovisual.</p>
+              <p class="meta-head">Reconhecimento</p>
+              <p class="meta-text">Prêmios Shell e Cesgranrio de Melhor Ator por <em>Tom na Fazenda</em>.</p>
             </div>
 
             <div class="meta-item">
-              <p class="meta-head">Reconhecimento</p>
-              <p class="meta-text">Prêmio Shell de Melhor Ator por <em>Tom na Fazenda</em>.</p>
+              <p class="meta-head">Pesquisa autoral</p>
+              <p class="meta-text">ExCompanhia como campo continuado de criação desde 2012.</p>
             </div>
 
             <div class="meta-item">
               <p class="meta-head">Internacional</p>
               <p class="meta-text">Residências, apresentações e intercâmbios em Alemanha, Portugal, Montenegro e Suíça.</p>
+            </div>
+
+            <div class="meta-item">
+              <p class="meta-head">Dramaturgia</p>
+              <p class="meta-text">Prêmio internacional FIAT, em Podgorica, Montenegro, por <em>Frequência Ausente 19Hz</em>.</p>
             </div>
           </div>
         </div>
@@ -1141,19 +1122,15 @@
       <h2 class="section-label">Contato</h2>
 
       <div class="section-body">
-        <div class="contact-grid">
-          <h3 class="contact-title">Colaborações, residências, convites, imprensa.</h3>
+        <div class="contact-simple">
+          <div class="contact-line">
+            <span class="contact-label">Email</span>
+            contato@gustavovaz.com.br
+          </div>
 
-          <div class="contact-cards">
-            <article class="contact-card">
-              <p class="contact-label">Email</p>
-              <p class="contact-value">contato@gustavovaz.com.br</p>
-            </article>
-
-            <article class="contact-card">
-              <p class="contact-label">Instagram</p>
-              <p class="contact-value">@gustavovaz</p>
-            </article>
+          <div class="contact-line">
+            <span class="contact-label">Instagram</span>
+            @gustavovaz
           </div>
         </div>
       </div>
