@@ -7,7 +7,7 @@
   <title>Gustavo Vaz</title>
   <meta
     name="description"
-    content="Gustavo Vaz é ator, autor e criador multimídia. Teatro, dramaturgia, pesquisa autoral, audiovisual, literatura e mídia."
+    content="Gustavo Vaz é ator, autor e criador multimídia. Teatro, dramaturgia, pesquisa autoral, audiovisual e literatura."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -190,43 +190,6 @@
       object-position:center top;
     }
 
-    .strip{
-      padding:0 26px;
-      border-bottom:1px solid var(--line);
-    }
-
-    .strip-grid{
-      width:min(100%, var(--max));
-      margin:0 auto;
-      display:grid;
-      grid-template-columns:repeat(4, minmax(0,1fr));
-      gap:0;
-    }
-
-    .strip-item{
-      padding:16px 16px 18px 18px;
-      border-right:1px solid var(--line);
-    }
-
-    .strip-item:last-child{
-      border-right:0;
-      padding-right:0;
-    }
-
-    .strip-label{
-      margin:0 0 6px;
-      font-size:10px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--muted);
-    }
-
-    .strip-text{
-      margin:0;
-      font-size:15px;
-      line-height:1.62;
-    }
-
     .section{
       padding:76px 26px 36px;
       border-bottom:1px solid var(--line);
@@ -406,18 +369,31 @@
     }
 
     .compact-name{
-      font-family-name{
-      font-family:'Manrope',sans-serif;
+      font-family:'Inter',sans-serif;
       font-size:18px;
       line-height:1.2;
-      letter-spacing:-.02em;
       font-weight:700;
+      color:var(--text);
     }
 
     .compact-info{
       font-size:15px;
-      line-height:1.65;
+      line-height:1.68;
       color:#232323;
+    }
+
+    .compact-role{
+      font-weight:400;
+      color:#202020;
+    }
+
+    .compact-dir{
+      font-style:italic;
+      color:var(--muted);
+    }
+
+    .compact-year{
+      color:var(--muted);
     }
 
     .compact-note{
@@ -458,6 +434,16 @@
       margin-top:18px;
     }
 
+    .more-link{
+      display:inline-block;
+      margin-top:22px;
+      font-size:11px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      border-bottom:1px solid currentColor;
+      padding-bottom:4px;
+    }
+
     .meta-list{
       display:grid;
       gap:14px;
@@ -487,53 +473,24 @@
       line-height:1.72;
     }
 
-    .media-list{
-      border-top:1px solid var(--line);
-    }
-
-    .media-row{
-      display:grid;
-      grid-template-columns:240px minmax(0, 1fr);
-      gap:18px;
-      padding:12px 0;
-      border-bottom:1px solid var(--line);
-      align-items:start;
-    }
-
-    .media-source{
-      font-family:'Manrope',sans-serif;
-      font-size:18px;
-      line-height:1.2;
-      letter-spacing:-.02em;
-      font-weight:700;
-    }
-
-    .media-focus{
-      font-size:15px;
-      line-height:1.65;
-      color:#232323;
-    }
-
     .contact-simple{
       display:grid;
-      gap:14px;
-      max-width:480px;
+      gap:10px;
+      max-width:520px;
       border-top:1px solid var(--line);
       padding-top:18px;
     }
 
-    .contact-line{
+    .contact-line a{
       font-size:18px;
       line-height:1.5;
+      color:var(--text);
+      border-bottom:1px solid transparent;
+      transition:border-color .2s ease;
     }
 
-    .contact-label{
-      display:block;
-      margin-bottom:4px;
-      font-size:10px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--muted);
+    .contact-line a:hover{
+      border-color:currentColor;
     }
 
     .footer{
@@ -563,19 +520,6 @@
         width:100%;
         min-height:420px;
       }
-
-      .strip-grid{
-        grid-template-columns:1fr 1fr;
-      }
-
-      .strip-item{
-        border-right:0;
-        border-bottom:1px solid var(--line);
-      }
-
-      .strip-item:nth-last-child(-n+2){
-        border-bottom:0;
-      }
     }
 
     @media (max-width:920px){
@@ -587,8 +531,7 @@
         position:static;
       }
 
-      .compact-row,
-      .media-row{
+      .compact-row{
         grid-template-columns:1fr;
         gap:6px;
       }
@@ -619,18 +562,6 @@
       .work-year{
         padding-top:0;
       }
-
-      .strip-grid{
-        grid-template-columns:1fr;
-      }
-
-      .strip-item{
-        border-bottom:1px solid var(--line);
-      }
-
-      .strip-item:last-child{
-        border-bottom:0;
-      }
     }
 
     @media (max-width:560px){
@@ -651,7 +582,6 @@
         <a href="#teatro">Teatro</a>
         <a href="#audiovisual">Audiovisual</a>
         <a href="#literatura">Literatura</a>
-        <a href="#midia">Mídia</a>
         <a href="#sobre">Sobre</a>
         <a href="#contato">Contato</a>
       </nav>
@@ -689,30 +619,6 @@
           />
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="strip" aria-label="Percurso em resumo">
-    <div class="strip-grid">
-      <article class="strip-item">
-        <p class="strip-label">Reconhecimento</p>
-        <p class="strip-text">Prêmios Shell e Cesgranrio de Melhor Ator por <em>Tom na Fazenda</em>.</p>
-      </article>
-
-      <article class="strip-item">
-        <p class="strip-label">Pesquisa autoral</p>
-        <p class="strip-text">ExCompanhia, desde 2012.</p>
-      </article>
-
-      <article class="strip-item">
-        <p class="strip-label">Circulação</p>
-        <p class="strip-text">Alemanha, Portugal, Montenegro e Suíça.</p>
-      </article>
-
-      <article class="strip-item">
-        <p class="strip-label">Dramaturgia</p>
-        <p class="strip-text">Prêmio internacional FIAT, em Podgorica, Montenegro, por <em>Frequência Ausente 19Hz</em>.</p>
-      </article>
     </div>
   </section>
 
@@ -842,86 +748,148 @@
         <div class="compact-block" style="margin-top:0;padding-top:0;border-top:0;">
           <div class="compact-list">
             <article class="compact-row">
-              <div class="compact-name">Terminal</div>
-              <div class="compact-info">Ele mesmo, filho, ator · direção Cesar Augusto · 2025</div>
-            </article>
-
-            <article class="compact-row">
-              <div class="compact-name">Uma Casa de Bonecas</div>
-              <div class="compact-info">Torvald Helmer · direção Georgette Fadel e Lívia Camargo · 2025</div>
-            </article>
-
-            <article class="compact-row">
-              <div class="compact-name">Shakespeare Apaixonado</div>
-              <div class="compact-info">Lord Wessex · direção Rafael Gomes · 2024</div>
-            </article>
-
-            <article class="compact-row">
-              <div class="compact-name">Tom na Fazenda</div>
+              <div class="compact-name"><strong>Terminal</strong></div>
               <div class="compact-info">
-                Francis · direção Rodrigo Portella · 2017–2021
+                <span class="compact-role">Ele mesmo, filho, ator</span> ·
+                <span class="compact-dir">direção Cesar Augusto</span> ·
+                <span class="compact-year">2025</span>
+              </div>
+            </article>
+
+            <article class="compact-row">
+              <div class="compact-name"><strong>Uma Casa de Bonecas</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">Torvald Helmer</span> ·
+                <span class="compact-dir">direção Georgette Fadel e Lívia Camargo</span> ·
+                <span class="compact-year">2025</span>
+              </div>
+            </article>
+
+            <article class="compact-row">
+              <div class="compact-name"><strong>Shakespeare Apaixonado</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">Lord Wessex</span> ·
+                <span class="compact-dir">direção Rafael Gomes</span> ·
+                <span class="compact-year">2024</span>
+              </div>
+            </article>
+
+            <article class="compact-row">
+              <div class="compact-name"><strong>Tom na Fazenda</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">Francis</span> ·
+                <span class="compact-dir">direção Rodrigo Portella</span> ·
+                <span class="compact-year">2017–2021</span>
                 <span class="compact-note">Prêmio Shell – Melhor Ator · Prêmio Cesgranrio – Melhor Ator · Prêmio Botequim Cultural – Melhor Ator Coadjuvante · Prêmio Cenym – Melhor Ator Coadjuvante</span>
               </div>
             </article>
 
             <article class="compact-row">
-              <div class="compact-name">Ovono</div>
-              <div class="compact-info">Adão · direção Ricardo Karman · 2016</div>
+              <div class="compact-name"><strong>Ovono</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">Adão</span> ·
+                <span class="compact-dir">direção Ricardo Karman</span> ·
+                <span class="compact-year">2016</span>
+              </div>
             </article>
 
             <article class="compact-row">
-              <div class="compact-name">Sobre Ratos e Homens</div>
-              <div class="compact-info">Slim · direção Kiko Marques · 2016</div>
+              <div class="compact-name"><strong>Sobre Ratos e Homens</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">Slim</span> ·
+                <span class="compact-dir">direção Kiko Marques</span> ·
+                <span class="compact-year">2016</span>
+              </div>
             </article>
 
             <article class="compact-row">
-              <div class="compact-name">Animais na Pista</div>
-              <div class="compact-info">Léo · direção Isabel Teixeira · 2015</div>
+              <div class="compact-name"><strong>Animais na Pista</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">Léo</span> ·
+                <span class="compact-dir">direção Isabel Teixeira</span> ·
+                <span class="compact-year">2015</span>
+              </div>
             </article>
 
             <article class="compact-row">
-              <div class="compact-name">O Rei Leão</div>
-              <div class="compact-info">Diretor residente · direção original Julie Taymor · 2013–2014</div>
+              <div class="compact-name"><strong>O Rei Leão</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">diretor residente</span> ·
+                <span class="compact-dir">direção original Julie Taymor</span> ·
+                <span class="compact-year">2013–2014</span>
+              </div>
             </article>
 
             <article class="compact-row">
-              <div class="compact-name">Toc Toc</div>
-              <div class="compact-info">Vicente · direção Alexandre Heinecke · 2011–2012</div>
+              <div class="compact-name"><strong>Toc Toc</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">Vicente</span> ·
+                <span class="compact-dir">direção Alexandre Heinecke</span> ·
+                <span class="compact-year">2011–2012</span>
+              </div>
             </article>
 
             <article class="compact-row">
-              <div class="compact-name">Biliri e o Pote Vazio</div>
-              <div class="compact-info">Imperador e outros · direção Ricardo Karman · 2011</div>
+              <div class="compact-name"><strong>Biliri e o Pote Vazio</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">Imperador e outros</span> ·
+                <span class="compact-dir">direção Ricardo Karman</span> ·
+                <span class="compact-year">2011</span>
+              </div>
             </article>
 
             <article class="compact-row">
-              <div class="compact-name">A Pantera</div>
-              <div class="compact-info">Ele · texto Camila Appel · 2010</div>
+              <div class="compact-name"><strong>A Pantera</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">Ele</span> ·
+                <span class="compact-dir">texto Camila Appel</span> ·
+                <span class="compact-year">2010</span>
+              </div>
             </article>
 
             <article class="compact-row">
-              <div class="compact-name">Teatrokê</div>
-              <div class="compact-info">Apresentador e outros · direção Ricardo Karman · 2010</div>
+              <div class="compact-name"><strong>Teatrokê</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">Apresentador e outros</span> ·
+                <span class="compact-dir">direção Ricardo Karman</span> ·
+                <span class="compact-year">2010</span>
+              </div>
             </article>
 
             <article class="compact-row">
-              <div class="compact-name">Na Solidão dos Campos de Algodão</div>
-              <div class="compact-info">Dealer · direção Caco Ciocler · 2009</div>
+              <div class="compact-name"><strong>Na Solidão dos Campos de Algodão</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">Dealer</span> ·
+                <span class="compact-dir">direção Caco Ciocler</span> ·
+                <span class="compact-year">2009</span>
+              </div>
             </article>
 
             <article class="compact-row">
-              <div class="compact-name">Os Assassinos de Inês de Castro</div>
-              <div class="compact-info">Pedro · direção Rui Xavier · 2008</div>
+              <div class="compact-name"><strong>Os Assassinos de Inês de Castro</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">Pedro</span> ·
+                <span class="compact-dir">direção Rui Xavier</span> ·
+                <span class="compact-year">2008</span>
+              </div>
             </article>
 
             <article class="compact-row">
-              <div class="compact-name">O Kronoscópio</div>
-              <div class="compact-info">José Félix · direção Ricardo Karman · 2007</div>
+              <div class="compact-name"><strong>O Kronoscópio</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">José Félix</span> ·
+                <span class="compact-dir">direção Ricardo Karman</span> ·
+                <span class="compact-year">2007</span>
+              </div>
             </article>
 
             <article class="compact-row">
-              <div class="compact-name">Por Trás do Céu</div>
-              <div class="compact-info">Micuim · direção Caio Soh · 2006</div>
+              <div class="compact-name"><strong>Por Trás do Céu</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">Micuim</span> ·
+                <span class="compact-dir">direção Caio Soh</span> ·
+                <span class="compact-year">2006</span>
+              </div>
             </article>
           </div>
         </div>
@@ -937,72 +905,119 @@
         <div class="compact-block" style="margin-top:0;padding-top:0;border-top:0;">
           <div class="compact-list">
             <article class="compact-row">
-              <div class="compact-name">Justino</div>
-              <div class="compact-info">Pastor Lauris · José Eduardo Belmonte · em pós-produção</div>
-            </article>
-
-            <article class="compact-row">
-              <div class="compact-name">Reencarne</div>
-              <div class="compact-info">Ricardo · Bruno Safadi e Noa Bressani · Globoplay / TV Globo · 2025</div>
-            </article>
-
-            <article class="compact-row">
-              <div class="compact-name">Paulo, o Apóstolo</div>
-              <div class="compact-info">Apolo · Record TV · 2025</div>
-            </article>
-
-            <article class="compact-row">
-              <div class="compact-name">A Vida Pela Frente</div>
-              <div class="compact-info">Ivo · Bruno Safadi e Leandra Leal · Globoplay / TV Globo · 2023</div>
-            </article>
-
-            <article class="compact-row">
-              <div class="compact-name">Só Se For Por Amor</div>
-              <div class="compact-info">César · Ana Azevedo · Netflix · 2022</div>
-            </article>
-
-            <article class="compact-row">
-              <div class="compact-name">Coisa Mais Linda</div>
-              <div class="compact-info">Augusto · Caito Ortiz, Julia Rezende e Hugo Prata · Netflix · 2019–2020</div>
-            </article>
-
-            <article class="compact-row">
-              <div class="compact-name">Aruanas</div>
-              <div class="compact-info">Gregory · Luiz Felipe Binder, Carlos Manga Jr. e Estela Renner · Globoplay / TV Globo · 2019–2021</div>
-            </article>
-
-            <article class="compact-row">
-              <div class="compact-name">Os Homens São de Marte</div>
-              <div class="compact-info">Léo · Suzana Garcia · GNT / Globosat · 2019</div>
-            </article>
-
-            <article class="compact-row">
-              <div class="compact-name">O Jardim Secreto de Mariana</div>
-              <div class="compact-info">João · Sérgio Rezende · 2021</div>
-            </article>
-
-            <article class="compact-row">
-              <div class="compact-name">Depois a Louca Sou Eu</div>
+              <div class="compact-name"><strong>Justino</strong></div>
               <div class="compact-info">
-                Gilberto · Julia Rezende · 2021
+                <span class="compact-role">Pastor Lauris</span> ·
+                <span class="compact-dir">José Eduardo Belmonte</span> ·
+                <span class="compact-year">em pós-produção</span>
+              </div>
+            </article>
+
+            <article class="compact-row">
+              <div class="compact-name"><strong>Reencarne</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">Ricardo</span> ·
+                <span class="compact-dir">Bruno Safadi e Noa Bressani</span> ·
+                <span class="compact-year">Globoplay / TV Globo · 2025</span>
+              </div>
+            </article>
+
+            <article class="compact-row">
+              <div class="compact-name"><strong>Paulo, o Apóstolo</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">Apolo</span> ·
+                <span class="compact-year">Record TV · 2025</span>
+              </div>
+            </article>
+
+            <article class="compact-row">
+              <div class="compact-name"><strong>A Vida Pela Frente</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">Ivo</span> ·
+                <span class="compact-dir">Bruno Safadi e Leandra Leal</span> ·
+                <span class="compact-year">Globoplay / TV Globo · 2023</span>
+              </div>
+            </article>
+
+            <article class="compact-row">
+              <div class="compact-name"><strong>Só Se For Por Amor</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">César</span> ·
+                <span class="compact-dir">Ana Azevedo</span> ·
+                <span class="compact-year">Netflix · 2022</span>
+              </div>
+            </article>
+
+            <article class="compact-row">
+              <div class="compact-name"><strong>Coisa Mais Linda</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">Augusto</span> ·
+                <span class="compact-dir">Caito Ortiz, Julia Rezende e Hugo Prata</span> ·
+                <span class="compact-year">Netflix · 2019–2020</span>
+              </div>
+            </article>
+
+            <article class="compact-row">
+              <div class="compact-name"><strong>Aruanas</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">Gregory</span> ·
+                <span class="compact-dir">Luiz Felipe Binder, Carlos Manga Jr. e Estela Renner</span> ·
+                <span class="compact-year">Globoplay / TV Globo · 2019–2021</span>
+              </div>
+            </article>
+
+            <article class="compact-row">
+              <div class="compact-name"><strong>Os Homens São de Marte</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">Léo</span> ·
+                <span class="compact-dir">Suzana Garcia</span> ·
+                <span class="compact-year">GNT / Globosat · 2019</span>
+              </div>
+            </article>
+
+            <article class="compact-row">
+              <div class="compact-name"><strong>O Jardim Secreto de Mariana</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">João</span> ·
+                <span class="compact-dir">Sérgio Rezende</span> ·
+                <span class="compact-year">2021</span>
+              </div>
+            </article>
+
+            <article class="compact-row">
+              <div class="compact-name"><strong>Depois a Louca Sou Eu</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">Gilberto</span> ·
+                <span class="compact-dir">Julia Rezende</span> ·
+                <span class="compact-year">2021</span>
                 <span class="compact-note">Grande Prêmio do Cinema Brasileiro – Melhor Longa de Comédia</span>
               </div>
             </article>
 
             <article class="compact-row">
-              <div class="compact-name">Maria do Caritó</div>
-              <div class="compact-info">Anatoli · João Paulo Jabour · 2019</div>
-            </article>
-
-            <article class="compact-row">
-              <div class="compact-name">O Doutrinador</div>
-              <div class="compact-info">Anterinho · Gustavo Bonafé · 2018</div>
-            </article>
-
-            <article class="compact-row">
-              <div class="compact-name">Divórcio</div>
+              <div class="compact-name"><strong>Maria do Caritó</strong></div>
               <div class="compact-info">
-                Catanduva · Pedro Amorim · 2017
+                <span class="compact-role">Anatoli</span> ·
+                <span class="compact-dir">João Paulo Jabour</span> ·
+                <span class="compact-year">2019</span>
+              </div>
+            </article>
+
+            <article class="compact-row">
+              <div class="compact-name"><strong>O Doutrinador</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">Anterinho</span> ·
+                <span class="compact-dir">Gustavo Bonafé</span> ·
+                <span class="compact-year">2018</span>
+              </div>
+            </article>
+
+            <article class="compact-row">
+              <div class="compact-name"><strong>Divórcio</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">Catanduva</span> ·
+                <span class="compact-dir">Pedro Amorim</span> ·
+                <span class="compact-year">2017</span>
                 <span class="compact-note">Grande Prêmio do Cinema Brasileiro – Melhor Longa de Comédia</span>
               </div>
             </article>
@@ -1020,50 +1035,13 @@
         <div class="compact-block" style="margin-top:0;padding-top:0;border-top:0;">
           <div class="compact-list">
             <article class="compact-row">
-              <div class="compact-name">Como Não Morrer de uma Só Vez</div>
-              <div class="compact-info">Romance · lançamento em 2023</div>
+              <div class="compact-name"><strong>Como Não Morrer de uma Só Vez</strong></div>
+              <div class="compact-info">
+                <span class="compact-role">romance</span> ·
+                <span class="compact-year">2023</span>
+              </div>
             </article>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="midia" class="section">
-    <div class="section-grid">
-      <h2 class="section-label">Mídia</h2>
-
-      <div class="section-body">
-        <div class="media-list">
-          <article class="media-row">
-            <div class="media-source">Folha de S.Paulo</div>
-            <div class="media-focus">Frequência Ausente 19Hz</div>
-          </article>
-
-          <article class="media-row">
-            <div class="media-source">O Globo</div>
-            <div class="media-focus">ExReality</div>
-          </article>
-
-          <article class="media-row">
-            <div class="media-source">Gshow</div>
-            <div class="media-focus">Se Eu Estivesse Aí</div>
-          </article>
-
-          <article class="media-row">
-            <div class="media-source">Veja Rio</div>
-            <div class="media-focus">Terminal</div>
-          </article>
-
-          <article class="media-row">
-            <div class="media-source">Rota Cult</div>
-            <div class="media-focus">Terminal</div>
-          </article>
-
-          <article class="media-row">
-            <div class="media-source">Literatamy</div>
-            <div class="media-focus">Como Não Morrer de uma Só Vez</div>
-          </article>
         </div>
       </div>
     </div>
@@ -1087,29 +1065,30 @@
             </p>
 
             <p class="body-text">
+              Sua trajetória internacional inclui residências, apresentações e intercâmbios na Alemanha, em Portugal, em Montenegro e na Suíça. Em paralelo à pesquisa autoral, construiu uma carreira sólida como ator, reconhecida com os prêmios Shell e Cesgranrio de Melhor Ator por <em>Tom na Fazenda</em>. No campo da dramaturgia, <em>Frequência Ausente 19Hz</em> recebeu o prêmio FIAT em Podgorica, Montenegro.
+            </p>
+
+            <p class="body-text">
               Nos últimos anos, esse eixo vem se concentrando de modo mais agudo na escrita dramatúrgica. Em 2023, publicou seu primeiro romance. Em 2025, estreou <em>Terminal</em>, texto original em formato palco-plateia. Atualmente desenvolve <em>NATUREZA</em>, novo estágio da pesquisa, voltado ao aprofundamento das relações entre voz, presença, dramaturgia e experiência humana em contextos contemporâneos.
             </p>
+
+            <a class="more-link" href="saiba-mais.html">Saiba mais</a>
           </div>
 
           <div class="meta-list">
-            <div class="meta-item">
-              <p class="meta-head">Reconhecimento</p>
-              <p class="meta-text">Prêmios Shell e Cesgranrio de Melhor Ator por <em>Tom na Fazenda</em>.</p>
-            </div>
-
             <div class="meta-item">
               <p class="meta-head">Pesquisa autoral</p>
               <p class="meta-text">ExCompanhia como campo continuado de criação desde 2012.</p>
             </div>
 
             <div class="meta-item">
-              <p class="meta-head">Internacional</p>
-              <p class="meta-text">Residências, apresentações e intercâmbios em Alemanha, Portugal, Montenegro e Suíça.</p>
+              <p class="meta-head">Reconhecimento</p>
+              <p class="meta-text">Prêmios Shell e Cesgranrio de Melhor Ator por <em>Tom na Fazenda</em>.</p>
             </div>
 
             <div class="meta-item">
               <p class="meta-head">Dramaturgia</p>
-              <p class="meta-text">Prêmio internacional FIAT, em Podgorica, Montenegro, por <em>Frequência Ausente 19Hz</em>.</p>
+              <p class="meta-text">FIAT, em Podgorica, Montenegro, por <em>Frequência Ausente 19Hz</em>.</p>
             </div>
           </div>
         </div>
@@ -1124,13 +1103,11 @@
       <div class="section-body">
         <div class="contact-simple">
           <div class="contact-line">
-            <span class="contact-label">Email</span>
-            contato@gustavovaz.com.br
+            <a href="mailto:contato@gustavovaz.com.br">contato@gustavovaz.com.br</a>
           </div>
 
           <div class="contact-line">
-            <span class="contact-label">Instagram</span>
-            @gustavovaz
+            <a href="https://instagram.com/gustavovaz" target="_blank" rel="noopener noreferrer">@gustavovaz</a>
           </div>
         </div>
       </div>
