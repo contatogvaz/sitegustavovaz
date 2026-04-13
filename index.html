@@ -424,37 +424,50 @@
       font-style:italic;
     }
 
-    .compact-row-expandable{
+    .expandable-entry{
+      border-bottom:1px solid var(--line);
+    }
+
+    .expand-head{
+      display:grid;
+      grid-template-columns:240px minmax(0, 1fr);
+      gap:18px;
+      padding:12px 0;
+      align-items:start;
       cursor:pointer;
     }
 
-    .compact-row-expandable .expand-panel{
+    .expand-head .compact-name,
+    .expand-head .compact-info{
+      margin:0;
+    }
+
+    .expand-panel{
       max-height:0;
       opacity:0;
       overflow:hidden;
-      transition:max-height .35s ease, opacity .22s ease, margin-top .22s ease;
-      margin-top:0;
+      transition:max-height .38s ease, opacity .22s ease;
     }
 
-    .compact-row-expandable:hover .expand-panel,
-    .compact-row-expandable:focus-within .expand-panel,
-    .compact-row-expandable.is-open .expand-panel{
-      max-height:520px;
+    .expandable-entry:hover .expand-panel,
+    .expandable-entry:focus-within .expand-panel,
+    .expandable-entry.is-open .expand-panel{
+      max-height:720px;
       opacity:1;
-      margin-top:14px;
     }
 
     .expand-inner{
       display:grid;
-      grid-template-columns:220px minmax(0, 1fr);
+      grid-template-columns:240px minmax(0, 1fr);
       gap:18px;
-      padding-top:14px;
+      align-items:start;
+      padding:16px 0 18px;
       border-top:1px solid var(--line);
     }
 
     .expand-image{
       width:100%;
-      aspect-ratio:4/3;
+      aspect-ratio:4 / 5;
       overflow:hidden;
       border:1px solid var(--line);
       background:#f3f3f3;
@@ -469,8 +482,9 @@
 
     .expand-text{
       font-size:15px;
-      line-height:1.78;
+      line-height:1.82;
       color:#232323;
+      padding-top:2px;
     }
 
     .expand-text p{
@@ -579,13 +593,15 @@
         position:static;
       }
 
-      .compact-row{
+      .compact-row,
+      .expand-head,
+      .expand-inner{
         grid-template-columns:1fr;
         gap:6px;
       }
 
-      .expand-inner{
-        grid-template-columns:1fr;
+      .expand-image{
+        max-width:360px;
       }
     }
 
@@ -865,30 +881,32 @@
       <div class="section-body">
         <div class="compact-block" style="margin-top:0;padding-top:0;border-top:0;">
           <div class="compact-list">
-            <article class="compact-row compact-row-expandable" id="terminal-expand" tabindex="0">
-              <div class="compact-name"><strong>Terminal</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Ele mesmo, filho, ator</span> ·
-                <span class="compact-dir">direção Cesar Augusto</span> ·
-                <span class="compact-year">2025</span>
+            <article class="expandable-entry" id="terminal-expand" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Terminal</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Ele mesmo, filho, ator</span> ·
+                  <span class="compact-dir">direção Cesar Augusto</span> ·
+                  <span class="compact-year">2025</span>
+                </div>
+              </div>
 
-                <div class="expand-panel">
-                  <div class="expand-inner">
-                    <div class="expand-image">
-                      <img
-                        src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/9R4A5628.jpg"
-                        alt="Imagem de Terminal"
-                      />
-                    </div>
+              <div class="expand-panel">
+                <div class="expand-inner">
+                  <div class="expand-image">
+                    <img
+                      src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/Captura%20de%20Tela%202026-04-13%20%C3%A0s%2020.13.37.png"
+                      alt="Imagem de Terminal"
+                    />
+                  </div>
 
-                    <div class="expand-text">
-                      <p>
-                        Texto original em formato palco-plateia, em que ficção, autobiografia e construção de verdade se atravessam na cena.
-                      </p>
-                      <p>
-                        Aqui o bloco funciona como teste de expansão vertical: ao passar o mouse, a obra abre para baixo com imagem e informação adicional, em vez de usar uma janela lateral.
-                      </p>
-                    </div>
+                  <div class="expand-text">
+                    <p>
+                      Texto original em formato palco-plateia, em que ficção, autobiografia e construção de verdade se atravessam na cena.
+                    </p>
+                    <p>
+                      Aqui o bloco funciona como teste de expansão vertical: a imagem ocupa a coluna do título e o texto expandido continua exatamente sob a linha de informação principal.
+                    </p>
                   </div>
                 </div>
               </div>
