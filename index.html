@@ -80,25 +80,41 @@
     .topbar-right{
       display:flex;
       align-items:center;
-      gap:24px;
+      gap:28px;
     }
 
     .nav{
       display:flex;
+      align-items:center;
       flex-wrap:wrap;
-      gap:16px;
+      gap:0;
       font-size:11px;
       letter-spacing:.18em;
       text-transform:uppercase;
     }
 
-    .nav a{
-      opacity:.72;
-      transition:opacity .2s ease;
+    .nav-group{
+      display:flex;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:16px;
     }
 
-    .nav a:hover{
+    .nav-group + .nav-group{
+      margin-left:34px;
+    }
+
+    .nav a{
+      opacity:.68;
+      font-weight:500;
+      transition:opacity .18s ease, color .18s ease, transform .18s ease, font-weight .18s ease;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible{
       opacity:1;
+      font-weight:700;
+      transform:translateY(-1px);
     }
 
     .lang{
@@ -405,11 +421,8 @@
       font-style:italic;
     }
 
-    .about-grid{
-      display:grid;
-      grid-template-columns:minmax(0, 1fr) 320px;
-      gap:28px;
-      align-items:start;
+    .about-text{
+      max-width:860px;
     }
 
     .about-title{
@@ -444,35 +457,6 @@
       padding-bottom:4px;
     }
 
-    .meta-list{
-      display:grid;
-      gap:14px;
-    }
-
-    .meta-item{
-      padding-top:14px;
-      border-top:1px solid var(--line);
-    }
-
-    .meta-item:first-child{
-      padding-top:0;
-      border-top:0;
-    }
-
-    .meta-head{
-      margin:0 0 4px;
-      font-size:10px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--muted);
-    }
-
-    .meta-text{
-      margin:0;
-      font-size:15px;
-      line-height:1.72;
-    }
-
     .contact-simple{
       display:grid;
       gap:10px;
@@ -505,8 +489,7 @@
 
     @media (max-width:1120px){
       .hero-grid,
-      .works-layout,
-      .about-grid{
+      .works-layout{
         grid-template-columns:1fr;
       }
 
@@ -550,6 +533,21 @@
         gap:14px;
       }
 
+      .nav{
+        width:100%;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:12px;
+      }
+
+      .nav-group{
+        gap:12px;
+      }
+
+      .nav-group + .nav-group{
+        margin-left:0;
+      }
+
       .hero{
         padding-top:156px;
       }
@@ -578,12 +576,18 @@
 
     <div class="topbar-right">
       <nav class="nav">
-        <a href="#trabalhos">Trabalhos</a>
-        <a href="#teatro">Teatro</a>
-        <a href="#audiovisual">Audiovisual</a>
-        <a href="#literatura">Literatura</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#contato">Contato</a>
+        <div class="nav-group">
+          <a href="#autoral">Autoral</a>
+          <a href="#teatro">Teatro</a>
+          <a href="#audiovisual">Audiovisual</a>
+          <a href="#literatura">Literatura</a>
+        </div>
+
+        <div class="nav-group">
+          <a href="midia.html">Mídia</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#contato">Contato</a>
+        </div>
       </nav>
 
       <div class="lang">
@@ -622,9 +626,9 @@
     </div>
   </section>
 
-  <section id="trabalhos" class="section">
+  <section id="autoral" class="section">
     <div class="section-grid">
-      <h2 class="section-label">Trabalhos</h2>
+      <h2 class="section-label">Autoral</h2>
 
       <div class="section-body">
         <div class="works-layout">
@@ -649,12 +653,42 @@
                 data-title="Jornada"
                 data-meta="2023 · Direção · Dramaturgia · Performance"
                 data-text="Audiotour artístico site-specific que propõe uma leitura sensível do espaço urbano por meio de uma travessia sonora."
-                data-image="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg"
+                data-image="https://static.wixstatic.com/media/69a89b_b562c4ceb97443169a31da1712a2204c~mv2.png/v1/fill/w_313,h_313,q_75,enc_avif,quality_auto/69a89b_b562c4ceb97443169a31da1712a2204c~mv2.png"
               >
                 <div class="work-year">2023</div>
                 <div class="work-main">
                   <h3 class="work-name">Jornada</h3>
-                  <p class="work-kind">Pesquisa autoral / ExCompanhia</p>
+                  <p class="work-kind">ExCompanhia</p>
+                </div>
+              </button>
+            </article>
+
+            <article class="work-item">
+              <button class="work-button"
+                data-title="Vozes da Independência"
+                data-meta="2022 · Direção · Dramaturgia · Performance"
+                data-text="Experiência sonora em áudio 3D para o Parque da Independência, articulando história oficial, vozes apagadas e escuta no espaço público."
+                data-image="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/9R4A5628.jpg"
+              >
+                <div class="work-year">2022</div>
+                <div class="work-main">
+                  <h3 class="work-name">Vozes da Independência</h3>
+                  <p class="work-kind">ExCompanhia</p>
+                </div>
+              </button>
+            </article>
+
+            <article class="work-item">
+              <button class="work-button"
+                data-title="Vozes do Itororó"
+                data-meta="2021 · Direção · Dramaturgia · Performance"
+                data-text="Experiência imersiva em áudio 3D e intervenção permanente ligada à memória da Vila Itororó e às camadas históricas do espaço."
+                data-image="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/9R4A5628.jpg"
+              >
+                <div class="work-year">2021</div>
+                <div class="work-main">
+                  <h3 class="work-name">Vozes do Itororó</h3>
+                  <p class="work-kind">ExCompanhia</p>
                 </div>
               </button>
             </article>
@@ -664,12 +698,27 @@
                 data-title="ExReality"
                 data-meta="2021 · Direção · Dramaturgia"
                 data-text="Experimento performativo em transmissão contínua, com dramaturgia modulada em tempo real pela interação do público em plataforma própria."
-                data-image="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/9R4A5628.jpg"
+                data-image="https://static.wixstatic.com/media/69a89b_e6d0e08846be44fb9025cb34c393840e~mv2.png/v1/fill/w_314,h_313,q_75,enc_avif,quality_auto/69a89b_e6d0e08846be44fb9025cb34c393840e~mv2.png"
               >
                 <div class="work-year">2021</div>
                 <div class="work-main">
                   <h3 class="work-name">ExReality</h3>
-                  <p class="work-kind">Pesquisa autoral / ExCompanhia</p>
+                  <p class="work-kind">ExCompanhia</p>
+                </div>
+              </button>
+            </article>
+
+            <article class="work-item">
+              <button class="work-button"
+                data-title="Se Eu Estivesse Aí"
+                data-meta="2020 · Série imersiva · ExCompanhia"
+                data-text="Série imersiva em áudio 3D em primeira pessoa, estruturada por mensagens de voz e escuta íntima em contexto pandêmico."
+                data-image="https://static.wixstatic.com/media/69a89b_d985be497bd3452abfc91e73568289d6~mv2.png/v1/fill/w_313,h_313,q_75,enc_avif,quality_auto/69a89b_d985be497bd3452abfc91e73568289d6~mv2.png"
+              >
+                <div class="work-year">2020</div>
+                <div class="work-main">
+                  <h3 class="work-name">Se Eu Estivesse Aí</h3>
+                  <p class="work-kind">ExCompanhia</p>
                 </div>
               </button>
             </article>
@@ -679,12 +728,12 @@
                 data-title="O Enigma Voynich"
                 data-meta="2017 · Roteiro · Direção · Performance"
                 data-text="Série em aplicativo que posiciona o público como protagonista de uma narrativa em áudio 3D, articulando memória e espaço urbano."
-                data-image="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/9R4A5628.jpg"
+                data-image="https://static.wixstatic.com/media/69a89b_0b1df711870943d4907275263a57cb5d~mv2.png/v1/fill/w_314,h_313,q_75,enc_avif,quality_auto/69a89b_0b1df711870943d4907275263a57cb5d~mv2.png"
               >
                 <div class="work-year">2017</div>
                 <div class="work-main">
                   <h3 class="work-name">O Enigma Voynich</h3>
-                  <p class="work-kind">Pesquisa autoral / ExCompanhia</p>
+                  <p class="work-kind">ExCompanhia</p>
                 </div>
               </button>
             </article>
@@ -694,12 +743,12 @@
                 data-title="Frequência Ausente 19Hz"
                 data-meta="2015 – atual · Dramaturgia · Direção · Performance"
                 data-text="Trabalho estruturado pela integração entre presença, vídeo e áudio 3D, concebido para dialogar com diferentes cidades e contextos."
-                data-image="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg"
+                data-image="https://static.wixstatic.com/media/69a89b_0d84e2e4fd5e46749d17fa65dca2abc9~mv2.png/v1/fill/w_313,h_313,q_75,enc_avif,quality_auto/69a89b_0d84e2e4fd5e46749d17fa65dca2abc9~mv2.png"
               >
                 <div class="work-year">2015 – atual</div>
                 <div class="work-main">
                   <h3 class="work-name">Frequência Ausente 19Hz</h3>
-                  <p class="work-kind">Pesquisa autoral / ExCompanhia</p>
+                  <p class="work-kind">ExCompanhia</p>
                 </div>
               </button>
             </article>
@@ -709,12 +758,12 @@
                 data-title="EU – Negociando Sentidos"
                 data-meta="2012 – 2013 · Dramaturgia · Direção"
                 data-text="Experiência cênica de longa duração que articulou redes sociais, encontros presenciais, telefone, mensagens e território urbano."
-                data-image="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/9R4A5628.jpg"
+                data-image="https://static.wixstatic.com/media/69a89b_4da71109976a447fab0bbbe2a146907a~mv2.png/v1/fill/w_313,h_313,q_75,enc_avif,quality_auto/69a89b_4da71109976a447fab0bbbe2a146907a~mv2.png"
               >
                 <div class="work-year">2012 – 2013</div>
                 <div class="work-main">
                   <h3 class="work-name">EU – Negociando Sentidos</h3>
-                  <p class="work-kind">Pesquisa autoral / ExCompanhia</p>
+                  <p class="work-kind">ExCompanhia</p>
                 </div>
               </button>
             </article>
@@ -728,7 +777,7 @@
                 alt="Imagem do trabalho selecionado"
               />
             </div>
-            <p class="preview-tag">Pesquisa autoral</p>
+            <p class="preview-tag">Autoral</p>
             <h3 class="preview-title" id="preview-title">NATUREZA</h3>
             <p class="preview-meta" id="preview-meta">2026 · Pesquisa atual</p>
             <p class="preview-text" id="preview-text">
@@ -1052,45 +1101,26 @@
       <h2 class="section-label">Sobre</h2>
 
       <div class="section-body">
-        <div class="about-grid">
-          <div>
-            <h3 class="about-title">Atuação, escrita, pesquisa, mediação.</h3>
+        <div class="about-text">
+          <h3 class="about-title">Atuação, escrita, pesquisa, mediação.</h3>
 
-            <p class="body-text">
-              Gustavo Vaz é ator, autor e criador multimídia, com 22 anos de trajetória profissional. Ao lado de um percurso consistente no teatro e no audiovisual, desenvolve desde 2012, na ExCompanhia, uma investigação continuada em torno de presença, escuta, dramaturgia, experiência e mediação.
-            </p>
+          <p class="body-text">
+            Gustavo Vaz é ator, autor e criador multimídia, com 22 anos de trajetória profissional. Ao lado de um percurso consistente no teatro e no audiovisual, desenvolve desde 2012, na ExCompanhia, uma investigação continuada em torno de presença, escuta, dramaturgia, experiência e mediação.
+          </p>
 
-            <p class="body-text">
-              Ao longo desse percurso, criou trabalhos que atravessam dramaturgias site-specific, imersões sonoras, dispositivos digitais e formas de reorganização da posição do público. A pesquisa se estrutura em diálogo com transformações culturais, tecnológicas e territoriais do presente, e cada obra desloca procedimentos sem abandonar as questões que sustentam o campo de investigação.
-            </p>
+          <p class="body-text">
+            Ao longo desse percurso, criou trabalhos que atravessam dramaturgias site-specific, imersões sonoras, dispositivos digitais e formas de reorganização da posição do público. A pesquisa se estrutura em diálogo com transformações culturais, tecnológicas e territoriais do presente, e cada obra desloca procedimentos sem abandonar as questões que sustentam o campo de investigação.
+          </p>
 
-            <p class="body-text">
-              Sua trajetória internacional inclui residências, apresentações e intercâmbios na Alemanha, em Portugal, em Montenegro e na Suíça. Em paralelo à pesquisa autoral, construiu uma carreira sólida como ator, reconhecida com os prêmios Shell e Cesgranrio de Melhor Ator por <em>Tom na Fazenda</em>. No campo da dramaturgia, <em>Frequência Ausente 19Hz</em> recebeu o prêmio FIAT em Podgorica, Montenegro.
-            </p>
+          <p class="body-text">
+            Sua trajetória internacional inclui residências, apresentações e intercâmbios na Alemanha, em Portugal, em Montenegro e na Suíça. Em paralelo à pesquisa autoral, construiu uma carreira sólida como ator, reconhecida com os prêmios Shell e Cesgranrio de Melhor Ator por <em>Tom na Fazenda</em>. No campo da dramaturgia, <em>Frequência Ausente 19Hz</em> recebeu o prêmio FIAT em Podgorica, Montenegro.
+          </p>
 
-            <p class="body-text">
-              Nos últimos anos, esse eixo vem se concentrando de modo mais agudo na escrita dramatúrgica. Em 2023, publicou seu primeiro romance. Em 2025, estreou <em>Terminal</em>, texto original em formato palco-plateia. Atualmente desenvolve <em>NATUREZA</em>, novo estágio da pesquisa, voltado ao aprofundamento das relações entre voz, presença, dramaturgia e experiência humana em contextos contemporâneos.
-            </p>
+          <p class="body-text">
+            Nos últimos anos, esse eixo vem se concentrando de modo mais agudo na escrita dramatúrgica. Em 2023, publicou seu primeiro romance. Em 2025, estreou <em>Terminal</em>, texto original em formato palco-plateia. Atualmente desenvolve <em>NATUREZA</em>, novo estágio da pesquisa, voltado ao aprofundamento das relações entre voz, presença, dramaturgia e experiência humana em contextos contemporâneos.
+          </p>
 
-            <a class="more-link" href="saiba-mais.html">Saiba mais</a>
-          </div>
-
-          <div class="meta-list">
-            <div class="meta-item">
-              <p class="meta-head">Pesquisa autoral</p>
-              <p class="meta-text">ExCompanhia como campo continuado de criação desde 2012.</p>
-            </div>
-
-            <div class="meta-item">
-              <p class="meta-head">Reconhecimento</p>
-              <p class="meta-text">Prêmios Shell e Cesgranrio de Melhor Ator por <em>Tom na Fazenda</em>.</p>
-            </div>
-
-            <div class="meta-item">
-              <p class="meta-head">Dramaturgia</p>
-              <p class="meta-text">FIAT, em Podgorica, Montenegro, por <em>Frequência Ausente 19Hz</em>.</p>
-            </div>
-          </div>
+          <a class="more-link" href="saiba-mais.html">Saiba mais</a>
         </div>
       </div>
     </div>
