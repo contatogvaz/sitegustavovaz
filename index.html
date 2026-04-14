@@ -107,7 +107,7 @@
     .nav a{
       opacity:.62;
       font-weight:500;
-      transition:opacity .18s ease, color .18s ease, transform .18s ease, font-weight .18s ease;
+      transition:opacity .18s ease, transform .18s ease, font-weight .18s ease;
     }
 
     .nav a:hover,
@@ -365,15 +365,6 @@
       border-top:1px solid var(--line-strong);
     }
 
-    .compact-title{
-      margin:0 0 16px;
-      font-family:'Manrope',sans-serif;
-      font-size:32px;
-      line-height:1;
-      letter-spacing:-.04em;
-      font-weight:800;
-    }
-
     .compact-list{
       border-top:1px solid var(--line);
     }
@@ -446,14 +437,20 @@
       max-height:0;
       opacity:0;
       overflow:hidden;
-      transition:max-height .38s ease, opacity .22s ease;
+      transform:translateY(-6px);
+      transition:
+        max-height .62s cubic-bezier(.22,1,.36,1),
+        opacity .34s ease,
+        transform .42s ease;
+      will-change:max-height, opacity, transform;
     }
 
     .expandable-entry:hover .expand-panel,
     .expandable-entry:focus-within .expand-panel,
     .expandable-entry.is-open .expand-panel{
-      max-height:720px;
+      max-height:760px;
       opacity:1;
+      transform:translateY(0);
     }
 
     .expand-inner{
@@ -881,7 +878,8 @@
       <div class="section-body">
         <div class="compact-block" style="margin-top:0;padding-top:0;border-top:0;">
           <div class="compact-list">
-            <article class="expandable-entry" id="terminal-expand" tabindex="0">
+
+            <article class="expandable-entry" tabindex="0">
               <div class="expand-head">
                 <div class="compact-name"><strong>Terminal</strong></div>
                 <div class="compact-info">
@@ -890,163 +888,353 @@
                   <span class="compact-year">2025</span>
                 </div>
               </div>
-
               <div class="expand-panel">
                 <div class="expand-inner">
                   <div class="expand-image">
                     <img
-                      src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/Captura%20de%20Tela%202026-04-13%20%C3%A0s%2020.13.37.png"
-                      alt="Imagem de Terminal"
+                      src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg"
+                      alt="Imagem temporária para visualização do bloco expandido de Terminal"
                     />
                   </div>
-
                   <div class="expand-text">
-                    <p>
-                      Texto original em formato palco-plateia, em que ficção, autobiografia e construção de verdade se atravessam na cena.
-                    </p>
-                    <p>
-                      Aqui o bloco funciona como teste de expansão vertical: a imagem ocupa a coluna do título e o texto expandido continua exatamente sob a linha de informação principal.
-                    </p>
+                    <p>Texto original em formato palco-plateia, em que ficção, autobiografia e construção de verdade se atravessam na cena.</p>
+                    <p>Bloco expandido de teste aplicado ao restante do site. Depois a imagem e o texto entram como conteúdo real da obra.</p>
                   </div>
                 </div>
               </div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>Uma Casa de Bonecas</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Torvald Helmer</span> ·
-                <span class="compact-dir">direção Georgette Fadel e Lívia Camargo</span> ·
-                <span class="compact-year">2025</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Uma Casa de Bonecas</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Torvald Helmer</span> ·
+                  <span class="compact-dir">direção Georgette Fadel e Lívia Camargo</span> ·
+                  <span class="compact-year">2025</span>
+                </div>
+              </div>
+              <div class="expand-panel">
+                <div class="expand-inner">
+                  <div class="expand-image">
+                    <img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de Uma Casa de Bonecas" />
+                  </div>
+                  <div class="expand-text">
+                    <p>Espaço para sinopse curta, contexto da montagem, função exercida e imagem da obra.</p>
+                    <p>Nesta etapa, o bloco serve para definir o comportamento visual da expansão vertical.</p>
+                  </div>
+                </div>
               </div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>Shakespeare Apaixonado</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Lord Wessex</span> ·
-                <span class="compact-dir">direção Rafael Gomes</span> ·
-                <span class="compact-year">2024</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Shakespeare Apaixonado</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Lord Wessex</span> ·
+                  <span class="compact-dir">direção Rafael Gomes</span> ·
+                  <span class="compact-year">2024</span>
+                </div>
+              </div>
+              <div class="expand-panel">
+                <div class="expand-inner">
+                  <div class="expand-image">
+                    <img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de Shakespeare Apaixonado" />
+                  </div>
+                  <div class="expand-text">
+                    <p>Espaço para sinopse curta, contexto da montagem, função exercida e imagem da obra.</p>
+                    <p>Depois a gente troca este texto genérico pelo conteúdo específico da peça.</p>
+                  </div>
+                </div>
               </div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>Tom na Fazenda</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Francis</span> ·
-                <span class="compact-dir">direção Rodrigo Portella</span> ·
-                <span class="compact-year">2017–2021</span>
-                <span class="compact-note">Prêmio Shell – Melhor Ator · Prêmio Cesgranrio – Melhor Ator · Prêmio Botequim Cultural – Melhor Ator Coadjuvante · Prêmio Cenym – Melhor Ator Coadjuvante</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Tom na Fazenda</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Francis</span> ·
+                  <span class="compact-dir">direção Rodrigo Portella</span> ·
+                  <span class="compact-year">2017–2021</span>
+                  <span class="compact-note">Prêmio Shell – Melhor Ator · Prêmio Cesgranrio – Melhor Ator · Prêmio Botequim Cultural – Melhor Ator Coadjuvante · Prêmio Cenym – Melhor Ator Coadjuvante</span>
+                </div>
+              </div>
+              <div class="expand-panel">
+                <div class="expand-inner">
+                  <div class="expand-image">
+                    <img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem de Tom na Fazenda" />
+                  </div>
+                  <div class="expand-text">
+                    <p>Espaço para texto curto sobre a montagem, circulação, prêmios e recepção crítica.</p>
+                    <p>Aqui já há uma imagem válida da peça, que pode ficar como base até a seleção final do material visual.</p>
+                  </div>
+                </div>
               </div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>Ovono</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Adão</span> ·
-                <span class="compact-dir">direção Ricardo Karman</span> ·
-                <span class="compact-year">2016</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Ovono</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Adão</span> ·
+                  <span class="compact-dir">direção Ricardo Karman</span> ·
+                  <span class="compact-year">2016</span>
+                </div>
+              </div>
+              <div class="expand-panel">
+                <div class="expand-inner">
+                  <div class="expand-image">
+                    <img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de Ovono" />
+                  </div>
+                  <div class="expand-text">
+                    <p>Espaço para sinopse curta, função, contexto da criação e imagem.</p>
+                    <p>O comportamento do bloco já está igual ao do Terminal.</p>
+                  </div>
+                </div>
               </div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>Sobre Ratos e Homens</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Slim</span> ·
-                <span class="compact-dir">direção Kiko Marques</span> ·
-                <span class="compact-year">2016</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Sobre Ratos e Homens</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Slim</span> ·
+                  <span class="compact-dir">direção Kiko Marques</span> ·
+                  <span class="compact-year">2016</span>
+                </div>
+              </div>
+              <div class="expand-panel">
+                <div class="expand-inner">
+                  <div class="expand-image">
+                    <img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de Sobre Ratos e Homens" />
+                  </div>
+                  <div class="expand-text">
+                    <p>Espaço para sinopse curta, função, contexto da criação e imagem.</p>
+                    <p>Depois a gente substitui pelo conteúdo real da montagem.</p>
+                  </div>
+                </div>
               </div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>Animais na Pista</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Léo</span> ·
-                <span class="compact-dir">direção Isabel Teixeira</span> ·
-                <span class="compact-year">2015</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Animais na Pista</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Léo</span> ·
+                  <span class="compact-dir">direção Isabel Teixeira</span> ·
+                  <span class="compact-year">2015</span>
+                </div>
+              </div>
+              <div class="expand-panel">
+                <div class="expand-inner">
+                  <div class="expand-image">
+                    <img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de Animais na Pista" />
+                  </div>
+                  <div class="expand-text">
+                    <p>Espaço para sinopse curta, função, contexto da criação e imagem.</p>
+                    <p>O bloco expandido agora acompanha a mesma lógica em todo o teatro.</p>
+                  </div>
+                </div>
               </div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>O Rei Leão</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">diretor residente</span> ·
-                <span class="compact-dir">direção original Julie Taymor</span> ·
-                <span class="compact-year">2013–2014</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>O Rei Leão</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">diretor residente</span> ·
+                  <span class="compact-dir">direção original Julie Taymor</span> ·
+                  <span class="compact-year">2013–2014</span>
+                </div>
+              </div>
+              <div class="expand-panel">
+                <div class="expand-inner">
+                  <div class="expand-image">
+                    <img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de O Rei Leão" />
+                  </div>
+                  <div class="expand-text">
+                    <p>Espaço para breve nota sobre função de direção, contexto da produção e imagem.</p>
+                    <p>Depois entra o texto real desta experiência específica.</p>
+                  </div>
+                </div>
               </div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>Toc Toc</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Vicente</span> ·
-                <span class="compact-dir">direção Alexandre Heinecke</span> ·
-                <span class="compact-year">2011–2012</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Toc Toc</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Vicente</span> ·
+                  <span class="compact-dir">direção Alexandre Heinecke</span> ·
+                  <span class="compact-year">2011–2012</span>
+                </div>
+              </div>
+              <div class="expand-panel">
+                <div class="expand-inner">
+                  <div class="expand-image">
+                    <img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de Toc Toc" />
+                  </div>
+                  <div class="expand-text">
+                    <p>Espaço para sinopse curta, função, contexto da criação e imagem.</p>
+                    <p>O conteúdo final entra depois sem mexer mais na estrutura.</p>
+                  </div>
+                </div>
               </div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>Biliri e o Pote Vazio</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Imperador e outros</span> ·
-                <span class="compact-dir">direção Ricardo Karman</span> ·
-                <span class="compact-year">2011</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Biliri e o Pote Vazio</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Imperador e outros</span> ·
+                  <span class="compact-dir">direção Ricardo Karman</span> ·
+                  <span class="compact-year">2011</span>
+                </div>
+              </div>
+              <div class="expand-panel">
+                <div class="expand-inner">
+                  <div class="expand-image">
+                    <img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de Biliri e o Pote Vazio" />
+                  </div>
+                  <div class="expand-text">
+                    <p>Espaço para sinopse curta, função, contexto da criação e imagem.</p>
+                    <p>O teste visual já vale para toda a seção.</p>
+                  </div>
+                </div>
               </div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>A Pantera</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Ele</span> ·
-                <span class="compact-dir">texto Camila Appel</span> ·
-                <span class="compact-year">2010</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>A Pantera</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Ele</span> ·
+                  <span class="compact-dir">texto Camila Appel</span> ·
+                  <span class="compact-year">2010</span>
+                </div>
+              </div>
+              <div class="expand-panel">
+                <div class="expand-inner">
+                  <div class="expand-image">
+                    <img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de A Pantera" />
+                  </div>
+                  <div class="expand-text">
+                    <p>Espaço para breve texto, imagem e contexto do trabalho.</p>
+                    <p>Depois a gente ajusta peça por peça com material real.</p>
+                  </div>
+                </div>
               </div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>Teatrokê</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Apresentador e outros</span> ·
-                <span class="compact-dir">direção Ricardo Karman</span> ·
-                <span class="compact-year">2010</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Teatrokê</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Apresentador e outros</span> ·
+                  <span class="compact-dir">direção Ricardo Karman</span> ·
+                  <span class="compact-year">2010</span>
+                </div>
+              </div>
+              <div class="expand-panel">
+                <div class="expand-inner">
+                  <div class="expand-image">
+                    <img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de Teatrokê" />
+                  </div>
+                  <div class="expand-text">
+                    <p>Espaço para breve texto, imagem e contexto do trabalho.</p>
+                    <p>Estrutura pronta para conteúdo específico quando você quiser.</p>
+                  </div>
+                </div>
               </div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>Na Solidão dos Campos de Algodão</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Dealer</span> ·
-                <span class="compact-dir">direção Caco Ciocler</span> ·
-                <span class="compact-year">2009</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Na Solidão dos Campos de Algodão</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Dealer</span> ·
+                  <span class="compact-dir">direção Caco Ciocler</span> ·
+                  <span class="compact-year">2009</span>
+                </div>
+              </div>
+              <div class="expand-panel">
+                <div class="expand-inner">
+                  <div class="expand-image">
+                    <img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de Na Solidão dos Campos de Algodão" />
+                  </div>
+                  <div class="expand-text">
+                    <p>Espaço para breve texto, imagem e contexto do trabalho.</p>
+                    <p>Depois a gente personaliza com material real desta montagem.</p>
+                  </div>
+                </div>
               </div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>Os Assassinos de Inês de Castro</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Pedro</span> ·
-                <span class="compact-dir">direção Rui Xavier</span> ·
-                <span class="compact-year">2008</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Os Assassinos de Inês de Castro</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Pedro</span> ·
+                  <span class="compact-dir">direção Rui Xavier</span> ·
+                  <span class="compact-year">2008</span>
+                </div>
+              </div>
+              <div class="expand-panel">
+                <div class="expand-inner">
+                  <div class="expand-image">
+                    <img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de Os Assassinos de Inês de Castro" />
+                  </div>
+                  <div class="expand-text">
+                    <p>Espaço para breve texto, imagem e contexto do trabalho.</p>
+                    <p>O bloco está pronto para receber o material definitivo.</p>
+                  </div>
+                </div>
               </div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>O Kronoscópio</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">José Félix</span> ·
-                <span class="compact-dir">direção Ricardo Karman</span> ·
-                <span class="compact-year">2007</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>O Kronoscópio</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">José Félix</span> ·
+                  <span class="compact-dir">direção Ricardo Karman</span> ·
+                  <span class="compact-year">2007</span>
+                </div>
+              </div>
+              <div class="expand-panel">
+                <div class="expand-inner">
+                  <div class="expand-image">
+                    <img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de O Kronoscópio" />
+                  </div>
+                  <div class="expand-text">
+                    <p>Espaço para breve texto, imagem e contexto do trabalho.</p>
+                    <p>O comportamento visual agora está replicado em toda a seção.</p>
+                  </div>
+                </div>
               </div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>Por Trás do Céu</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Micuim</span> ·
-                <span class="compact-dir">direção Caio Soh</span> ·
-                <span class="compact-year">2006</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Por Trás do Céu</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Micuim</span> ·
+                  <span class="compact-dir">direção Caio Soh</span> ·
+                  <span class="compact-year">2006</span>
+                </div>
+              </div>
+              <div class="expand-panel">
+                <div class="expand-inner">
+                  <div class="expand-image">
+                    <img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de Por Trás do Céu" />
+                  </div>
+                  <div class="expand-text">
+                    <p>Espaço para breve texto, imagem e contexto do trabalho.</p>
+                    <p>Depois a gente substitui esse conteúdo de teste pelo texto final.</p>
+                  </div>
+                </div>
               </div>
             </article>
+
           </div>
         </div>
       </div>
@@ -1060,123 +1248,174 @@
       <div class="section-body">
         <div class="compact-block" style="margin-top:0;padding-top:0;border-top:0;">
           <div class="compact-list">
-            <article class="compact-row">
-              <div class="compact-name"><strong>Justino</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Pastor Lauris</span> ·
-                <span class="compact-dir">José Eduardo Belmonte</span> ·
-                <span class="compact-year">em pós-produção</span>
+
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Justino</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Pastor Lauris</span> ·
+                  <span class="compact-dir">José Eduardo Belmonte</span> ·
+                  <span class="compact-year">em pós-produção</span>
+                </div>
+              </div>
+              <div class="expand-panel">
+                <div class="expand-inner">
+                  <div class="expand-image">
+                    <img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de Justino" />
+                  </div>
+                  <div class="expand-text">
+                    <p>Espaço para breve apresentação do trabalho, personagem, contexto e imagem.</p>
+                    <p>No audiovisual, usei uma imagem temporária válida para visualizar o comportamento do bloco.</p>
+                  </div>
+                </div>
               </div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>Reencarne</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Ricardo</span> ·
-                <span class="compact-dir">Bruno Safadi e Noa Bressani</span> ·
-                <span class="compact-year">Globoplay / TV Globo · 2025</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Reencarne</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Ricardo</span> ·
+                  <span class="compact-dir">Bruno Safadi e Noa Bressani</span> ·
+                  <span class="compact-year">Globoplay / TV Globo · 2025</span>
+                </div>
               </div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de Reencarne" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Depois a gente substitui pelo material específico da série.</p></div></div></div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>Paulo, o Apóstolo</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Apolo</span> ·
-                <span class="compact-year">Record TV · 2025</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Paulo, o Apóstolo</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Apolo</span> ·
+                  <span class="compact-year">Record TV · 2025</span>
+                </div>
               </div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de Paulo, o Apóstolo" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Estrutura pronta para receber a imagem correta da produção.</p></div></div></div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>A Vida Pela Frente</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Ivo</span> ·
-                <span class="compact-dir">Bruno Safadi e Leandra Leal</span> ·
-                <span class="compact-year">Globoplay / TV Globo · 2023</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>A Vida Pela Frente</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Ivo</span> ·
+                  <span class="compact-dir">Bruno Safadi e Leandra Leal</span> ·
+                  <span class="compact-year">Globoplay / TV Globo · 2023</span>
+                </div>
               </div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de A Vida Pela Frente" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Depois a gente ajusta item por item com texto e stills reais.</p></div></div></div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>Só Se For Por Amor</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">César</span> ·
-                <span class="compact-dir">Ana Azevedo</span> ·
-                <span class="compact-year">Netflix · 2022</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Só Se For Por Amor</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">César</span> ·
+                  <span class="compact-dir">Ana Azevedo</span> ·
+                  <span class="compact-year">Netflix · 2022</span>
+                </div>
               </div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de Só Se For Por Amor" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>O movimento de abertura agora é o mesmo em toda a seção.</p></div></div></div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>Coisa Mais Linda</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Augusto</span> ·
-                <span class="compact-dir">Caito Ortiz, Julia Rezende e Hugo Prata</span> ·
-                <span class="compact-year">Netflix · 2019–2020</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Coisa Mais Linda</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Augusto</span> ·
+                  <span class="compact-dir">Caito Ortiz, Julia Rezende e Hugo Prata</span> ·
+                  <span class="compact-year">Netflix · 2019–2020</span>
+                </div>
               </div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem de Coisa Mais Linda" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Aqui a imagem já conversa melhor com o universo audiovisual do bloco.</p></div></div></div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>Aruanas</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Gregory</span> ·
-                <span class="compact-dir">Luiz Felipe Binder, Carlos Manga Jr. e Estela Renner</span> ·
-                <span class="compact-year">Globoplay / TV Globo · 2019–2021</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Aruanas</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Gregory</span> ·
+                  <span class="compact-dir">Luiz Felipe Binder, Carlos Manga Jr. e Estela Renner</span> ·
+                  <span class="compact-year">Globoplay / TV Globo · 2019–2021</span>
+                </div>
               </div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de Aruanas" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Depois a imagem correta entra sem alterar a estrutura.</p></div></div></div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>Os Homens São de Marte</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Léo</span> ·
-                <span class="compact-dir">Suzana Garcia</span> ·
-                <span class="compact-year">GNT / Globosat · 2019</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Os Homens São de Marte</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Léo</span> ·
+                  <span class="compact-dir">Suzana Garcia</span> ·
+                  <span class="compact-year">GNT / Globosat · 2019</span>
+                </div>
               </div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de Os Homens São de Marte" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Bloco expandido pronto para receber texto final.</p></div></div></div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>O Jardim Secreto de Mariana</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">João</span> ·
-                <span class="compact-dir">Sérgio Rezende</span> ·
-                <span class="compact-year">2021</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>O Jardim Secreto de Mariana</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">João</span> ·
+                  <span class="compact-dir">Sérgio Rezende</span> ·
+                  <span class="compact-year">2021</span>
+                </div>
               </div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de O Jardim Secreto de Mariana" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Depois a imagem e a descrição específicas entram aqui.</p></div></div></div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>Depois a Louca Sou Eu</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Gilberto</span> ·
-                <span class="compact-dir">Julia Rezende</span> ·
-                <span class="compact-year">2021</span>
-                <span class="compact-note">Grande Prêmio do Cinema Brasileiro – Melhor Longa de Comédia</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Depois a Louca Sou Eu</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Gilberto</span> ·
+                  <span class="compact-dir">Julia Rezende</span> ·
+                  <span class="compact-year">2021</span>
+                  <span class="compact-note">Grande Prêmio do Cinema Brasileiro – Melhor Longa de Comédia</span>
+                </div>
               </div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de Depois a Louca Sou Eu" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Também cabe aqui um comentário curto sobre prêmio e recepção.</p></div></div></div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>Maria do Caritó</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Anatoli</span> ·
-                <span class="compact-dir">João Paulo Jabour</span> ·
-                <span class="compact-year">2019</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Maria do Caritó</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Anatoli</span> ·
+                  <span class="compact-dir">João Paulo Jabour</span> ·
+                  <span class="compact-year">2019</span>
+                </div>
               </div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de Maria do Caritó" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Depois a gente afina cada descrição sem mexer no comportamento visual.</p></div></div></div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>O Doutrinador</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Anterinho</span> ·
-                <span class="compact-dir">Gustavo Bonafé</span> ·
-                <span class="compact-year">2018</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>O Doutrinador</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Anterinho</span> ·
+                  <span class="compact-dir">Gustavo Bonafé</span> ·
+                  <span class="compact-year">2018</span>
+                </div>
               </div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de O Doutrinador" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Estrutura pronta para conteúdo definitivo.</p></div></div></div>
             </article>
 
-            <article class="compact-row">
-              <div class="compact-name"><strong>Divórcio</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">Catanduva</span> ·
-                <span class="compact-dir">Pedro Amorim</span> ·
-                <span class="compact-year">2017</span>
-                <span class="compact-note">Grande Prêmio do Cinema Brasileiro – Melhor Longa de Comédia</span>
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Divórcio</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">Catanduva</span> ·
+                  <span class="compact-dir">Pedro Amorim</span> ·
+                  <span class="compact-year">2017</span>
+                  <span class="compact-note">Grande Prêmio do Cinema Brasileiro – Melhor Longa de Comédia</span>
+                </div>
               </div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de Divórcio" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Aqui também cabe um comentário breve sobre o prêmio do longa.</p></div></div></div>
             </article>
+
           </div>
         </div>
       </div>
@@ -1190,13 +1429,28 @@
       <div class="section-body">
         <div class="compact-block" style="margin-top:0;padding-top:0;border-top:0;">
           <div class="compact-list">
-            <article class="compact-row">
-              <div class="compact-name"><strong>Como Não Morrer de uma Só Vez</strong></div>
-              <div class="compact-info">
-                <span class="compact-role">romance</span> ·
-                <span class="compact-year">2023</span>
+
+            <article class="expandable-entry" tabindex="0">
+              <div class="expand-head">
+                <div class="compact-name"><strong>Como Não Morrer de uma Só Vez</strong></div>
+                <div class="compact-info">
+                  <span class="compact-role">romance</span> ·
+                  <span class="compact-year">2023</span>
+                </div>
+              </div>
+              <div class="expand-panel">
+                <div class="expand-inner">
+                  <div class="expand-image">
+                    <img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/9R4A5628.jpg" alt="Imagem temporária de Como Não Morrer de uma Só Vez" />
+                  </div>
+                  <div class="expand-text">
+                    <p>Espaço para texto curto sobre o livro, seu lançamento e imagem de capa ou divulgação.</p>
+                    <p>Nesta fase, o bloco existe para visualizar a expansão vertical também na literatura.</p>
+                  </div>
+                </div>
               </div>
             </article>
+
           </div>
         </div>
       </div>
@@ -1278,20 +1532,18 @@
       button.addEventListener('click', () => setPreview(button));
     });
 
-    const terminalExpand = document.getElementById('terminal-expand');
-
-    if (terminalExpand) {
-      terminalExpand.addEventListener('click', () => {
-        terminalExpand.classList.toggle('is-open');
+    document.querySelectorAll('.expandable-entry').forEach((entry) => {
+      entry.addEventListener('click', () => {
+        entry.classList.toggle('is-open');
       });
 
-      terminalExpand.addEventListener('keydown', (event) => {
+      entry.addEventListener('keydown', (event) => {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
-          terminalExpand.classList.toggle('is-open');
+          entry.classList.toggle('is-open');
         }
       });
-    }
+    });
   </script>
 
 </body>
