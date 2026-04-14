@@ -302,11 +302,12 @@
 
     .preview{
       position:sticky;
-      top:102px;
+      top:0;
       align-self:start;
-      padding-top:2px;
+      padding-top:0;
       border-top:1px solid var(--line-strong);
       min-height:560px;
+      background:var(--bg);
     }
 
     .preview-image{
@@ -437,18 +438,38 @@
       max-height:0;
       opacity:0;
       overflow:hidden;
-      transform:translateY(-6px);
+      transform:translateY(-4px);
       transition:
-        max-height .62s cubic-bezier(.22,1,.36,1),
-        opacity .34s ease,
-        transform .42s ease;
+        max-height 1.9s cubic-bezier(.16,1,.3,1),
+        opacity 1.15s ease,
+        transform 1.45s cubic-bezier(.16,1,.3,1);
       will-change:max-height, opacity, transform;
+    }
+
+    .expand-image,
+    .expand-text{
+      opacity:0;
+      transform:translateY(8px);
+      transition:
+        opacity 1.05s ease,
+        transform 1.35s cubic-bezier(.16,1,.3,1);
+      transition-delay:.12s;
     }
 
     .expandable-entry:hover .expand-panel,
     .expandable-entry:focus-within .expand-panel,
     .expandable-entry.is-open .expand-panel{
-      max-height:760px;
+      max-height:900px;
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .expandable-entry:hover .expand-image,
+    .expandable-entry:hover .expand-text,
+    .expandable-entry:focus-within .expand-image,
+    .expandable-entry:focus-within .expand-text,
+    .expandable-entry.is-open .expand-image,
+    .expandable-entry.is-open .expand-text{
       opacity:1;
       transform:translateY(0);
     }
@@ -1074,7 +1095,7 @@
                     <img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de Toc Toc" />
                   </div>
                   <div class="expand-text">
-                    <p>Espaço para sinopse curta, função, contexto da criação e imagem.</p>
+                    <p>Espaço para texto curto, contexto do trabalho e imagem.</p>
                     <p>O conteúdo final entra depois sem mexer mais na estrutura.</p>
                   </div>
                 </div>
@@ -1096,7 +1117,7 @@
                     <img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de Biliri e o Pote Vazio" />
                   </div>
                   <div class="expand-text">
-                    <p>Espaço para sinopse curta, função, contexto da criação e imagem.</p>
+                    <p>Espaço para texto curto, contexto do trabalho e imagem.</p>
                     <p>O teste visual já vale para toda a seção.</p>
                   </div>
                 </div>
@@ -1261,7 +1282,7 @@
               <div class="expand-panel">
                 <div class="expand-inner">
                   <div class="expand-image">
-                    <img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de Justino" />
+                    <img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de Justino" />
                   </div>
                   <div class="expand-text">
                     <p>Espaço para breve apresentação do trabalho, personagem, contexto e imagem.</p>
@@ -1280,7 +1301,7 @@
                   <span class="compact-year">Globoplay / TV Globo · 2025</span>
                 </div>
               </div>
-              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de Reencarne" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Depois a gente substitui pelo material específico da série.</p></div></div></div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de Reencarne" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Depois a gente substitui pelo material específico da série.</p></div></div></div>
             </article>
 
             <article class="expandable-entry" tabindex="0">
@@ -1291,7 +1312,7 @@
                   <span class="compact-year">Record TV · 2025</span>
                 </div>
               </div>
-              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de Paulo, o Apóstolo" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Estrutura pronta para receber a imagem correta da produção.</p></div></div></div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de Paulo, o Apóstolo" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Estrutura pronta para receber a imagem correta da produção.</p></div></div></div>
             </article>
 
             <article class="expandable-entry" tabindex="0">
@@ -1303,7 +1324,7 @@
                   <span class="compact-year">Globoplay / TV Globo · 2023</span>
                 </div>
               </div>
-              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de A Vida Pela Frente" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Depois a gente ajusta item por item com texto e stills reais.</p></div></div></div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de A Vida Pela Frente" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Depois a gente ajusta item por item com texto e stills reais.</p></div></div></div>
             </article>
 
             <article class="expandable-entry" tabindex="0">
@@ -1315,7 +1336,7 @@
                   <span class="compact-year">Netflix · 2022</span>
                 </div>
               </div>
-              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de Só Se For Por Amor" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>O movimento de abertura agora é o mesmo em toda a seção.</p></div></div></div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de Só Se For Por Amor" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>O movimento de abertura agora é o mesmo em toda a seção.</p></div></div></div>
             </article>
 
             <article class="expandable-entry" tabindex="0">
@@ -1327,7 +1348,7 @@
                   <span class="compact-year">Netflix · 2019–2020</span>
                 </div>
               </div>
-              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem de Coisa Mais Linda" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Aqui a imagem já conversa melhor com o universo audiovisual do bloco.</p></div></div></div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem de Coisa Mais Linda" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Aqui a imagem já conversa melhor com o universo audiovisual do bloco.</p></div></div></div>
             </article>
 
             <article class="expandable-entry" tabindex="0">
@@ -1339,7 +1360,7 @@
                   <span class="compact-year">Globoplay / TV Globo · 2019–2021</span>
                 </div>
               </div>
-              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de Aruanas" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Depois a imagem correta entra sem alterar a estrutura.</p></div></div></div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de Aruanas" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Depois a imagem correta entra sem alterar a estrutura.</p></div></div></div>
             </article>
 
             <article class="expandable-entry" tabindex="0">
@@ -1351,7 +1372,7 @@
                   <span class="compact-year">GNT / Globosat · 2019</span>
                 </div>
               </div>
-              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de Os Homens São de Marte" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Bloco expandido pronto para receber texto final.</p></div></div></div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de Os Homens São de Marte" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Bloco expandido pronto para receber texto final.</p></div></div></div>
             </article>
 
             <article class="expandable-entry" tabindex="0">
@@ -1363,7 +1384,7 @@
                   <span class="compact-year">2021</span>
                 </div>
               </div>
-              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de O Jardim Secreto de Mariana" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Depois a imagem e a descrição específicas entram aqui.</p></div></div></div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de O Jardim Secreto de Mariana" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Depois a imagem e a descrição específicas entram aqui.</p></div></div></div>
             </article>
 
             <article class="expandable-entry" tabindex="0">
@@ -1376,7 +1397,7 @@
                   <span class="compact-note">Grande Prêmio do Cinema Brasileiro – Melhor Longa de Comédia</span>
                 </div>
               </div>
-              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de Depois a Louca Sou Eu" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Também cabe aqui um comentário curto sobre prêmio e recepção.</p></div></div></div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de Depois a Louca Sou Eu" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Também cabe aqui um comentário curto sobre prêmio e recepção.</p></div></div></div>
             </article>
 
             <article class="expandable-entry" tabindex="0">
@@ -1388,7 +1409,7 @@
                   <span class="compact-year">2019</span>
                 </div>
               </div>
-              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de Maria do Caritó" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Depois a gente afina cada descrição sem mexer no comportamento visual.</p></div></div></div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de Maria do Caritó" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Depois a gente afina cada descrição sem mexer no comportamento visual.</p></div></div></div>
             </article>
 
             <article class="expandable-entry" tabindex="0">
@@ -1400,7 +1421,7 @@
                   <span class="compact-year">2018</span>
                 </div>
               </div>
-              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de O Doutrinador" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Estrutura pronta para conteúdo definitivo.</p></div></div></div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de O Doutrinador" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Estrutura pronta para conteúdo definitivo.</p></div></div></div>
             </article>
 
             <article class="expandable-entry" tabindex="0">
@@ -1413,7 +1434,7 @@
                   <span class="compact-note">Grande Prêmio do Cinema Brasileiro – Melhor Longa de Comédia</span>
                 </div>
               </div>
-              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/augusto-gustavo-vaz-coisa-mais-linda-reproducao-netflix.webp" alt="Imagem temporária de Divórcio" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Aqui também cabe um comentário breve sobre o prêmio do longa.</p></div></div></div>
+              <div class="expand-panel"><div class="expand-inner"><div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/2019-04-05%20Tom%20na%20Fazenda%20Guto%201138.jpg" alt="Imagem temporária de Divórcio" /></div><div class="expand-text"><p>Espaço para texto curto, contexto do trabalho e imagem.</p><p>Aqui também cabe um comentário breve sobre o prêmio do longa.</p></div></div></div>
             </article>
 
           </div>
