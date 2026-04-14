@@ -99,8 +99,12 @@
       gap:16px;
     }
 
-    .nav-group + .nav-group{
-      margin-left:34px;
+    .nav-divider{
+      width:1px;
+      height:14px;
+      margin:0 18px;
+      background:rgba(0,0,0,.22);
+      flex:0 0 auto;
     }
 
     .nav a{
@@ -143,10 +147,10 @@
       top:24px;
       right:0;
       bottom:0;
-      width:min(72vw, 1280px);
+      left:0;
+      width:100%;
       z-index:1;
       overflow:hidden;
-      border-left:1px solid rgba(255,255,255,.16);
     }
 
     .hero-image-band img{
@@ -155,20 +159,6 @@
       object-fit:cover;
       object-position:center center;
       filter:brightness(.72);
-    }
-
-    .hero-overlay{
-      position:absolute;
-      inset:0;
-      z-index:2;
-      background:linear-gradient(
-        90deg,
-        rgba(0,0,0,.78) 0%,
-        rgba(0,0,0,.54) 26%,
-        rgba(0,0,0,.12) 52%,
-        rgba(0,0,0,0) 72%
-      );
-      pointer-events:none;
     }
 
     .hero-grid{
@@ -211,16 +201,6 @@
 
     .hero-title span{
       display:block;
-    }
-
-    .hero-lines{
-      margin-top:28px;
-      display:grid;
-      gap:8px;
-      max-width:560px;
-      font-size:clamp(22px, 2.25vw, 28px);
-      line-height:1.36;
-      color:#fff;
     }
 
     .hero-spacer{
@@ -323,7 +303,7 @@
 
     .preview{
       position:sticky;
-      top:0;
+      top:96px;
       align-self:start;
       padding-top:0;
       min-height:560px;
@@ -601,16 +581,6 @@
         width:100%;
       }
 
-      .hero-overlay{
-        background:linear-gradient(
-          180deg,
-          rgba(0,0,0,.52) 0%,
-          rgba(0,0,0,.28) 38%,
-          rgba(0,0,0,.08) 62%,
-          rgba(0,0,0,0) 100%
-        );
-      }
-
       .hero-grid,
       .works-layout{
         grid-template-columns:1fr;
@@ -674,8 +644,8 @@
         gap:12px;
       }
 
-      .nav-group + .nav-group{
-        margin-left:0;
+      .nav-divider{
+        display:none;
       }
 
       .hero{
@@ -693,10 +663,6 @@
 
       .work-year{
         padding-top:0;
-      }
-
-      .hero-lines{
-        font-size:clamp(20px, 5vw, 25px);
       }
     }
 
@@ -721,6 +687,8 @@
           <a href="#literatura">Literatura</a>
         </div>
 
+        <span class="nav-divider" aria-hidden="true"></span>
+
         <div class="nav-group">
           <a href="midia.html">Mídia</a>
           <a href="#sobre">Sobre</a>
@@ -743,7 +711,6 @@
         alt="Gustavo Vaz em cena"
       />
     </div>
-    <div class="hero-overlay"></div>
 
     <div class="hero-grid">
       <div class="hero-copy">
@@ -753,12 +720,6 @@
           <span>Gustavo</span>
           <span>Vaz</span>
         </h1>
-
-        <div class="hero-lines">
-          <div>Atuação. Dramaturgia.</div>
-          <div>Arte e tecnologia.</div>
-          <div>Escuta, mediação, cidade.</div>
-        </div>
       </div>
 
       <div class="hero-spacer" aria-hidden="true"></div>
