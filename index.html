@@ -279,21 +279,25 @@
 
     .work-name{
   margin:0;
-  display:inline;
-  padding:.06em .14em .1em;
   font-family:'Manrope',sans-serif;
   font-size:clamp(28px, 3.4vw, 46px);
-  line-height:.98;
+  line-height:1.02;
   letter-spacing:-.05em;
   font-weight:800;
   color:var(--text);
-  background:transparent;
-  transition:transform .18s ease, background-color .18s ease, color .18s ease;
   overflow-wrap:anywhere;
+  max-width:100%;
+}
+    .work-name-text{
+  display:inline;
+  padding:.06em .14em .1em;
+  background:transparent;
+  color:inherit;
+  transition:transform .18s ease, background-color .18s ease, color .18s ease;
   -webkit-box-decoration-break:clone;
   box-decoration-break:clone;
 }
-
+    
     .work-kind{
       margin:8px 0 0;
       font-size:13px;
@@ -302,9 +306,9 @@
       color:var(--muted);
     }
 
-    .work-button:hover .work-name,
-.work-button:focus-visible .work-name,
-.work-button.is-active .work-name{
+    .work-button:hover .work-name-text,
+.work-button:focus-visible .work-name-text,
+.work-button.is-active .work-name-text{
   transform:translateX(8px);
   background:#111;
   color:#fff;
@@ -1547,6 +1551,12 @@
       button.addEventListener('click', () => setPreview(button));
     });
 
+document.querySelectorAll('.work-name').forEach((title) => {
+  if (!title.querySelector('.work-name-text')) {
+    title.innerHTML = `<span class="work-name-text">${title.innerHTML}</span>`;
+  }
+});
+    
     const accordionItems = Array.from(document.querySelectorAll('.accordion-item'));
 
     accordionItems.forEach((item) => {
