@@ -279,7 +279,7 @@
 
     .work-name{
   margin:0;
-  display:inline-block;
+  display:inline;
   padding:.06em .14em .1em;
   font-family:'Manrope',sans-serif;
   font-size:clamp(28px, 3.4vw, 46px);
@@ -289,6 +289,9 @@
   color:var(--text);
   background:transparent;
   transition:transform .18s ease, background-color .18s ease, color .18s ease;
+  overflow-wrap:anywhere;
+  -webkit-box-decoration-break:clone;
+  box-decoration-break:clone;
 }
 
     .work-kind{
