@@ -162,17 +162,17 @@
     }
 
     .hero-grid{
-  position:relative;
-  z-index:3;
-  width:min(100%, var(--max));
-  margin:0 auto;
-  min-height:76vh;
-  display:grid;
-  grid-template-columns:minmax(0, .88fr) minmax(420px, 1.12fr);
-  gap:28px;
-  align-items:end;
-  padding:0 26px 24px;
-}
+      position:relative;
+      z-index:3;
+      width:min(100%, var(--max));
+      margin:0 auto;
+      min-height:76vh;
+      display:grid;
+      grid-template-columns:minmax(0, .88fr) minmax(420px, 1.12fr);
+      gap:28px;
+      align-items:end;
+      padding:0 26px 24px;
+    }
 
     .hero-copy{
       color:#fff;
@@ -189,15 +189,15 @@
     }
 
     .hero-title{
-  margin:10px 0 0 -10px;
-  font-family:'Oswald',sans-serif;
-  font-size:clamp(52px, 7.2vw, 108px);
-  line-height:.92;
-  letter-spacing:-.04em;
-  font-weight:700;
-  color:#fff;
-  text-shadow:0 1px 1px rgba(0,0,0,.08);
-}
+      margin:10px 0 0 -10px;
+      font-family:'Oswald',sans-serif;
+      font-size:clamp(52px, 7.2vw, 108px);
+      line-height:.92;
+      letter-spacing:-.04em;
+      font-weight:700;
+      color:#fff;
+      text-shadow:0 1px 1px rgba(0,0,0,.08);
+    }
 
     .hero-title span{
       display:block;
@@ -220,14 +220,25 @@
       gap:30px;
     }
 
-    .section-label{
-      margin:0;
+    .section-sidebar{
       position:sticky;
       top:88px;
       align-self:start;
+    }
+
+    .section-label{
+      margin:0;
       font-size:11px;
       letter-spacing:.20em;
       text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .section-note{
+      margin:10px 0 0;
+      max-width:180px;
+      font-size:12px;
+      line-height:1.55;
       color:var(--muted);
     }
 
@@ -274,49 +285,50 @@
     }
 
     .work-main{
-  min-width:0;
-  display:grid;
-  gap:10px;
-  align-content:start;
-}
+      min-width:0;
+      display:grid;
+      gap:10px;
+      align-content:start;
+    }
 
     .work-name{
-  margin:0;
-  font-family:'Manrope',sans-serif;
-  font-size:clamp(22px, 2.4vw, 34px);
-  line-height:1.04;
-  letter-spacing:-.04em;
-  font-weight:800;
-  color:var(--text);
-  overflow-wrap:anywhere;
-  max-width:100%;
-}
+      margin:0;
+      font-family:'Manrope',sans-serif;
+      font-size:clamp(22px, 2.4vw, 34px);
+      line-height:1.04;
+      letter-spacing:-.04em;
+      font-weight:800;
+      color:var(--text);
+      overflow-wrap:anywhere;
+      max-width:100%;
+    }
+
     .work-name-text{
-  display:inline;
-  padding:.02em 0 .04em;
-  background:transparent;
-  color:inherit;
-  transition:padding .18s ease, background-color .18s ease, color .18s ease;
-  -webkit-box-decoration-break:clone;
-  box-decoration-break:clone;
-}
+      display:inline;
+      padding:.02em 0 .04em;
+      background:transparent;
+      color:inherit;
+      transition:padding .18s ease, background-color .18s ease, color .18s ease;
+      -webkit-box-decoration-break:clone;
+      box-decoration-break:clone;
+    }
     
     .work-kind{
-  margin:0;
-  font-size:12px;
-  line-height:1.3;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:var(--muted);
-}
+      margin:0;
+      font-size:12px;
+      line-height:1.3;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
 
     .work-button:hover .work-name-text,
-.work-button:focus-visible .work-name-text,
-.work-button.is-active .work-name-text{
-  padding:.02em .12em .04em;
-  background:#111;
-  color:#fff;
-}
+    .work-button:focus-visible .work-name-text,
+    .work-button.is-active .work-name-text{
+      padding:.02em .12em .04em;
+      background:#111;
+      color:#fff;
+    }
 
     .preview{
       position:sticky;
@@ -352,15 +364,15 @@
     }
 
     .preview-title{
-  margin:0 0 10px;
-  font-family:'Manrope',sans-serif;
-  font-size:clamp(34px, 4.8vw, 64px);
-  line-height:.92;
-  letter-spacing:-.055em;
-  font-weight:800;
-  max-width:520px;
-  overflow-wrap:anywhere;
-}
+      margin:0 0 10px;
+      font-family:'Manrope',sans-serif;
+      font-size:clamp(34px, 4.8vw, 64px);
+      line-height:.92;
+      letter-spacing:-.055em;
+      font-weight:800;
+      max-width:520px;
+      overflow-wrap:anywhere;
+    }
 
     .preview-meta{
       margin:0 0 16px;
@@ -619,8 +631,12 @@
         grid-template-columns:1fr;
       }
 
-      .section-label{
+      .section-sidebar{
         position:static;
+      }
+
+      .section-note{
+        max-width:100%;
       }
 
       .accordion-button,
@@ -699,7 +715,7 @@
     <div class="topbar-right">
       <nav class="nav">
         <div class="nav-group">
-          <a href="#autoral">Autoral</a>
+          <a href="#pesquisa">Pesquisa</a>
           <a href="#teatro">Teatro</a>
           <a href="#audiovisual">Audiovisual</a>
           <a href="#literatura">Literatura</a>
@@ -741,9 +757,12 @@
     </div>
   </section>
 
-  <section id="autoral" class="section">
+  <section id="pesquisa" class="section">
     <div class="section-grid">
-      <h2 class="section-label">Autoral</h2>
+      <div class="section-sidebar">
+        <h2 class="section-label">Pesquisa</h2>
+        <p class="section-note">Obras interdisciplinares em teatro expandido, dramaturgia site-specific, som, mediação e mídias digitais.</p>
+      </div>
 
       <div class="section-body">
         <div class="works-layout">
@@ -847,11 +866,11 @@
               >
                 <div class="work-year">2019</div>
                 <div class="work-main">
-                <h3 class="work-name">frequencia_ausente.doc</h3>
-                <p class="work-kind">ExCompanhia</p>
-              </div>
-            </button>
-          </article>
+                  <h3 class="work-name">frequencia_ausente.doc</h3>
+                  <p class="work-kind">ExCompanhia</p>
+                </div>
+              </button>
+            </article>
             
             <article class="work-item">
               <button class="work-button"
@@ -902,12 +921,12 @@
           <aside class="preview" aria-live="polite">
             <div class="preview-image">
               <img
-  id="preview-image"
-  src="images/autoral/cf4898ec-376f-419e-b93e-426847234d72.png"
-  alt="Imagem do trabalho selecionado"
-/>
+                id="preview-image"
+                src="images/autoral/cf4898ec-376f-419e-b93e-426847234d72.png"
+                alt="Imagem do trabalho selecionado"
+              />
             </div>
-            <p class="preview-tag">Autoral</p>
+            <p class="preview-tag">Pesquisa</p>
             <h3 class="preview-title" id="preview-title">Natureza</h3>
             <p class="preview-meta" id="preview-meta">2016 - atual · Em processo</p>
             <p class="preview-text" id="preview-text">
@@ -921,7 +940,10 @@
 
   <section id="teatro" class="section">
     <div class="section-grid">
-      <h2 class="section-label">Teatro</h2>
+      <div class="section-sidebar">
+        <h2 class="section-label">Teatro</h2>
+        <p class="section-note">Trabalhos em teatro como ator.</p>
+      </div>
 
       <div class="section-body">
         <div class="compact-block" style="margin-top:0;padding-top:0;border-top:0;">
@@ -1222,7 +1244,10 @@
 
   <section id="audiovisual" class="section">
     <div class="section-grid">
-      <h2 class="section-label">Audiovisual</h2>
+      <div class="section-sidebar">
+        <h2 class="section-label">Audiovisual</h2>
+        <p class="section-note">Trabalhos no audiovisual como ator.</p>
+      </div>
 
       <div class="section-body">
         <div class="compact-block" style="margin-top:0;padding-top:0;border-top:0;">
@@ -1443,7 +1468,10 @@
 
   <section id="literatura" class="section">
     <div class="section-grid">
-      <h2 class="section-label">Literatura</h2>
+      <div class="section-sidebar">
+        <h2 class="section-label">Literatura</h2>
+        <p class="section-note">Trabalhos como escritor.</p>
+      </div>
 
       <div class="section-body">
         <div class="compact-block" style="margin-top:0;padding-top:0;border-top:0;">
@@ -1555,11 +1583,11 @@
       button.addEventListener('click', () => setPreview(button));
     });
 
-document.querySelectorAll('.work-name').forEach((title) => {
-  if (!title.querySelector('.work-name-text')) {
-    title.innerHTML = `<span class="work-name-text">${title.innerHTML}</span>`;
-  }
-});
+    document.querySelectorAll('.work-name').forEach((title) => {
+      if (!title.querySelector('.work-name-text')) {
+        title.innerHTML = `<span class="work-name-text">${title.innerHTML}</span>`;
+      }
+    });
     
     const accordionItems = Array.from(document.querySelectorAll('.accordion-item'));
 
