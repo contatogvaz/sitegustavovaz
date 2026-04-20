@@ -240,6 +240,10 @@
       border-bottom:1px solid var(--line);
     }
 
+    .work-item-mobile-panel{
+  display:none;
+}
+
     .section-grid{
       width:min(100%, var(--max));
       margin:0 auto;
@@ -1940,9 +1944,9 @@ Na Revista Programa, a montagem foi resumida como “teatro de investigação em
                   <div class="expand-inner">
                     <div class="expand-image"><img src="https://raw.githubusercontent.com/contatogvaz/sitegustavovaz/main/9R4A5628.jpg" alt="Imagem temporária de Como Não Morrer de uma Só Vez" /></div>
                     <div class="expand-text">
-                      <p><div class="expand-text">
-  <p>Quando se arrepende de morrer, Walter Galego, ruivo e depressivo, ganha a chance de voltar ao início de sua antiga vida e mudar a própria história graças a um pacto extraordinário com o Nada. Prisioneiro de um corpo que limita suas ações e narrador consciente de sua trajetória desde a própria concepção, ele enfrenta crises de pânico, ressignifica encontros fundamentais, faz descobertas desconcertantes e se vê, mais uma vez, diante do pai violento. Partindo de um suicídio e flertando em muitos momentos com a morte, <em>Como Não Morrer de uma Só Vez</em> concentra-se na trama cotidiana da vida e em nossa busca por sentido, entrelaçada à jornada de um homem que tenta desesperadamente se reconstruir — ou se destruir — num bairro quente da Zona Norte do Rio de Janeiro.</p></div></p>
-                    </div>
+                      <div class="expand-text">
+  <p>Quando se arrepende de morrer, Walter Galego, ruivo e depressivo, ganha a chance de voltar ao início de sua antiga vida e mudar a própria história graças a um pacto extraordinário com o Nada. Prisioneiro de um corpo que limita suas ações e narrador consciente de sua trajetória desde a própria concepção, ele enfrenta crises de pânico, ressignifica encontros fundamentais, faz descobertas desconcertantes e se vê, mais uma vez, diante do pai violento. Partindo de um suicídio e flertando em muitos momentos com a morte, <em>Como Não Morrer de uma Só Vez</em> concentra-se na trama cotidiana da vida e em nossa busca por sentido, entrelaçada à jornada de um homem que tenta desesperadamente se reconstruir — ou se destruir — num bairro quente da Zona Norte do Rio de Janeiro.</p>
+</div>
                     <div class="expand-spacer"></div>
                   </div>
                 </div>
@@ -2007,96 +2011,131 @@ Na Revista Programa, a montagem foi resumida como “teatro de investigação em
     Gustavo Vaz
   </footer>
 
-  <script>
-    const workButtons = document.querySelectorAll('.work-button');
-    const previewTitle = document.getElementById('preview-title');
-    const previewMeta = document.getElementById('preview-meta');
-    const previewText = document.getElementById('preview-text');
-    const previewImage = document.getElementById('preview-image');
+ <script>
+  const pesquisaButtons = document.querySelectorAll('#pesquisa .work-button');
+  const pesquisaItems = document.querySelectorAll('#pesquisa .work-item');
+  const previewTitle = document.getElementById('preview-title');
+  const previewMeta = document.getElementById('preview-meta');
+  const previewText = document.getElementById('preview-text');
+  const previewImage = document.getElementById('preview-image');
 
-    function setPreview(button){
-      workButtons.forEach(btn => btn.classList.remove('is-active'));
-      button.classList.add('is-active');
-      previewTitle.textContent = button.dataset.title;
-      previewMeta.textContent = button.dataset.meta;
-      previewText.textContent = button.dataset.text;
-      previewImage.src = button.dataset.image;
-      previewImage.alt = button.dataset.title;
-    }
+  function setPreview(button) {
+    if (!previewTitle || !previewMeta || !previewText || !previewImage) return;
 
-    workButtons.forEach((button) => {
-  button.addEventListener('mouseenter', () => {
-    if (window.innerWidth <= 760) return;
-    setPreview(button);
-  });
+    pesquisaButtons.forEach((btn) => btn.classList.remove('is-active'));
+    button.classList.add('is-active');
 
-  button.addEventListener('click', () => {
-    if (window.innerWidth > 760) {
+    previewTitle.textContent = button.dataset.title;
+    previewMeta.textContent = button.dataset.meta;
+    previewText.textContent = button.dataset.text;
+    previewImage.src = button.dataset.image;
+    previewImage.alt = button.dataset.title;
+  }
+
+  pesquisaButtons.forEach((button) => {
+    button.addEventListener('mouseenter', () => {
+      if (window.innerWidth <= 760) return;
       setPreview(button);
-      return;
-    }
-
-    const currentItem = button.closest('.work-item');
-    const isOpen = currentItem.classList.contains('is-mobile-open');
-
-    document.querySelectorAll('.work-item').forEach((item) => {
-      item.classList.remove('is-mobile-open');
     });
 
-    workButtons.forEach((btn) => {
-      btn.classList.remove('is-active');
+    button.addEventListener('focus', () => {
+      if (window.innerWidth <= 760) return;
+      setPreview(button);
     });
 
-    if (!isOpen) {
-      currentItem.classList.add('is-mobile-open');
-      button.classList.add('is-active');
+    button.addEventListener('click', () => {
+      if (window.innerWidth > 760) {
+        setPreview(button);
+        return;
+      }
+
+      const currentItem = button.closest('.work-item');
+      const isOpen = currentItem.classList.contains('is-mobile-open');
+
+      pesquisaItems.forEach((item) => {
+        item.classList.remove('is-mobile-open');
+      });
+
+      pesquisaButtons.forEach((btn) => {
+        btn.classList.remove('is-active');
+      });
+
+      if (!isOpen) {
+        currentItem.classList.add('is-mobile-open');
+        button.classList.add('is-active');
+      }
+    });
+  });
+
+  document.querySelectorAll('.work-name').forEach((title) => {
+    if (!title.querySelector('.work-name-text')) {
+      title.innerHTML = `<span class="work-name-text">${title.innerHTML}</span>`;
     }
   });
-});
 
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+  const accordionItems = Array.from(document.querySelectorAll('.accordion-item'));
 
-    function closeMobileMenu(){
-      document.body.classList.remove('menu-open');
-      if (menuToggle) {
-        menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.setAttribute('aria-label', 'Abrir menu');
+  accordionItems.forEach((item) => {
+    const button = item.querySelector('.accordion-button');
+
+    if (!button) return;
+
+    button.addEventListener('click', () => {
+      const isOpen = item.classList.contains('is-open');
+
+      accordionItems.forEach((other) => {
+        other.classList.remove('is-open');
+      });
+
+      if (!isOpen) {
+        item.classList.add('is-open');
       }
-    }
+    });
+  });
 
-    function openMobileMenu(){
-      document.body.classList.add('menu-open');
-      if (menuToggle) {
-        menuToggle.setAttribute('aria-expanded', 'true');
-        menuToggle.setAttribute('aria-label', 'Fechar menu');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+
+  function closeMobileMenu() {
+    document.body.classList.remove('menu-open');
+    if (menuToggle) {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Abrir menu');
+    }
+  }
+
+  function openMobileMenu() {
+    document.body.classList.add('menu-open');
+    if (menuToggle) {
+      menuToggle.setAttribute('aria-expanded', 'true');
+      menuToggle.setAttribute('aria-label', 'Fechar menu');
+    }
+  }
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = document.body.classList.contains('menu-open');
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
       }
-    }
+    });
 
-    if (menuToggle && mobileMenu) {
-      menuToggle.addEventListener('click', () => {
-        const isOpen = document.body.classList.contains('menu-open');
-        if (isOpen) {
-          closeMobileMenu();
-        } else {
-          openMobileMenu();
-        }
+    mobileMenuLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        closeMobileMenu();
       });
+    });
 
-      mobileMenuLinks.forEach((link) => {
-        link.addEventListener('click', () => {
-          closeMobileMenu();
-        });
-      });
-
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 760) {
-          closeMobileMenu();
-        }
-      });
-    }
-  </script>
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 760) {
+        closeMobileMenu();
+      }
+    });
+  }
+</script>
 
 </body>
 </html>
