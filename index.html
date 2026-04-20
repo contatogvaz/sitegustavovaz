@@ -2024,35 +2024,35 @@ Na Revista Programa, a montagem foi resumida como “teatro de investigação em
       previewImage.alt = button.dataset.title;
     }
 
-    workButtons.forEach(button => {
-      button.addEventListener('mouseenter', () => setPreview(button));
-      button.addEventListener('focus', () => setPreview(button));
-      button.addEventListener('click', () => setPreview(button));
+    workButtons.forEach((button) => {
+  button.addEventListener('mouseenter', () => {
+    if (window.innerWidth <= 760) return;
+    setPreview(button);
+  });
+
+  button.addEventListener('click', () => {
+    if (window.innerWidth > 760) {
+      setPreview(button);
+      return;
+    }
+
+    const currentItem = button.closest('.work-item');
+    const isOpen = currentItem.classList.contains('is-mobile-open');
+
+    document.querySelectorAll('.work-item').forEach((item) => {
+      item.classList.remove('is-mobile-open');
     });
 
-    document.querySelectorAll('.work-name').forEach((title) => {
-      if (!title.querySelector('.work-name-text')) {
-        title.innerHTML = `<span class="work-name-text">${title.innerHTML}</span>`;
-      }
+    workButtons.forEach((btn) => {
+      btn.classList.remove('is-active');
     });
-    
-    const accordionItems = Array.from(document.querySelectorAll('.accordion-item'));
 
-    accordionItems.forEach((item) => {
-      const button = item.querySelector('.accordion-button');
-
-      button.addEventListener('click', () => {
-        const isOpen = item.classList.contains('is-open');
-
-        accordionItems.forEach((other) => {
-          other.classList.remove('is-open');
-        });
-
-        if (!isOpen) {
-          item.classList.add('is-open');
-        }
-      });
-    });
+    if (!isOpen) {
+      currentItem.classList.add('is-mobile-open');
+      button.classList.add('is-active');
+    }
+  });
+});
 
     const menuToggle = document.querySelector('.menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
