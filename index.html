@@ -831,10 +831,31 @@
 }
 
     @media (max-width:560px){
-      .hero-title{
-        font-size:80px;
-      }
-    }
+  .hero{
+    padding-top:78px;
+  }
+
+  .hero-grid{
+    min-height:88vh;
+    padding:0 16px 18px;
+  }
+
+  .hero-image-band img{
+    object-position:center 20%;
+  }
+
+  .hero-kicker{
+    margin:0 0 10px;
+    font-size:9px;
+    letter-spacing:.14em;
+    max-width:240px;
+  }
+
+  .hero-title{
+    font-size:clamp(44px, 13.8vw, 62px);
+    white-space:nowrap;
+  }
+}
   </style>
 </head>
 <body>
