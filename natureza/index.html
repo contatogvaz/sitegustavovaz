@@ -1,0 +1,237 @@
+---
+layout: null
+title: NATUREZA | Gustavo Vaz
+description: Registros do processo de NATUREZA.
+permalink: /natureza/
+---
+{% assign posts = site.data.natureza_publicacoes | sort: "date" | reverse %}
+{% assign settings = site.data.natureza_config %}
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Registros do processo de NATUREZA, projeto de Gustavo Vaz.">
+  <meta name="theme-color" content="#ffffff">
+  <title>NATUREZA | Gustavo Vaz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fff;
+      --ink: #111;
+      --muted: #686868;
+      --line: rgba(0,0,0,.14);
+      --max: 1180px;
+      --reading: 720px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; }
+    .site-header {
+      height: 72px;
+      padding: 0 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand, .header-link, .eyebrow, .post-date, .response-link, .footer-link {
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .brand { text-decoration: none; white-space: nowrap; }
+    .header-link { text-decoration: none; color: var(--muted); }
+    .header-link:hover, .footer-link:hover { color: var(--ink); }
+    main { width: min(100% - 52px, var(--max)); margin: 0 auto; }
+    .intro {
+      padding: clamp(70px, 10vw, 132px) 0 clamp(52px, 7vw, 88px);
+      border-bottom: 1px solid var(--line);
+    }
+    .intro-inner { width: min(100%, var(--reading)); }
+    .eyebrow { margin: 0 0 20px; color: var(--muted); }
+    h1 {
+      margin: 0;
+      font: 700 clamp(52px, 10vw, 112px)/.92 Manrope, Inter, sans-serif;
+      letter-spacing: -.075em;
+    }
+    .intro-copy {
+      margin-top: 28px;
+      max-width: 650px;
+      font-size: 16px;
+      line-height: 1.85;
+      color: #333;
+    }
+    .intro-copy:empty { display: none; }
+    .intro-copy p { margin: 0 0 14px; }
+    .intro-copy p:last-child { margin-bottom: 0; }
+    .feed { width: min(100%, var(--reading)); }
+    .post { padding: clamp(40px, 6vw, 72px) 0; border-bottom: 1px solid var(--line); }
+    .post-date { margin: 0 0 18px; color: var(--muted); }
+    .post-title {
+      margin: 0 0 20px;
+      font: 600 clamp(25px, 4.4vw, 42px)/1.08 Manrope, Inter, sans-serif;
+      letter-spacing: -.055em;
+    }
+    .post-body { font-size: 16px; line-height: 1.88; color: #252525; }
+    .post-body > :first-child { margin-top: 0; }
+    .post-body > :last-child { margin-bottom: 0; }
+    .post-body p { margin: 0 0 16px; }
+    .post-body img { width: 100%; height: auto; margin: 22px 0; }
+    .post-body a { text-underline-offset: 3px; }
+    .gallery { display: grid; gap: 12px; margin-top: 24px; }
+    .gallery img { display: block; width: 100%; height: auto; }
+    .video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin-top: 24px; background: #111; }
+    .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video-link { display: inline-block; margin-top: 18px; font-size: 13px; }
+    .post-response { margin-top: 30px; padding-top: 17px; border-top: 1px solid var(--line); }
+    .response-link, .footer-link { display: inline-block; padding-bottom: 5px; text-decoration: none; border-bottom: 1px solid currentColor; }
+    .response-note { margin: 10px 0 0; max-width: 420px; font-size: 12px; line-height: 1.65; color: var(--muted); }
+    .empty-state { padding: 54px 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .signup {
+      margin-top: clamp(52px, 8vw, 100px);
+      padding: 26px 0 64px;
+      border-top: 1px solid var(--line);
+    }
+    .signup[hidden] { display: none; }
+    .signup-copy { max-width: 600px; margin: 0 0 22px; font-size: 15px; line-height: 1.75; }
+    .signup-frame { width: 100%; min-height: 600px; border: 0; background: transparent; }
+    .site-footer {
+      min-height: 68px;
+      padding: 22px 0 30px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      color: var(--muted);
+    }
+    .footer-link { color: var(--muted); }
+    @media (max-width: 640px) {
+      .site-header { height: 64px; padding: 0 18px; }
+      main { width: min(100% - 36px, var(--max)); }
+      .intro { padding-top: 72px; }
+      .post-body { font-size: 15px; line-height: 1.8; }
+      .signup-frame { min-height: 680px; }
+      .site-footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">Gustavo Vaz</a>
+    <a class="header-link" href="/">Voltar ao site</a>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div class="intro-inner">
+        <p class="eyebrow">NATUREZA</p>
+        <h1 id="page-title">NATUREZA</h1>
+        {% if settings.introduction and settings.introduction != "" %}
+        <div class="intro-copy">{{ settings.introduction | markdownify }}</div>
+        {% endif %}
+      </div>
+    </section>
+
+    <section class="feed" aria-label="Publicações">
+      {% if posts and posts.size > 0 %}
+        {% for post in posts %}
+          <article class="post">
+            {% if post.date and post.date != "" %}
+            <p class="post-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time></p>
+            {% endif %}
+            {% if post.title and post.title != "" %}
+            <h2 class="post-title">{{ post.title | escape }}</h2>
+            {% endif %}
+            {% if post.body and post.body != "" %}
+            <div class="post-body">{{ post.body | markdownify }}</div>
+            {% endif %}
+            {% if post.gallery and post.gallery.size > 0 %}
+            <div class="gallery">
+              {% for image in post.gallery %}
+              <img src="{{ image | relative_url }}" alt="" loading="lazy">
+              {% endfor %}
+            </div>
+            {% endif %}
+            {% if post.video_url and post.video_url != "" %}
+            <div class="video" data-video-url="{{ post.video_url | escape }}"></div>
+            <a class="video-link" href="{{ post.video_url | escape }}" target="_blank" rel="noopener noreferrer">Abrir vídeo</a>
+            {% endif %}
+            {% if settings.response_form_url and settings.response_form_url != "" %}
+            <div class="post-response">
+              <a class="response-link" href="{{ settings.response_form_url | escape }}" target="_blank" rel="noopener noreferrer">Responder a esta publicação</a>
+              <p class="response-note">Sua resposta será encaminhada em privado e não ficará visível nesta página.</p>
+            </div>
+            {% endif %}
+          </article>
+        {% endfor %}
+      {% else %}
+        <p class="empty-state">As publicações aparecerão aqui.</p>
+      {% endif %}
+    </section>
+
+    <section class="signup" id="cadastro" {% unless settings.signup_form_embed_url and settings.signup_form_embed_url != "" %}hidden{% endunless %}>
+      <p class="signup-copy">Você tem interesse em receber novidades direto no seu e-mail ou no WhatsApp? Cadastre-se aqui.</p>
+      {% if settings.signup_form_embed_url and settings.signup_form_embed_url != "" %}
+      <iframe class="signup-frame" src="{{ settings.signup_form_embed_url | escape }}" title="Cadastro para receber novidades de NATUREZA" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      {% endif %}
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <span class="brand">Gustavo Vaz</span>
+    <a class="footer-link" href="/">Site principal</a>
+  </footer>
+
+  <script>
+    (() => {
+      const safeEmbed = (raw) => {
+        try {
+          const url = new URL(raw);
+          const host = url.hostname.replace(/^www\./, '').toLowerCase();
+          if (host === 'youtu.be') {
+            const id = url.pathname.split('/').filter(Boolean)[0];
+            return id ? `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}` : '';
+          }
+          if (host === 'youtube.com' || host === 'm.youtube.com') {
+            let id = url.searchParams.get('v');
+            if (!id) {
+              const parts = url.pathname.split('/').filter(Boolean);
+              if (parts[0] === 'embed' || parts[0] === 'shorts') id = parts[1];
+            }
+            return id ? `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}` : '';
+          }
+          if (host === 'vimeo.com' || host === 'player.vimeo.com') {
+            const parts = url.pathname.split('/').filter(Boolean);
+            const id = host === 'player.vimeo.com' ? parts[1] : parts[0];
+            return id && /^\d+$/.test(id) ? `https://player.vimeo.com/video/${id}` : '';
+          }
+        } catch (_) {}
+        return '';
+      };
+      document.querySelectorAll('.video[data-video-url]').forEach((container) => {
+        const embedUrl = safeEmbed(container.dataset.videoUrl || '');
+        if (!embedUrl) return;
+        const frame = document.createElement('iframe');
+        frame.src = embedUrl;
+        frame.title = 'Vídeo de NATUREZA';
+        frame.loading = 'lazy';
+        frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        frame.allowFullscreen = true;
+        frame.referrerPolicy = 'strict-origin-when-cross-origin';
+        container.appendChild(frame);
+      });
+    })();
+  </script>
+</body>
+</html>

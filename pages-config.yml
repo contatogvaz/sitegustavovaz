@@ -1,0 +1,62 @@
+media:
+  - name: natureza
+    label: Imagens de NATUREZA
+    input: images/natureza
+    output: /images/natureza
+    extensions: [jpg, jpeg, png, webp]
+    rename: safe
+
+content:
+  - name: publicacoes
+    label: Publicações
+    type: file
+    path: _data/natureza_publicacoes.json
+    format: json
+    list: true
+    fields:
+      - name: date
+        label: Data
+        type: date
+        required: true
+      - name: title
+        label: Título (opcional)
+        type: string
+      - name: body
+        label: Texto
+        type: rich-text
+        options:
+          format: markdown
+          media: natureza
+          path: images/natureza
+          rename: safe
+      - name: gallery
+        label: Fotos
+        type: image
+        list:
+          max: 12
+        options:
+          media: natureza
+          path: images/natureza
+          extensions: [jpg, jpeg, png, webp]
+      - name: video_url
+        label: Link do vídeo (opcional)
+        type: string
+
+  - name: configuracao
+    label: Configuração da página
+    type: file
+    path: _data/natureza_config.json
+    format: json
+    fields:
+      - name: introduction
+        label: Texto de abertura (opcional)
+        type: rich-text
+        options:
+          format: markdown
+          media: false
+      - name: response_form_url
+        label: Link do formulário de resposta privada
+        type: string
+      - name: signup_form_embed_url
+        label: Link de incorporação do formulário de cadastro
+        type: string
