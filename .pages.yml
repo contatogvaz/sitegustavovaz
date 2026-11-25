@@ -19,18 +19,11 @@ content:
         type: date
         required: true
       - name: title
-        label: Título (opcional)
+        label: Título
         type: string
-      - name: body
-        label: Texto
-        type: rich-text
-        options:
-          format: markdown
-          media: natureza
-          path: images/natureza
-          rename: safe
+        required: true
       - name: gallery
-        label: Fotos
+        label: Fotos (opcional)
         type: image
         list:
           max: 12
@@ -38,6 +31,14 @@ content:
           media: natureza
           path: images/natureza
           extensions: [jpg, jpeg, png, webp]
+      - name: body
+        label: Texto (opcional)
+        type: rich-text
+        options:
+          format: markdown
+          media: natureza
+          path: images/natureza
+          rename: safe
       - name: video_url
         label: Link do vídeo (opcional)
         type: string
