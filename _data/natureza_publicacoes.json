@@ -40,6 +40,12 @@
     "video_url": "https://youtu.be/W-xBGI_5Yg0"
   },
   {
+    "date": "2026-05-23",
+    "title": "Transmutação Vocal - teste",
+    "body": "Primeiro teste de transmutação vocal em tempo real. Improviso.",
+    "video_url": "https://youtu.be/0qczfIDd0Lg"
+  },
+  {
     "date": "2026-05-29",
     "title": "Dia 06 - Registro",
     "body": "Exaustão.",
@@ -58,9 +64,11 @@
     "video_url": "https://youtu.be/SbYiYH8W8Us"
   },
   {
-    "date": "2026-05-23",
-    "title": "Transmutação Vocal - teste",
-    "body": "Primeiro teste de transmutação vocal em tempo real. Improviso.",
-    "video_url": "https://youtu.be/0qczfIDd0Lg"
+    "date": "2026-06-19",
+    "title": "Rastreamento geral do rosto",
+    "gallery": [
+      "/images/natureza/img-20260618-wa0005.jpg"
+    ],
+    "body": "Ferramenta de leitura das expressões faciais que auxilia o Sistema Cênico no modo de improviso de diálogo, onde ele conduz perguntas de acordo com as respostas e experessões do ator."
   }
 ]
