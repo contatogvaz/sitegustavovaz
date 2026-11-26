@@ -20,6 +20,14 @@
     "video_url": "https://youtu.be/xTAQevKa92Q"
   },
   {
+    "date": "2026-05-15",
+    "title": "Eu & ela",
+    "gallery": [
+      "/images/natureza/20260515132058.jpg"
+    ],
+    "body": "Experimentos de cena com ANA, primeira personagem de voz em protótipo."
+  },
+  {
     "date": "2026-05-18",
     "title": "Dia 04 - Registro",
     "body": "Diário de processo. Dia 04."
@@ -35,13 +43,5 @@
     "title": "Estudo de Relação 1",
     "body": "É possível criar relação entre um ator e uma máquina?  \nEste é um trecho de um primeiro experimento no processo chamado de Estudo de Relação entre o ator e o Sistema Cênico de Natureza.  \nNessa cena, o personagem de voz consegue escolher entre duas qualidades de resposta a cada fala do diálogo a depender de como o ator fala seu texto.",
     "video_url": "https://youtu.be/SbYiYH8W8Us"
-  },
-  {
-    "date": "2026-05-15",
-    "title": "Eu & ela",
-    "gallery": [
-      "/images/natureza/20260515132058.jpg"
-    ],
-    "body": "Experimentos de cena com ANA, primeira personagem de voz em protótipo."
   }
 ]
