@@ -20,6 +20,11 @@
     "video_url": "https://youtu.be/xTAQevKa92Q"
   },
   {
+    "date": "2026-05-18",
+    "title": "Dia 04 - Registro",
+    "body": "Diário de processo. Dia 04."
+  },
+  {
     "date": "2026-06-02",
     "title": "ExPodcast #1",
     "body": "Durante o processo de NATUREZA, registrei uma primeira conversa em formato de Podcast/Videocast, inaugurando esse espaço de comunicação do grupo a ser desenvolvido futuramente.",
@@ -33,14 +38,10 @@
   },
   {
     "date": "2026-05-15",
-    "title": "Eu e ela",
+    "title": "Eu & ela",
     "gallery": [
       "/images/natureza/20260515132058.jpg"
-    ]
-  },
-  {
-    "date": "2026-05-18",
-    "title": "Dia 04 - Registro",
-    "body": "Diário de processo. Dia 04."
+    ],
+    "body": "Experimentos de cena com ANA, primeira personagem de voz em protótipo."
   }
 ]
